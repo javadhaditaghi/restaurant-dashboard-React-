@@ -19,6 +19,8 @@ import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
 import { sidebarButtons } from '../../constants/consts';
+import { useState } from 'react';
+import './sidebar.css'
 
 const drawerWidth = 240;
 
@@ -87,7 +89,20 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
     }),
 );
 
+
+
+
+
 export default function MiniDrawer() {
+
+    const [selectedButton, setSelectedButton] = useState(null);
+    const handleButtonClick = (index) => {
+        setSelectedButton(index);
+    };
+
+
+
+
     const theme = useTheme();
     const [open, setOpen] = React.useState(false);
 
@@ -132,20 +147,29 @@ export default function MiniDrawer() {
                     {sidebarButtons.map((text, index) => (
                         <ListItem key={text.title} disablePadding sx={{ display: 'block' }}>
                             <ListItemButton
+                                selected={selectedButton === index}
+                                onClick={() => handleButtonClick(index)}
                                 sx={{
                                     minHeight: 48,
                                     justifyContent: open ? 'initial' : 'center',
                                     px: 2.5,
+                                    color: selectedButton === index ? '#2F4CDD' : 'inherit',
                                 }}
                             >
+                                {selectedButton === index ? (
+                                    <div className='sidebar__buttons-items' />
+                                ) : null}
                                 <ListItemIcon
                                     sx={{
                                         minWidth: 0,
                                         mr: open ? 3 : 'auto',
                                         justifyContent: 'center',
+
+                                        fill: selectedButton === index ? '#2F4CDD' : 'inherit',
                                     }}
                                 >
-                                    {text.icon}
+                                    {selectedButton === index ? text.icon1 : text.icon}
+
                                 </ListItemIcon>
                                 <ListItemText primary={text.title} sx={{ opacity: open ? 1 : 0 }} />
                             </ListItemButton>

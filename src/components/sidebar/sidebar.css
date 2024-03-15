@@ -1,0 +1,15 @@
+.sidebar__buttons-items {
+    position: absolute;
+    width: 8px;
+    height: 45px;
+    background-color: #2F4CDD;
+    border-radius: 0px 6px 6px 0px;
+    -webkit-border-radius: 0px 6px 6px 0px;
+    -moz-border-radius: 0px 6px 6px 0px;
+    -ms-border-radius: 0px 6px 6px 0px;
+    -o-border-radius: 0px 6px 6px 0px;
+    z-index: 999;
+    position: relative;
+    left: 0;
+
+}
