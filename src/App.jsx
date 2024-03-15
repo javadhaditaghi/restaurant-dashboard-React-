@@ -1,4 +1,4 @@
-import Test from "./components/test"
+import MiniDrawer from "./components/sidebar/sidebar"
 
 
 function App() {
@@ -6,7 +6,8 @@ function App() {
 
   return (
     <>
-      <Test />
+      <MiniDrawer />
+
 
     </>
   )
