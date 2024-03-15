@@ -76,4 +76,34 @@ const sidebarButtons = [
 
 // -------------------- End of Sidebar buttons text and icons---------------------
 
-export { sidebarButtons }
+// --------------------Start of sidebar subbuttons ---------------------
+
+const sidebarSubuttons_1 = [
+    {
+        title: "Breakfast"
+    },
+    {
+        title: "Dinner"
+    },
+    {
+        title: "Lunch"
+    },
+]
+
+const sidebarSubuttons_2 = [
+    {
+        title: "Add New"
+    },
+    {
+        title: "Members"
+    },
+    {
+        title: "General Customers"
+    },
+
+
+]
+
+// --------------------End of sidebar subbuttons ---------------------
+
+export { sidebarButtons, sidebarSubuttons_1, sidebarSubuttons_2 }

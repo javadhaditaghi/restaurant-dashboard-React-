@@ -13,3 +13,8 @@
     left: 0;
 
 }
+
+.sidebar__dropduttons-items ul {
+    list-style: none;
+    padding-left: 70px;
+}

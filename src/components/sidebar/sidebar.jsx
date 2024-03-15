@@ -18,9 +18,11 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
-import { sidebarButtons } from '../../constants/consts';
+import { sidebarButtons, sidebarSubuttons_1, sidebarSubuttons_2 } from '../../constants/consts';
 import { useState } from 'react';
-import './sidebar.css'
+import './sidebar.css';
+import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
+import { KeyboardDoubleArrowRight } from '@mui/icons-material';
 
 const drawerWidth = 240;
 
@@ -95,9 +97,14 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
 
 export default function MiniDrawer() {
 
+    // Change the color of the button when clicked 
     const [selectedButton, setSelectedButton] = useState(null);
     const handleButtonClick = (index) => {
         setSelectedButton(index);
+    };
+    const [selectedSuButton, setSelectedSuButton] = useState(null);
+    const handleSuButtonClick = (ind) => {
+        setSelectedSuButton(ind);
     };
 
 
@@ -138,14 +145,16 @@ export default function MiniDrawer() {
             </AppBar>
             <Drawer variant="permanent" open={open}>
                 <DrawerHeader>
+
                     <IconButton onClick={handleDrawerClose}>
                         {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
                     </IconButton>
                 </DrawerHeader>
                 <Divider />
                 <List>
+
                     {sidebarButtons.map((text, index) => (
-                        <ListItem key={text.title} disablePadding sx={{ display: 'block' }}>
+                        <ListItem key={text.index} disablePadding sx={{ display: 'block' }}>
                             <ListItemButton
                                 selected={selectedButton === index}
                                 onClick={() => handleButtonClick(index)}
@@ -164,43 +173,69 @@ export default function MiniDrawer() {
                                         minWidth: 0,
                                         mr: open ? 3 : 'auto',
                                         justifyContent: 'center',
-
-                                        fill: selectedButton === index ? '#2F4CDD' : 'inherit',
                                     }}
                                 >
                                     {selectedButton === index ? text.icon1 : text.icon}
 
                                 </ListItemIcon>
                                 <ListItemText primary={text.title} sx={{ opacity: open ? 1 : 0 }} />
+                                {((index === 2 || index === 3) && open ? <KeyboardArrowRightIcon /> : null)}
+
                             </ListItemButton>
+                            {((index === 2) && open && (selectedButton == index) ? <div className='sidebar__dropduttons-items'>
+
+                                {
+                                    sidebarSubuttons_1.map((item, ind) => (
+                                        <ListItemButton
+                                            key={ind}
+                                            selected={selectedSuButton === ind}
+                                            onClick={() => handleSuButtonClick(ind)}
+                                            sx={{
+                                                minHeight: 48,
+                                                justifyContent: open ? 'initial' : 'center',
+                                                px: 2.5,
+                                                color: selectedSuButton === ind ? '#2F4CDD' : 'inherit',
+                                                paddingLeft: 8.5
+                                            }}
+                                        >
+                                            <ListItemText primary={item.title} sx={{ opacity: open ? 1 : 0 }} />
+
+
+                                        </ListItemButton>
+
+                                    ))
+
+                                }
+                            </div> : null)}
+                            {((index === 3) && open && (selectedButton == index) ? <div className='sidebar__dropduttons-items'>
+                                {
+                                    sidebarSubuttons_2.map((items, inde) => (
+                                        <ListItemButton
+                                            key={inde}
+                                            selected={selectedSuButton === inde}
+                                            onClick={() => handleSuButtonClick(inde)}
+                                            sx={{
+                                                minHeight: 48,
+                                                justifyContent: open ? 'initial' : 'center',
+                                                px: 2.5,
+                                                color: selectedSuButton === inde ? '#2F4CDD' : 'inherit',
+                                                paddingLeft: 8.5
+                                            }}
+                                        >
+                                            <ListItemText primary={items.title} sx={{ opacity: open ? 1 : 0 }} />
+
+
+                                        </ListItemButton>
+
+                                    ))
+
+                                }
+                            </div> : null)}
                         </ListItem>
                     ))}
                 </List>
                 <Divider />
-                <List>
-                    {['All mail', 'Trash', 'Spam'].map((text, index) => (
-                        <ListItem key={text} disablePadding sx={{ display: 'block' }}>
-                            <ListItemButton
-                                sx={{
-                                    minHeight: 48,
-                                    justifyContent: open ? 'initial' : 'center',
-                                    px: 2.5,
-                                }}
-                            >
-                                <ListItemIcon
-                                    sx={{
-                                        minWidth: 0,
-                                        mr: open ? 3 : 'auto',
-                                        justifyContent: 'center',
-                                    }}
-                                >
-                                    {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                                </ListItemIcon>
-                                <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} />
-                            </ListItemButton>
-                        </ListItem>
-                    ))}
-                </List>
+
             </Drawer>
             <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
                 <DrawerHeader />
