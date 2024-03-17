@@ -22,6 +22,7 @@ import { sidebarButtons, sidebarSubuttons_1, sidebarSubuttons_2 } from '../../co
 import { useState } from 'react';
 import './sidebar.css';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
+import TextButton from '../buttons/button';
 
 
 // APP-BAR IMPORTS 
@@ -34,6 +35,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import AccountCircle from '@mui/icons-material/AccountCircle';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
+import { Button } from '@mui/material';
 
 
 
@@ -292,7 +294,7 @@ export default function MiniDrawer() {
         <Box sx={{ display: 'flex' }}>
             <CssBaseline />
 
-            <AppBar position="fixed" open={open} sx={{ backgroundColor: "#ffffff", color: theme.palette.secondary.light }}>
+            <AppBar position="fixed" open={open} sx={{ backgroundColor: "#ffffff", color: theme.palette.secondary.light, minHeight: "75px", justifyContent: "center" }}>
                 <Toolbar>
                     <IconButton
                         color="inherit"
@@ -307,27 +309,46 @@ export default function MiniDrawer() {
                         <MenuIcon />
                     </IconButton>
 
-                    <Search>
+                    <Search
+                        sx={{
+                            border: '1px solid #EBEBEB',
+                            display: 'flex',
+                            alignItems: 'center', // Align items vertically
+                            justifyContent: 'flex-end', // Distribute space between items
+                            flexGrow: '.7',
+                        }}
+                    >
+                        <StyledInputBase
+                            placeholder="Search Here"
+                            inputProps={{ 'aria-label': 'search' }}
+                        />
+                        <Box sx={{ flexGrow: 1.5 }} />
                         <SearchIconWrapper>
                             <SearchIcon />
                         </SearchIconWrapper>
-                        <StyledInputBase
-                            placeholder="Search…"
-                            inputProps={{ 'aria-label': 'search' }}
-                        />
                     </Search>
-                    <Box sx={{ flexGrow: 1 }} />
 
+
+                    <Box sx={{ flexGrow: 1 }} />
+                    {/* ------------- Start of Buttons ----------------- */}
+                    <Box>
+                        <TextButton>About</TextButton>
+                        <TextButton>Tools</TextButton>
+                        <TextButton>Help</TextButton>
+                    </Box>
+                    {/* ------------- End of Buttons ----------------- */}
+                    <Box sx={{ flexGrow: .1 }} />
                     {/* ------------- Start of Appbar icons ----------------- */}
                     <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
 
+
                         <IconButton
                             size="large"
                             aria-label="show 17 new notifications"
                             color="inherit"
                         >
                             <Badge badgeContent={17} color="primary">
-                                <img src="../../../src/assets/images/ring.svg" width={30} />
+                                <img src="../../../src/assets/images/ring.svg" width={35} />
                             </Badge>
                         </IconButton>
                         <IconButton
@@ -335,8 +356,8 @@ export default function MiniDrawer() {
                             aria-label="show 17 new notifications"
                             color="inherit"
                         >
-                            <Badge badgeContent={17} color="primary">
-                                <img src="../../../src/assets/images/notification.svg" width={30} />
+                            <Badge badgeContent={85} color="primary">
+                                <img src="../../../src/assets/images/notification.svg" width={35} />
                             </Badge>
                         </IconButton>
                         <IconButton
@@ -344,8 +365,8 @@ export default function MiniDrawer() {
                             aria-label="show 17 new notifications"
                             color="inherit"
                         >
-                            <Badge badgeContent={17} color="secondary">
-                                <img src="../../../src/assets/images/gift.svg" width={30} />
+                            <Badge badgeContent={1700} color="secondary">
+                                <img src="../../../src/assets/images/gift.svg" width={35} />
                             </Badge>
                         </IconButton>
                         <IconButton
@@ -354,7 +375,7 @@ export default function MiniDrawer() {
                             color="inherit"
                         >
                             <Badge badgeContent={1} color="danger">
-                                <img src="../../../src/assets/images/process.svg" width={30} />
+                                <img src="../../../src/assets/images/process.svg" width={35} />
                             </Badge>
                         </IconButton>
                         <IconButton
@@ -367,10 +388,19 @@ export default function MiniDrawer() {
                             color="inherit"
                         >
                             <Box className="toolbar__profile-icon">
+                                <Typography sx={{
+                                    position: 'relative',
+                                    Zindex: "100",
+                                    fontSize: '12px',
+                                    lineHeight: '35px',
+                                    left: '-10px',
+                                    color: '#ffffff',
+                                }}>Hello, <Box component="span" sx={{ fontWeight: 'bold' }}>Samuel</Box></Typography>
                             </Box>
                             <AccountCircle className="toolbar__profile-circle" />
 
                         </IconButton>
+
                     </Box>
                     {/* ------------- End of Appbar icons ----------------- */}
                     <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
@@ -398,7 +428,8 @@ export default function MiniDrawer() {
                             flexDirection: 'row',
                             justifyContent: 'space-between',
                             alignItems: 'center',
-                            gap: 2
+                            gap: 2,
+                            minHeight: '75px',
 
                         }}
                     >
@@ -412,7 +443,7 @@ export default function MiniDrawer() {
                         {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
                     </IconButton>
                 </DrawerHeader>
-                <Divider />
+
                 <List>
 
                     {sidebarButtons.map((text, index) => (

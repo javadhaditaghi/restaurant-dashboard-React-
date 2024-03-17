@@ -1,6 +1,8 @@
+/* ------------Appbar Styling-------------- */
+
 .toolbar__profile-icon {
-    width: 100px;
-    height: 28px;
+    width: 120px;
+    height: 35px;
     position: relative;
     overflow: hidden;
     border-radius: 5px;
@@ -12,18 +14,19 @@
 
 .toolbar__profile-circle {
     position: relative;
-    right: 17px;
+    right: 19px;
+    width: 35px !important;
+    HEIGHT: 35px !important;
 }
 
-/* .css-i4bv87-MuiSvgIcon-root {
-    position: relative;
-    right: 17px;
-} */
+.css-qpyrf0-MuiInputBase-root .MuiInputBase-input {
+    padding-left: 10px !important;
+}
 
 .toolbar__profile-icon:before {
     content: '';
     position: absolute;
-    left: 81%;
+    left: 83%;
     width: 36%;
     height: 100%;
     border-radius: 100%;
@@ -31,9 +34,7 @@
     ;
 }
 
-
-
-
+/* ----------------Sidebar------------------- */
 
 .sidebar__buttons-items {
     position: absolute !important;
