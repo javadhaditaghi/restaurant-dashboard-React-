@@ -317,10 +317,17 @@ export default function MiniDrawer() {
                         />
                     </Search>
                     <Box sx={{ flexGrow: 1 }} />
+
+                    {/* ------------- Start of Appbar icons ----------------- */}
                     <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-                        <IconButton size="large" aria-label="show 4 new mails" color="inherit">
-                            <Badge badgeContent={4} color="error">
-                                <MailIcon />
+
+                        <IconButton
+                            size="large"
+                            aria-label="show 17 new notifications"
+                            color="inherit"
+                        >
+                            <Badge badgeContent={17} color="primary">
+                                <img src="../../../src/assets/images/ring.svg" width={30} />
                             </Badge>
                         </IconButton>
                         <IconButton
@@ -328,8 +335,26 @@ export default function MiniDrawer() {
                             aria-label="show 17 new notifications"
                             color="inherit"
                         >
-                            <Badge badgeContent={17} color="error">
-                                <NotificationsIcon />
+                            <Badge badgeContent={17} color="primary">
+                                <img src="../../../src/assets/images/notification.svg" width={30} />
+                            </Badge>
+                        </IconButton>
+                        <IconButton
+                            size="large"
+                            aria-label="show 17 new notifications"
+                            color="inherit"
+                        >
+                            <Badge badgeContent={17} color="secondary">
+                                <img src="../../../src/assets/images/gift.svg" width={30} />
+                            </Badge>
+                        </IconButton>
+                        <IconButton
+                            size="large"
+                            aria-label="show ! new notifications"
+                            color="inherit"
+                        >
+                            <Badge badgeContent={1} color="danger">
+                                <img src="../../../src/assets/images/process.svg" width={30} />
                             </Badge>
                         </IconButton>
                         <IconButton
@@ -341,17 +366,13 @@ export default function MiniDrawer() {
                             onClick={handleProfileMenuOpen}
                             color="inherit"
                         >
-                            <Box sx={{
-                                width: 70,
-                                height: 25,
-                                backgroundColor: "blue"
-
-                            }}>
+                            <Box className="toolbar__profile-icon">
                             </Box>
-                            <AccountCircle />
+                            <AccountCircle className="toolbar__profile-circle" />
 
                         </IconButton>
                     </Box>
+                    {/* ------------- End of Appbar icons ----------------- */}
                     <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
                         <IconButton
                             size="large"

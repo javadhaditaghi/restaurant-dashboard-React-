@@ -22,7 +22,7 @@ const theme = createTheme({
       light: '#969BA0',
       main: '#3E4954',
       dark: '#000000',
-      contrastText: '#000',
+      contrastText: '#fff',
     },
     // Red and orange color
     danger: {
@@ -30,7 +30,7 @@ const theme = createTheme({
       light: '#F7A16E',
       main: '#FF6D4C',
       dark: '#FF6D4D',
-      contrastText: '#000',
+      contrastText: '#fff',
     },
     // Green color
     sucess: {

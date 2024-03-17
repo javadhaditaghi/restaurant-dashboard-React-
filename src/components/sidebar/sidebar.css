@@ -1,3 +1,40 @@
+.toolbar__profile-icon {
+    width: 100px;
+    height: 28px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+.toolbar__profile-circle {
+    position: relative;
+    right: 17px;
+}
+
+/* .css-i4bv87-MuiSvgIcon-root {
+    position: relative;
+    right: 17px;
+} */
+
+.toolbar__profile-icon:before {
+    content: '';
+    position: absolute;
+    left: 81%;
+    width: 36%;
+    height: 100%;
+    border-radius: 100%;
+    box-shadow: 1px 93px 0px 498px #2F4CDD;
+    ;
+}
+
+
+
+
+
 .sidebar__buttons-items {
     position: absolute !important;
     width: 8px;
