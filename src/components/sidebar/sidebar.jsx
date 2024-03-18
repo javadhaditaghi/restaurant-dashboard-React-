@@ -300,6 +300,13 @@ export default function MiniDrawer() {
                 </IconButton>
                 <p>Profile</p>
             </MenuItem>
+            <Divider />
+            <Box >
+                <TextButton>About</TextButton>
+                <TextButton>Tools</TextButton>
+                <TextButton>Help</TextButton>
+            </Box>
+
         </Menu>
 
     );
@@ -362,7 +369,7 @@ export default function MiniDrawer() {
 
                     <Box sx={{ flexGrow: 1 }} />
                     {/* ------------- Start of Buttons ----------------- */}
-                    <Box>
+                    <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
                         <TextButton>About</TextButton>
                         <TextButton>Tools</TextButton>
                         <TextButton>Help</TextButton>
@@ -489,9 +496,11 @@ export default function MiniDrawer() {
                                     color: selectedButton === index ? '#2F4CDD' : 'inherit',
                                 }}
                             >
+
                                 {selectedButton === index ? (
                                     <div className='sidebar__buttons-items' />
                                 ) : null}
+
                                 <ListItemIcon
                                     sx={{
                                         minWidth: 0,
@@ -503,6 +512,10 @@ export default function MiniDrawer() {
 
                                 </ListItemIcon>
                                 <ListItemText primary={text.title} sx={{ opacity: open ? 1 : 0, color: theme.palette.secondary.light, fontWeight: 500 }} />
+
+                                {/*Small badge in front of orders*/}
+                                {index === 1 ? <Badge badgeContent={4} color="primary" className='sidebar__drower-badge'></Badge> : null}
+
                                 {((index === 2 || index === 3) && open ? <KeyboardArrowRightIcon /> : null)}
 
                             </ListItemButton>
@@ -515,7 +528,7 @@ export default function MiniDrawer() {
                                             selected={selectedSuButton === ind}
                                             onClick={() => handleSuButtonClick(ind)}
                                             sx={{
-                                                minHeight: 48,
+                                                minHeight: 30,
                                                 justifyContent: open ? 'initial' : 'center',
                                                 px: 2.5,
                                                 color: selectedSuButton === ind ? '#2F4CDD' : 'inherit',

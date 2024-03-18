@@ -56,3 +56,11 @@
     list-style: none;
     padding-left: 70px;
 }
+
+.sidebar__drower-badge .css-16q70vu-MuiBadge-badge {
+    border-radius: 4px !important;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+}
