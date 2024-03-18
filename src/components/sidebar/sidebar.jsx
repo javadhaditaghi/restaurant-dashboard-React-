@@ -222,6 +222,7 @@ export default function MiniDrawer() {
         </Menu>
     );
 
+    {/* ------------- Start of mobile Appbar Menue for right icons ------------------- */ }
     const mobileMenuId = 'primary-search-account-menu-mobile';
     const renderMobileMenu = (
         <Menu
@@ -240,9 +241,13 @@ export default function MiniDrawer() {
             onClose={handleMobileMenuClose}
         >
             <MenuItem>
-                <IconButton size="large" aria-label="show 4 new mails" color="inherit">
-                    <Badge badgeContent={4} color="error">
-                        <MailIcon />
+                <IconButton
+                    size="large"
+                    aria-label="show 17 new notifications"
+                    color="inherit"
+                >
+                    <Badge badgeContent={17} color="primary">
+                        <img src="../../../src/assets/images/ring.svg" width={35} />
                     </Badge>
                 </IconButton>
                 <p>Messages</p>
@@ -253,11 +258,35 @@ export default function MiniDrawer() {
                     aria-label="show 17 new notifications"
                     color="inherit"
                 >
-                    <Badge badgeContent={17} color="error">
-                        <NotificationsIcon />
+                    <Badge badgeContent={85} color="primary">
+                        <img src="../../../src/assets/images/notification.svg" width={35} />
                     </Badge>
                 </IconButton>
                 <p>Notifications</p>
+            </MenuItem>
+            <MenuItem>
+                <IconButton
+                    size="large"
+                    aria-label="show 17 new notifications"
+                    color="inherit"
+                >
+                    <Badge badgeContent={1700} color="secondary">
+                        <img src="../../../src/assets/images/gift.svg" width={35} />
+                    </Badge>
+                </IconButton>
+                <p>Lorem</p>
+            </MenuItem>
+            <MenuItem>
+                <IconButton
+                    size="large"
+                    aria-label="show ! new notifications"
+                    color="inherit"
+                >
+                    <Badge badgeContent={1} color="danger">
+                        <img src="../../../src/assets/images/process.svg" width={35} />
+                    </Badge>
+                </IconButton>
+                <p>Lorem</p>
             </MenuItem>
             <MenuItem onClick={handleProfileMenuOpen}>
                 <IconButton
@@ -272,7 +301,9 @@ export default function MiniDrawer() {
                 <p>Profile</p>
             </MenuItem>
         </Menu>
+
     );
+    {/* ------------- End  of mobile Appbar Menue for right icons ------------------- */ }
 
     //----------------------- END OF APPBAR SECTION ----------------------
 
