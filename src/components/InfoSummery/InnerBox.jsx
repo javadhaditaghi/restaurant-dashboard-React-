@@ -15,7 +15,7 @@ export default function InnerBox(props) {
         >
             <Box
                 sx={{
-                    width: "19vw",
+                    width: "100%",
                     height: "8.5rem",
                     borderRadius: "1.25rem;",
                     bgcolor: 'primary.main',
@@ -25,9 +25,10 @@ export default function InnerBox(props) {
                     alignItems: "center",
                     flexShrink: 1,
                     padding: "7px",
+                    transition: ".5s ease-in-out",
 
                     '&:hover': {
-                        bgcolor: 'primary.dark',
+                        boxShadow: "0px 12px 23px 0px rgba(62, 73, 84, 0.2)",
                     },
                 }}>{props.children}</Box>
         </ThemeProvider>
