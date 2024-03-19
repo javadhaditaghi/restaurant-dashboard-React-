@@ -39,6 +39,7 @@ import MoreIcon from '@mui/icons-material/MoreVert';
 // Imported Sections
 import DashboardHeader from '../dashboardHeader/DashboardHeader';
 import InfoSummary from '../InfoSummery/InfoSummary';
+import OrdersInfo from '../ordersSummary/ordersInfo';
 
 
 
@@ -582,6 +583,7 @@ export default function MiniDrawer() {
                     <DrawerHeader />
                     <DashboardHeader />
                     <InfoSummary />
+                    <OrdersInfo />
 
                     <Typography paragraph>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
