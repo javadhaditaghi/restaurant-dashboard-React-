@@ -37,6 +37,7 @@ import MoreIcon from '@mui/icons-material/MoreVert';
 
 // Imported Sections
 import DashboardHeader from '../dashboardHeader/DashboardHeader';
+import InfoSummary from '../InfoSummery/InfoSummary';
 
 
 
@@ -575,9 +576,11 @@ export default function MiniDrawer() {
                 <Divider />
 
             </Drawer>
-            <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
+            <Box component="main" sx={{ flexGrow: 1, p: 3, backgroundColor: "#F9F9F9" }}>
                 <DrawerHeader />
                 <DashboardHeader />
+                <InfoSummary />
+
                 <Typography paragraph>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
                     tempor incididunt ut labore et dolore magna aliqua. Rhoncus dolor purus non
