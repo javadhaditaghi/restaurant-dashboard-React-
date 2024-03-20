@@ -45,6 +45,8 @@ import OrdersInfo from '../ordersSummary/ordersInfo';
 
 
 
+
+
 const drawerWidth = 240;
 
 const openedMixin = (theme) => ({
@@ -584,6 +586,7 @@ export default function MiniDrawer() {
                     <DashboardHeader />
                     <InfoSummary />
                     <OrdersInfo />
+
 
                     <Typography paragraph>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod

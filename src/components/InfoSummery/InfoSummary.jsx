@@ -15,7 +15,7 @@ const InfoSummary = () => {
 
                     infoSummary.map((item) => (
                         <Grid2 sm={6} md={3}>
-                            <InnerBox >
+                            <InnerBox>
                                 <Box>
                                     <img src={item.ImgSrc} width={70} />
                                 </Box>
