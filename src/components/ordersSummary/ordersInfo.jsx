@@ -3,6 +3,7 @@ import InnerBox2 from './InnerBox2';
 import Grid2 from "@mui/material/Unstable_Grid2/Grid2"
 import { Box, Typography } from "@mui/material"
 import OrderInfHeader from './orderInfoHeader';
+import NewOrders from './newOrders';
 
 
 
@@ -23,6 +24,9 @@ const OrdersInfo = () => {
                         <Box>
                             <OrderInfHeader />
                         </Box>
+                    </Box>
+                    <Box>
+                        <NewOrders />
                     </Box>
                 </InnerBox2>
             </Grid2>
