@@ -24,7 +24,6 @@ const NewOrders = () => {
                     <Typography sx={{ display: "block", fontWeight: "700", textAlign: "center", fontSize: "1.5rem", lineHeight: "1.85" }}>25</Typography>
                 </Box>
                 <StyledBadge color="secondary" variant="dot">
-
                     <Typography fontWeight={600}>New Orders</Typography>
                 </StyledBadge>
 

@@ -4,6 +4,7 @@ import Grid2 from "@mui/material/Unstable_Grid2/Grid2"
 import { Box, Typography } from "@mui/material"
 import OrderInfHeader from './orderInfoHeader';
 import NewOrders from './newOrders';
+import DeliveryCards from './deliveryCards';
 
 
 
@@ -27,6 +28,9 @@ const OrdersInfo = () => {
                     </Box>
                     <Box>
                         <NewOrders />
+                    </Box>
+                    <Box>
+                        <DeliveryCards />
                     </Box>
                 </InnerBox2>
             </Grid2>
