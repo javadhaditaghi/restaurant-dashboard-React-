@@ -8,7 +8,7 @@ const DeliveryCards = () => {
             {
 
                 jsonData.map((item, index) => (
-                    <Grid2 sm={12} lg={4} key={index}>
+                    <Grid2 xs={12} sm={4} key={index}>
                         <Box sx={{ borderRadius: "12px", border: "1px solid #F2F2F2", width: "100%", p: 2 }}>
                             <Typography variant="h5" fontWeight={700}>{item.content}</Typography>
                             <Typography color={"#969BA0"} fontWeight={600}>{item.title}</Typography>

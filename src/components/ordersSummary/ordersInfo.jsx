@@ -5,6 +5,7 @@ import { Box, Typography } from "@mui/material"
 import OrderInfHeader from './orderInfoHeader';
 import NewOrders from './newOrders';
 import DeliveryCards from './deliveryCards';
+import DeliveryChart from './deliveryChart';
 
 
 
@@ -31,6 +32,9 @@ const OrdersInfo = () => {
                     </Box>
                     <Box>
                         <DeliveryCards />
+                    </Box>
+                    <Box>
+                        <DeliveryChart />
                     </Box>
                 </InnerBox2>
             </Grid2>
