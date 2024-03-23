@@ -85,7 +85,7 @@ const DeliveryChart = () => {
                         }}
 
                         margin={{
-                            left: 110,
+                            left: 150,
                         }}
 
 

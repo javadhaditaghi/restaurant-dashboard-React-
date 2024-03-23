@@ -7,6 +7,15 @@
     display: none;
 }
 
+text.MuiChartsAxis-tickLabel {
+    color: #3E4954;
+
+    font-size: 14px !important;
+
+    font-weight: 500;
+
+}
+
 /* Target the first rect element */
 rect:nth-of-type(1) {
     fill: #3E4954 !important;
