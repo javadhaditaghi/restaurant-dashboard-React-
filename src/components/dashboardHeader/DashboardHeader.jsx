@@ -39,7 +39,7 @@ const DashboardHeader = () => {
                     <Select
                         value={period}
                         onChange={handleChange}
-                        variant="outlined"
+
                         sx={{ backgroundColor: "#F4F5F9", borderRadius: "0.75rem", outline: "0px", border: "0px" }}
                     >
                         <MenuItem value={10} >

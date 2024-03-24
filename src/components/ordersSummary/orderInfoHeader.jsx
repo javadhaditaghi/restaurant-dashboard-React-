@@ -14,8 +14,6 @@ const CustomButton = styled(Button)({
     backgroundColor: 'transparent',
     fontSize: "12px",
 
-
-
     '&:hover': {
 
         borderRadius: "6px",
