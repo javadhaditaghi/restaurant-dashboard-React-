@@ -22,7 +22,7 @@ const DeliveryChart = () => {
 
         width: 400,
         height: 200,
-        colors: ['#3E4954', '#2BC155', '#FF6D4C'],
+
 
     };
     const valueFormatter = (value) => `${value.toFixed(3)}mm`;
