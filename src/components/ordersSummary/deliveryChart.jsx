@@ -19,11 +19,8 @@ const DeliveryChart = () => {
 
 
     const chartSetting = {
-
         width: 400,
         height: 200,
-
-
     };
     const valueFormatter = (value) => `${value.toFixed(3)}mm`;
 
@@ -58,8 +55,6 @@ const DeliveryChart = () => {
                         width={200}
                     />
                 </Grid>
-
-
 
                 <Grid item xs={12} sm={8} md={8}>
                     <BarChart
