@@ -18,6 +18,7 @@ const ChartInfo = () => {
                     <Typography fontSize={"20   px"} fontWeight={600}>$126,000</Typography>
                 </Box>
             </Box>
+
             <Box sx={{ display: "flex", justifyContent: "center", alignItems: "end", gap: 1 }}>
                 <Box>
                     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="26" viewBox="0 0 25 26" fill="none">

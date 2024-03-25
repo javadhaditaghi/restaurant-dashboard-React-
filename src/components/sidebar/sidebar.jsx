@@ -41,6 +41,7 @@ import DashboardHeader from '../dashboardHeader/DashboardHeader';
 import InfoSummary from '../InfoSummery/InfoSummary';
 import OrdersInfo from '../ordersSummary/ordersInfo';
 import Revenue from '../revenue/revenue';
+import DailyInfo from '../dailyInfo/dailyInfo';
 
 
 
@@ -591,6 +592,7 @@ export default function MiniDrawer() {
                         <OrdersInfo />
                         <Revenue />
                     </Grid2>
+                    <DailyInfo />
 
 
 

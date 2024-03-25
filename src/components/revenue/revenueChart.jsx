@@ -24,7 +24,7 @@ const RevenueChart = () => {
     return (
         <LineChart
             grid={{ horizontal: true }}
-            margin={{ top: 100, left: 100 }}
+            margin={{ top: 120, left: 100 }}
             height={350}
             colors={['#2F4CDD', '#B519EC']}
             series={
