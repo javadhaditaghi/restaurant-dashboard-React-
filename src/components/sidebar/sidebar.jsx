@@ -582,7 +582,7 @@ export default function MiniDrawer() {
                 <Divider />
 
             </Drawer>
-            <Grid2 container spacing={.5}>
+            <Grid2 spacing={.5} width={'100%'}>
                 <Box component="main" sx={{ flexGrow: 1, p: 3, backgroundColor: "#F9F9F9", display: "flex", flexDirection: "column" }}>
                     <DrawerHeader />
                     <DashboardHeader />
@@ -596,12 +596,7 @@ export default function MiniDrawer() {
 
 
 
-                    <Typography paragraph>
-                        Consequat mauris nunc congue nisi vitae suscipit. Fringilla est ullamcorper
-                        eget nulla facilisi etiam dignissim diam. Pulvinar elementum integer enim
-                        neque volutpat ac tincidunt. Ornare suspendisse sed nisi lacus sed viverra
-                        tellus. Purus sit amet volutpat consequat m
-                    </Typography>
+
                 </Box>
             </Grid2>
         </Box>
