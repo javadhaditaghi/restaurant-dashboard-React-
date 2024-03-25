@@ -2,6 +2,7 @@ import * as React from 'react';
 import { LineChart } from '@mui/x-charts/LineChart';
 import Colorswitch from './revenueChartColors';
 
+
 const uData = [4000, 3000, 2000, 2780, 1890, 2390, 3490, 6490, 5321, 1321];
 const pData = [2400, 1398, 9800, 3908, 4800, 3800, 4300, 10000, 1000, 7500];
 const xLabels = [
