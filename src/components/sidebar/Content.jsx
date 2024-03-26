@@ -9,7 +9,7 @@ import DailyInfo from '../dailyInfo/dailyInfo';
 import MiniDrawer from "./sidebar";
 
 
-const Content = (props) => {
+const Content = () => {
     return (
         < MiniDrawer >
             < Box component="main" sx={{ flexGrow: 1, p: 3, backgroundColor: "#F9F9F9", display: "flex", flexDirection: "column" }}>
