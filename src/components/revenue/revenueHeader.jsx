@@ -20,13 +20,21 @@ const RevenueHeader = () => {
                 <Typography variant="caption" color={"#969BA0"} sx={{ display: "block" }}>Lorem ipsum dolor sit amet, consectetur</Typography>
             </Box>
             <Box sx={{ minWidth: 120 }}>
-                <FormControl fullWidth sx={{ outline: 0, border: 0 }}>
+                <FormControl fullWidth>
                     <Select
                         labelId="demo-simple-select-label"
                         id="demo-simple-select"
                         value={age}
                         onChange={handleChange}
-                        sx={{ backgroundColor: "#F4F5F9", borderRadius: "0.75rem" }}
+                        sx={{
+                            backgroundColor: "#F4F5F9", borderRadius: "0.75rem",
+                            '.MuiSelect-outlined': {
+                                border: 0,
+                                outline: 0,
+                            },
+
+                        }}
+
                     >
                         <MenuItem value={10}>Monthly</MenuItem>
                         <MenuItem value={20}>Weekly</MenuItem>
