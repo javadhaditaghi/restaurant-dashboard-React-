@@ -1,5 +1,6 @@
 import MiniDrawer from "./components/sidebar/sidebar"
 // import AppBarComp from "./components/sidebar/appBar"
+import Content from "./components/sidebar/Content"
 
 
 function App() {
@@ -8,7 +9,7 @@ function App() {
   return (
     <>
 
-      <MiniDrawer />
+      <Content />
 
 
     </>

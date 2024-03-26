@@ -21,18 +21,12 @@ import Grid2 from '@mui/material/Unstable_Grid2/Grid2';
 
 
 // APP-BAR IMPORTS 
-
 import Badge from '@mui/material/Badge';
 import AppBarComp from './appBar';
 
 
 
-// Imported Sections
-import DashboardHeader from '../dashboardHeader/DashboardHeader';
-import InfoSummary from '../InfoSummery/InfoSummary';
-import OrdersInfo from '../ordersSummary/ordersInfo';
-import Revenue from '../revenue/revenue';
-import DailyInfo from '../dailyInfo/dailyInfo';
+
 
 
 
@@ -101,7 +95,7 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
 
 
 
-export default function MiniDrawer() {
+export default function MiniDrawer(props) {
 
     // Change the color of the button when clicked 
     const [selectedButton, setSelectedButton] = useState(null);
@@ -270,17 +264,8 @@ export default function MiniDrawer() {
             {/* ------------- End  of Left Drawer Section------------------- */}
 
             <Grid2 spacing={.5} width={'100%'}>
-                <Box component="main" sx={{ flexGrow: 1, p: 3, backgroundColor: "#F9F9F9", display: "flex", flexDirection: "column" }}>
-                    <DrawerHeader />
-                    <DashboardHeader />
-                    <InfoSummary />
-
-                    <Grid2 container rowSpacing={2} columnSpacing={{ xs: 1, sm: 2, md: 3 }} flexGrow={2}>
-                        <OrdersInfo />
-                        <Revenue />
-                    </Grid2>
-                    <DailyInfo />
-                </Box>
+                <DrawerHeader />
+                {props.children}
             </Grid2>
         </Box>
     );
