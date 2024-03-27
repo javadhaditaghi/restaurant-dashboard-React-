@@ -9,6 +9,7 @@ import Grid from '@mui/material/Grid';
 
 const DeliveryChart = ({ ordersData }) => {
 
+    {/* Pie -------------------------- Start of Preparing the Information for Charts -------------------*/ }
     // Extracting content values from ordersData
     const onDelivery = parseInt(ordersData.find(item => item.title === 'On Delivery').content);
     const delivered = parseInt(ordersData.find(item => item.title === 'Delivered').content);
@@ -19,6 +20,7 @@ const DeliveryChart = ({ ordersData }) => {
     const second = delivered / (onDelivery + delivered + canceled);
     const third = canceled / (onDelivery + delivered + canceled);
 
+    //Providing Data for the Charts
     const data = [
         { id: `On Delivery (${(first * 100).toFixed(2)}%)`, value: onDelivery, number: onDelivery },
         { id: `Delivered (${(second * 100).toFixed(2)}%)`, value: delivered, number: delivered },
@@ -26,7 +28,12 @@ const DeliveryChart = ({ ordersData }) => {
     ];
 
 
+    {/* Pie -------------------------- End of Preparing the Information for Charts -------------------*/ }
 
+
+
+
+    // Preparing Chart Settings
     const chartSetting = {
         width: 400,
         height: 200,
@@ -34,16 +41,13 @@ const DeliveryChart = ({ ordersData }) => {
     const valueFormatter = (number) => `${number}`;
 
 
-
-
-
-
-
     return (
 
         <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
             <Grid container spacing={2}>
                 <Grid item xs={12} sm={4} md={4}>
+
+                    {/* Pie -------------------------- Start of Pie Chart -------------------*/}
                     <PieChart
                         colors={['#3E4954', '#2BC155', '#FF6D4C']}
                         series={[
@@ -63,9 +67,12 @@ const DeliveryChart = ({ ordersData }) => {
                         height={200}
                         width={200}
                     />
+                    {/* Pie -------------------------- End of Pie Chart -------------------*/}
                 </Grid>
 
                 <Grid item xs={12} sm={8} md={8}>
+
+                    {/* Pie -------------------------- Start of Bar Chart -------------------*/}
                     <BarChart
                         dataset={data}
                         yAxis={[{ scaleType: 'band', dataKey: 'id', categoryGapRatio: 0.7 }]}
@@ -91,6 +98,7 @@ const DeliveryChart = ({ ordersData }) => {
                             left: 150,
                         }}
                     />
+                    {/* Pie -------------------------- End of Bar Chart -------------------*/}
 
 
                 </Grid>
