@@ -1,15 +1,12 @@
 import { Box, Typography } from "@mui/material";
 import Grid2 from "@mui/material/Unstable_Grid2/Grid2";
-import jsonData from './deliveryCards.json';
 
+// Receiving ordersData as props from ordersInfo.jsx
 const DeliveryCards = ({ ordersData }) => {
-    // Extracting data from jsonData
-    const todayData = jsonData.today;
-    const monthlyData = jsonData.monthly;
-    const yealyData = jsonData.yealy;
 
     return (
         <Grid2 container rowSpacing={2} columnSpacing={{ xs: 1, sm: 2, md: 3 }} flexGrow={2} sx={{ mt: 2 }}>
+            {/* Pie -------------------------- Start of delivery Info Cards in  -------------------*/}
             {
                 ordersData.map((item, index) => (
                     <Grid2 key={index} xs={12} sm={4}>
