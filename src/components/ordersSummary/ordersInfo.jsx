@@ -13,10 +13,12 @@ import { useState } from 'react';
 
 
 const OrdersInfo = () => {
+    // Receiving data from jsonData file 
     const todayData = jsonData.today;
     const monthlyData = jsonData.monthly;
     const weeklyData = jsonData.weekly;
 
+    // Differentiationg between daily, weekly and monthly
     const [data, setData] = useState(todayData)
 
     const onBottonClick = (index) => {
@@ -34,17 +36,17 @@ const OrdersInfo = () => {
                         <Typography variant="caption" color={"#969BA0"} sx={{ display: "block" }}>Lorem ipsum dolor sit amet, consectetur</Typography>
                     </Box>
                     <Box>
-                        <OrderInfHeader onButtonClick={onBottonClick} />
+                        <OrderInfHeader onButtonClick={onBottonClick} /> {/* sending function as props to orderInfo header */}
                     </Box>
                 </Box>
                 <Box>
                     <NewOrders />
                 </Box>
                 <Box>
-                    <DeliveryCards ordersData={data} />
+                    <DeliveryCards ordersData={data} />  {/* sending the data as props to deliveryCards.jsx */}
                 </Box>
                 <Box>
-                    <DeliveryChart ordersData={data} />
+                    <DeliveryChart ordersData={data} /> {/* sending the data as props to deliveryCharts.jsx */}
                 </Box>
             </InnerBox2>
         </Grid2>

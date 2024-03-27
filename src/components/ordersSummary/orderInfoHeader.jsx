@@ -34,12 +34,16 @@ const CustomButton = styled(Button)({
 });
 
 
-
+// Receiving onBottonClick function from ordersInfo.jsx
 const OrderInfHeader = ({ onButtonClick }) => {
+
+    // Differentiation between the buttons by setting index
     const [chosenButton, setChosenButton] = useState(2);
 
     const handleButtonClick = (index) => {
         setChosenButton(index);
+
+
         onButtonClick(index);
     };
 
@@ -48,7 +52,7 @@ const OrderInfHeader = ({ onButtonClick }) => {
             <CustomButton className={chosenButton === 0 ? "active" : ""} onClick={() => handleButtonClick(0)} sx={{ mx: 1 }}>Monthly</CustomButton>
             <CustomButton className={chosenButton === 1 ? "active" : ""} onClick={() => handleButtonClick(1)} sx={{ mx: 1 }}>Weekly</CustomButton>
             <CustomButton className={chosenButton === 2 ? "active" : ""} onClick={() => handleButtonClick(2)} sx={{ mx: 1 }}>Today</CustomButton>
-        </ButtonGroup >
+        </ButtonGroup>
     );
 }
 
