@@ -18,20 +18,12 @@ import { useState } from 'react';
 import './sidebar.css';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import Grid2 from '@mui/material/Unstable_Grid2/Grid2';
+import Badge from '@mui/material/Badge';
 
 
 // APP-BAR IMPORTS 
-import Badge from '@mui/material/Badge';
+
 import AppBarComp from './appBar';
-
-
-
-
-
-
-
-
-
 
 
 const drawerWidth = 240;
@@ -131,16 +123,7 @@ export default function MiniDrawer(props) {
 
             {/* ------------- Start  of Appbar Section------------------- */}
             <AppBarComp openDrawer={open} setOpenDrawer={handleDrawerOpen} />
-
-
-
-
-
-
-
-
-
-            {/* ------------- Start  of Appbar Section------------------- */}
+            {/* ------------- End  of Appbar Section------------------- */}
 
 
             {/* ------------- Start  of Left Drawer Section------------------- */}

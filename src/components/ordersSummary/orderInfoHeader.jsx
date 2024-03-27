@@ -35,11 +35,12 @@ const CustomButton = styled(Button)({
 
 
 
-const OrderInfHeader = () => {
-    const [chosenButton, setChosenButton] = useState(0);
+const OrderInfHeader = ({ onButtonClick }) => {
+    const [chosenButton, setChosenButton] = useState(2);
 
     const handleButtonClick = (index) => {
         setChosenButton(index);
+        onButtonClick(index);
     };
 
     return (

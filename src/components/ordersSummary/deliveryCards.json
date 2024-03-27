@@ -1,6 +1,18 @@
-[
-    { "title": "On Delivery", "content": "25" },
-    { "title": "Delivered", "content": "60" },
-    { "title": "Canceled", "content": "7" }
-]
+{
+    "today": [
+      { "title": "On Delivery", "content": "25" },
+      { "title": "Delivered", "content": "60" },
+      { "title": "Canceled", "content": "7" }
+    ],
+    "weekly": [
+      { "title": "On Delivery", "content": "500" },
+      { "title": "Delivered", "content": "1200" },
+      { "title": "Canceled", "content": "100" }
+    ],
+    "monthly": [
+      { "title": "On Delivery", "content": "6000" },
+      { "title": "Delivered", "content": "15000" },
+      { "title": "Canceled", "content": "800" }
+    ]
+  }
   
