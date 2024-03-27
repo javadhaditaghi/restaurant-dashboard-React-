@@ -6,7 +6,7 @@ const DeliveryCards = ({ ordersData }) => {
 
     return (
         <Grid2 container rowSpacing={2} columnSpacing={{ xs: 1, sm: 2, md: 3 }} flexGrow={2} sx={{ mt: 2 }}>
-            {/* Pie -------------------------- Start of delivery Info Cards in  -------------------*/}
+            {/* Pie -------------------------- Start of delivery Info Cards in orders summery secion -------------------*/}
             {
                 ordersData.map((item, index) => (
                     <Grid2 key={index} xs={12} sm={4}>
@@ -17,6 +17,7 @@ const DeliveryCards = ({ ordersData }) => {
                     </Grid2>
                 ))
             }
+            {/* Pie -------------------------- End of delivery Info Cards in orders summery secion -------------------*/}
         </Grid2>
     );
 };
