@@ -5,15 +5,24 @@ import "./deliveryChart.css";
 import Grid from '@mui/material/Grid';
 
 
-const first = 10 / 45
-const second = 15 / 45
-const third = 20 / 45
 
-const DeliveryChart = () => {
+
+const DeliveryChart = ({ ordersData }) => {
+
+    // Extracting content values from ordersData
+    const onDelivery = parseInt(ordersData.find(item => item.title === 'On Delivery').content);
+    const delivered = parseInt(ordersData.find(item => item.title === 'Delivered').content);
+    const canceled = parseInt(ordersData.find(item => item.title === 'Canceled').content);
+
+    // Calculating ratios based on extracted content values
+    const first = onDelivery / (onDelivery + delivered + canceled);
+    const second = delivered / (onDelivery + delivered + canceled);
+    const third = canceled / (onDelivery + delivered + canceled);
+
     const data = [
-        { id: `On Delivery (${first.toFixed(3) * 100}%)`, value: first, first: first },
-        { id: `Delivered (${second.toFixed(2) * 100}%)`, value: second, second: second },
-        { id: `Canceled (${third.toFixed(3) * 100}%)`, value: third, third: third },
+        { id: `On Delivery (${(first * 100).toFixed(2)}%)`, value: onDelivery, number: onDelivery },
+        { id: `Delivered (${(second * 100).toFixed(2)}%)`, value: delivered, number: delivered },
+        { id: `Canceled (${(third * 100).toFixed(2)}%)`, value: canceled, number: canceled },
     ];
 
 
@@ -22,7 +31,7 @@ const DeliveryChart = () => {
         width: 400,
         height: 200,
     };
-    const valueFormatter = (value) => `${value.toFixed(3)}mm`;
+    const valueFormatter = (number) => `${number}`;
 
 
 

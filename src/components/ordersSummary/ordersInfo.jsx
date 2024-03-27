@@ -12,10 +12,6 @@ import { useState } from 'react';
 
 
 
-
-
-
-
 const OrdersInfo = () => {
     const todayData = jsonData.today;
     const monthlyData = jsonData.monthly;
@@ -26,6 +22,7 @@ const OrdersInfo = () => {
     const onBottonClick = (index) => {
         setData(index == 2 ? todayData : (index == 1 ? weeklyData : monthlyData))
     }
+
 
     return (
 
@@ -47,7 +44,7 @@ const OrdersInfo = () => {
                     <DeliveryCards ordersData={data} />
                 </Box>
                 <Box>
-                    <DeliveryChart />
+                    <DeliveryChart ordersData={data} />
                 </Box>
             </InnerBox2>
         </Grid2>
