@@ -5,7 +5,7 @@ import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import OrderInfHeader from '../ordersSummary/orderInfoHeader';
 
-
+//Receiving Data as props and sending it to dataInfHeader.jsx as props
 const DailyInfoHeader = ({ dataClicked }) => {
 
     return (
