@@ -3,12 +3,14 @@ import { BarChart } from '@mui/x-charts/BarChart';
 
 
 
-
+// Receiveing data fron dailyInfo.jsx with [data] props
 export default function DailyInfoChart({ data }) {
-    const pData = data['pData']
 
+    //Preparing data to pass to the chart    
+    const pData = data['pData']
     const xLabels = data['xLabels']
 
+    {/* The bar chart is here */ }
     return (
         <BarChart
             colors={['#2F4CDD']}
