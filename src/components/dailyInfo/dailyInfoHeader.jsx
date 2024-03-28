@@ -6,7 +6,7 @@ import Select from '@mui/material/Select';
 import OrderInfHeader from '../ordersSummary/orderInfoHeader';
 
 
-const DailyInfoHeader = () => {
+const DailyInfoHeader = ({ dataClicked }) => {
 
     return (
         <Box sx={{ width: "100%", display: "flex", justifyContent: "space-between", alignItems: "center", padding: "10px" }}>
@@ -15,7 +15,7 @@ const DailyInfoHeader = () => {
                 <Typography variant="caption" color={"#969BA0"} sx={{ display: "block" }}>Lorem ipsum dolor sit amet, consectetur</Typography>
             </Box>
             <Box sx={{ minWidth: 120 }}>
-                <OrderInfHeader />
+                <OrderInfHeader dataClicked={dataClicked} />
 
             </Box>
         </Box>

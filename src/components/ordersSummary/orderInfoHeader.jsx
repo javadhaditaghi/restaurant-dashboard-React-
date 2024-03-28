@@ -35,16 +35,18 @@ const CustomButton = styled(Button)({
 
 
 // Receiving onBottonClick function from ordersInfo.jsx
-const OrderInfHeader = ({ onButtonClick }) => {
+const OrderInfHeader = ({ onButtonClick, dataClicked }) => {
 
     // Differentiation between the buttons by setting index
     const [chosenButton, setChosenButton] = useState(2);
 
     const handleButtonClick = (index) => {
         setChosenButton(index);
-
-
-        onButtonClick(index);
+        if (onButtonClick) {
+            onButtonClick(index);
+        } else {
+            dataClicked(index)
+        }
     };
 
     return (
