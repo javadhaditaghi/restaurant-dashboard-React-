@@ -13,8 +13,8 @@ const DailyInfo = () => {
     const monthlyData = jsonData.monthDaysData;
     const weeklyData = jsonData.daysOfWeekData;
 
+    // using useSatate to make a connection between dailyInfoChart and buttons inside daily info header
     const [data, setData] = useState(todayData)
-
     const dataClick = (ind) => {
         setData(ind == 2 ? todayData : (ind == 1 ? weeklyData : monthlyData))
     }
