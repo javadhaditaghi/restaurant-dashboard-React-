@@ -28,7 +28,7 @@ const Revenue = () => {
         < Grid2 sm={12} md={6} sx={{ position: "relative" }}>
             <InnerBox2>
                 <RevenueHeader handleData={handleData} />
-                <ChartInfo />
+                <ChartInfo data={data} />
                 <RevenueChart data={data} />
                 {console.log(data)}
 
