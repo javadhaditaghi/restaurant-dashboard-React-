@@ -6,12 +6,16 @@ import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 
 
-const RevenueHeader = () => {
-    const [age, setAge] = React.useState(10);
+const RevenueHeader = ({ handleData }) => {
+
+
+    const [age, setAge] = React.useState(0);
 
     const handleChange = (event) => {
         setAge(event.target.value);
+        handleData(event.target.value)
     };
+
 
     return (
         <Box sx={{ width: "100%", display: "flex", justifyContent: "space-between", alignItems: "center", padding: "10px" }}>
@@ -36,9 +40,9 @@ const RevenueHeader = () => {
                         }}
 
                     >
-                        <MenuItem value={10}>Monthly</MenuItem>
-                        <MenuItem value={20}>Weekly</MenuItem>
-                        <MenuItem value={30}>Today</MenuItem>
+                        <MenuItem value={0}>Monthly</MenuItem>
+                        <MenuItem value={1}>Weekly</MenuItem>
+                        <MenuItem value={2}>Today</MenuItem>
                     </Select>
                 </FormControl>
             </Box>

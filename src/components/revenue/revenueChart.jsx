@@ -3,24 +3,20 @@ import { LineChart } from '@mui/x-charts/LineChart';
 import Colorswitch from './revenueChartColors';
 
 
-const uData = [4000, 3000, 2000, 2780, 1890, 2390, 3490, 6490, 5321, 1321];
-const pData = [2400, 1398, 9800, 3908, 4800, 3800, 4300, 10000, 1000, 7500];
-const xLabels = [
-    'Jan',
-    'Feb',
-    'Mar',
-    'Apr',
-    'Jun',
-    'Jul',
-    'Aug',
-    'Sep',
-    'Oct',
-    'Nov',
-];
 
 
 
-const RevenueChart = () => {
+const RevenueChart = ({ data }) => {
+
+
+
+
+    const expenseData = data["expenseData"];
+    const incomeData = data["incomeData"];
+    const xLabels = data["Labels"];
+
+
+
     return (
         <LineChart
             grid={{ horizontal: true }}
@@ -29,8 +25,8 @@ const RevenueChart = () => {
             colors={['#2F4CDD', '#B519EC']}
             series={
                 [
-                    { data: pData, label: 'Income', area: 'true' },
-                    { data: uData, label: 'Expense', area: 'true' },
+                    { data: incomeData, label: 'Income', area: 'true' },
+                    { data: expenseData, label: 'Expense', area: 'true' },
                 ]}
             xAxis={[{ scaleType: 'point', data: xLabels }]}
 
