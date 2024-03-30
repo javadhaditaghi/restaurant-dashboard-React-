@@ -6,6 +6,7 @@ import Select from '@mui/material/Select';
 import { Typography } from '@mui/material';
 import { SvgIcon } from '@mui/material';
 import "./DashboardHeader.css";
+import { useEffect } from 'react';
 
 const DashboardHeader = () => {
     const HomeIcon = (props) => (
@@ -27,6 +28,17 @@ const DashboardHeader = () => {
         setPeriod(event.target.value);
     };
 
+
+    useEffect(() => {
+        if (period == 10 || period == 20 || period == 30) {
+            const svgElement = document.querySelector('.MuiPopover-paper svg');
+            if (svgElement) {
+                svgElement.style.display = 'none';
+            }
+        }
+    }, [period])
+
+
     return (
         <Box sx={{ width: "100%", display: "flex", justifyContent: "space-between", py: 3, alignItems: "center" }}>
             <Box>
@@ -40,22 +52,30 @@ const DashboardHeader = () => {
                         value={period}
                         onChange={handleChange}
 
-                        sx={{ backgroundColor: "#F4F5F9", borderRadius: "0.75rem", outline: "0px", border: "0px" }}
+
+                        sx={{ backgroundColor: "#F4F5F9", borderRadius: "0.75rem", outline: "0px", border: "0px", position: "relative" }}
                     >
+
                         <MenuItem value={10} >
                             <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-                                <HomeIcon />
+
+                                {period == 10 ? <HomeIcon /> : null}
+
+
+
                                 <Box sx={{ px: 2.5 }}>
                                     <Typography fontWeight={600}>Filter Periode</Typography>
                                     <Typography fontSize={13}>4 June 2020 - 4 July 2020</Typography>
                                 </Box>
 
 
+
                             </Box>
                         </MenuItem>
                         <MenuItem value={20} >
                             <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-                                <HomeIcon />
+                                {period == 20 ? <HomeIcon /> : null}
+
                                 <Box sx={{ px: 2.5 }}>
                                     <Typography fontWeight={600}>Filter Periode</Typography>
                                     <Typography fontSize={13}>4 June 2020 - 4 July 2020</Typography>
@@ -66,7 +86,8 @@ const DashboardHeader = () => {
                         </MenuItem>
                         <MenuItem value={30} >
                             <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-                                <HomeIcon />
+                                {period == 30 ? <HomeIcon /> : null}
+
                                 <Box sx={{ px: 2.5 }}>
                                     <Typography fontWeight={600}>Filter Periode</Typography>
                                     <Typography fontSize={13}>4 June 2020 - 4 July 2020</Typography>
