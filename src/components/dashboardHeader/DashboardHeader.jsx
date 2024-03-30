@@ -8,7 +8,9 @@ import { SvgIcon } from '@mui/material';
 import "./DashboardHeader.css";
 import { useEffect } from 'react';
 
-const DashboardHeader = () => {
+
+
+const DashboardHeader = ({ handleData }) => {
     const HomeIcon = (props) => (
         <SvgIcon {...props} width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g clipPath="url(#clip0_10_368)">
@@ -22,15 +24,16 @@ const DashboardHeader = () => {
         </SvgIcon>
     );
 
-    const [period, setPeriod] = React.useState(10); // Initialize age with the value of the first menu item
+    const [period, setPeriod] = React.useState(0); // Initialize age with the value of the first menu item
 
     const handleChange = (event) => {
         setPeriod(event.target.value);
+        handleData(event.target.value)
     };
 
 
     useEffect(() => {
-        if (period == 10 || period == 20 || period == 30) {
+        if (period == 0 || period == 1 || period == 2) {
             const svgElement = document.querySelector('.MuiPopover-paper svg');
             if (svgElement) {
                 svgElement.style.display = 'none';
@@ -56,41 +59,41 @@ const DashboardHeader = () => {
                         sx={{ backgroundColor: "#F4F5F9", borderRadius: "0.75rem", outline: "0px", border: "0px", position: "relative" }}
                     >
 
-                        <MenuItem value={10} >
+                        <MenuItem value={0} >
                             <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
 
-                                {period == 10 ? <HomeIcon /> : null}
+                                {period == 0 ? <HomeIcon /> : null}
 
 
 
                                 <Box sx={{ px: 2.5 }}>
                                     <Typography fontWeight={600}>Filter Periode</Typography>
-                                    <Typography fontSize={13}>4 June 2020 - 4 July 2020</Typography>
+                                    <Typography fontSize={13}>4 June 2023 - Present</Typography>
                                 </Box>
 
 
 
                             </Box>
                         </MenuItem>
-                        <MenuItem value={20} >
+                        <MenuItem value={1} >
                             <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-                                {period == 20 ? <HomeIcon /> : null}
+                                {period == 1 ? <HomeIcon /> : null}
 
                                 <Box sx={{ px: 2.5 }}>
                                     <Typography fontWeight={600}>Filter Periode</Typography>
-                                    <Typography fontSize={13}>4 June 2020 - 4 July 2020</Typography>
+                                    <Typography fontSize={13}>4 June 2022 - 4 June 2023</Typography>
                                 </Box>
 
 
                             </Box>
                         </MenuItem>
-                        <MenuItem value={30} >
+                        <MenuItem value={2} >
                             <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-                                {period == 30 ? <HomeIcon /> : null}
+                                {period == 2 ? <HomeIcon /> : null}
 
                                 <Box sx={{ px: 2.5 }}>
                                     <Typography fontWeight={600}>Filter Periode</Typography>
-                                    <Typography fontSize={13}>4 June 2020 - 4 July 2020</Typography>
+                                    <Typography fontSize={13}>4 June 2021 - 4 June 2022</Typography>
                                 </Box>
 
 

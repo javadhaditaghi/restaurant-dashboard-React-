@@ -1,34 +1,105 @@
-[ {
-        "ImgSrc": "../../../src/assets/images/icons/coffee.svg",
-        "statistics": "56",
-        "title": "Total Menus",
-        "condition":"4%",
-        "growth":"../../../src/assets/images/icons/condition/graphGrowth.svg",
-        "decline":"../../../src/assets/images/icons/condition/graphDecline.svg"
-      },
-      {
-        "ImgSrc": "../../../src/assets/images/icons/dollar.svg",
-        "statistics": "126k",
-        "title": "Total Revenue",
-        "condition":"-26%",
-        "growth":"../../../src/assets/images/icons/condition/graphGrowth.svg",
-        "decline":"../../../src/assets/images/icons/condition/graphDecline.svg"
-      },
-      {
-        "ImgSrc": "../../../src/assets/images/icons/orders.svg",
-        "statistics": "279",
-        "title": "Total Orders",
-        "condition":"4%",
-        "growth":"../../../src/assets/images/icons/condition/graphGrowth.svg",
-        "decline":"../../../src/assets/images/icons/condition/graphDecline.svg"
-      },
-      {
-        "ImgSrc": "../../../src/assets/images/icons/customers.svg",
-        "statistics": "65",
-        "title": "Total Customers",
-        "condition":"4%",
-        "growth":"../../../src/assets/images/icons/condition/graphGrowth.svg",
-        "decline":"../../../src/assets/images/icons/condition/graphDecline.svg"
-      }
-
+[
+  [
+    {
+      "ImgSrc": "../../../src/assets/images/icons/coffee.svg",
+      "statistics": "56",
+      "title": "Total Menus",
+      "condition": "4%",
+      "growth": "../../../src/assets/images/icons/condition/graphGrowth.svg",
+      "decline": "../../../src/assets/images/icons/condition/graphDecline.svg"
+    },
+    {
+      "ImgSrc": "../../../src/assets/images/icons/dollar.svg",
+      "statistics": "126k",
+      "title": "Total Revenue",
+      "condition": "-26%",
+      "growth": "../../../src/assets/images/icons/condition/graphGrowth.svg",
+      "decline": "../../../src/assets/images/icons/condition/graphDecline.svg"
+    },
+    {
+      "ImgSrc": "../../../src/assets/images/icons/orders.svg",
+      "statistics": "279",
+      "title": "Total Orders",
+      "condition": "4%",
+      "growth": "../../../src/assets/images/icons/condition/graphGrowth.svg",
+      "decline": "../../../src/assets/images/icons/condition/graphDecline.svg"
+    },
+    {
+      "ImgSrc": "../../../src/assets/images/icons/customers.svg",
+      "statistics": "65",
+      "title": "Total Customers",
+      "condition": "4%",
+      "growth": "../../../src/assets/images/icons/condition/graphGrowth.svg",
+      "decline": "../../../src/assets/images/icons/condition/graphDecline.svg"
+    }
+  ],
+  [
+    {
+      "ImgSrc": "../../../src/assets/images/icons/coffee.svg",
+      "statistics": "73",
+      "title": "Total Menus",
+      "condition": "-1%",
+      "growth": "../../../src/assets/images/icons/condition/graphGrowth.svg",
+      "decline": "../../../src/assets/images/icons/condition/graphDecline.svg"
+    },
+    {
+      "ImgSrc": "../../../src/assets/images/icons/dollar.svg",
+      "statistics": "157k",
+      "title": "Total Revenue",
+      "condition": "11%",
+      "growth": "../../../src/assets/images/icons/condition/graphGrowth.svg",
+      "decline": "../../../src/assets/images/icons/condition/graphDecline.svg"
+    },
+    {
+      "ImgSrc": "../../../src/assets/images/icons/orders.svg",
+      "statistics": "301",
+      "title": "Total Orders",
+      "condition": "6%",
+      "growth": "../../../src/assets/images/icons/condition/graphGrowth.svg",
+      "decline": "../../../src/assets/images/icons/condition/graphDecline.svg"
+    },
+    {
+      "ImgSrc": "../../../src/assets/images/icons/customers.svg",
+      "statistics": "31",
+      "title": "Total Customers",
+      "condition": "-1%",
+      "growth": "../../../src/assets/images/icons/condition/graphGrowth.svg",
+      "decline": "../../../src/assets/images/icons/condition/graphDecline.svg"
+    }
+  ],
+  [
+    {
+      "ImgSrc": "../../../src/assets/images/icons/coffee.svg",
+      "statistics": "31",
+      "title": "Total Menus",
+      "condition": "-1%",
+      "growth": "../../../src/assets/images/icons/condition/graphGrowth.svg",
+      "decline": "../../../src/assets/images/icons/condition/graphDecline.svg"
+    },
+    {
+      "ImgSrc": "../../../src/assets/images/icons/dollar.svg",
+      "statistics": "220k",
+      "title": "Total Revenue",
+      "condition": "9%",
+      "growth": "../../../src/assets/images/icons/condition/graphGrowth.svg",
+      "decline": "../../../src/assets/images/icons/condition/graphDecline.svg"
+    },
+    {
+      "ImgSrc": "../../../src/assets/images/icons/orders.svg",
+      "statistics": "330",
+      "title": "Total Orders",
+      "condition": "10%",
+      "growth": "../../../src/assets/images/icons/condition/graphGrowth.svg",
+      "decline": "../../../src/assets/images/icons/condition/graphDecline.svg"
+    },
+    {
+      "ImgSrc": "../../../src/assets/images/icons/customers.svg",
+      "statistics": "11",
+      "title": "Total Customers",
+      "condition": "-1%",
+      "growth": "../../../src/assets/images/icons/condition/graphGrowth.svg",
+      "decline": "../../../src/assets/images/icons/condition/graphDecline.svg"
+    }
   ]
+
+]

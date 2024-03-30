@@ -2,10 +2,10 @@ import InnerBox from "./InnerBox"
 import { Box, Typography } from "@mui/material"
 import Grid2 from "@mui/material/Unstable_Grid2/Grid2"
 
-import infoSummary from "./InfoSummart.json"
 
 
-const InfoSummary = () => {
+
+const InfoSummary = ({ data }) => {
 
     return (
         <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", my: "20px" }}>
@@ -13,7 +13,7 @@ const InfoSummary = () => {
             <Grid2 container rowSpacing={2} columnSpacing={{ xs: 1, sm: 2, md: 3 }} flexGrow={2}>
                 {
 
-                    infoSummary.map((item) => (
+                    data.map((item) => (
                         <Grid2 sm={6} md={3}>
                             <InnerBox>
                                 <Box>
