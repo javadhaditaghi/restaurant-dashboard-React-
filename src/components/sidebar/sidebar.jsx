@@ -20,6 +20,10 @@ import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import Grid2 from '@mui/material/Unstable_Grid2/Grid2';
 import Badge from '@mui/material/Badge';
 
+//Importing React router dom
+import { Outlet, Link } from "react-router-dom";
+
+
 
 // APP-BAR IMPORTS 
 
@@ -117,6 +121,10 @@ export default function MiniDrawer(props) {
         setOpen(true);
     };
 
+
+
+
+
     return (
         <Box sx={{ display: 'flex' }}>
             <CssBaseline />
@@ -156,39 +164,46 @@ export default function MiniDrawer(props) {
 
                     {sidebarButtons.map((text, index) => (
                         <ListItem key={text.index} disablePadding sx={{ display: 'block' }}>
-                            <ListItemButton
-                                selected={selectedButton === index}
-                                onClick={() => handleButtonClick(index)}
-                                sx={{
-                                    minHeight: 60,
-                                    justifyContent: open ? 'initial' : 'center',
-                                    px: 2.5,
-                                    color: selectedButton === index ? '#2F4CDD' : 'inherit',
-                                }}
-                            >
 
-                                {selectedButton === index ? (
-                                    <div className='sidebar__buttons-items' />
-                                ) : null}
 
-                                <ListItemIcon
+                            <Link to={text.to}>
+                                <ListItemButton
+                                    selected={selectedButton === index}
+                                    onClick={() => handleButtonClick(index)}
                                     sx={{
-                                        minWidth: 0,
-                                        mr: open ? 3 : 'auto',
-                                        justifyContent: 'center',
+                                        minHeight: 60,
+                                        justifyContent: open ? 'initial' : 'center',
+                                        px: 2.5,
+                                        color: selectedButton === index ? '#2F4CDD' : 'inherit',
                                     }}
                                 >
-                                    {selectedButton === index ? text.icon1 : text.icon}
 
-                                </ListItemIcon>
-                                <ListItemText primary={text.title} sx={{ opacity: open ? 1 : 0, color: theme.palette.secondary.light, fontWeight: 500 }} />
+                                    {selectedButton === index ? (
+                                        <div className='sidebar__buttons-items' />
+                                    ) : null}
 
-                                {/*Small badge in front of orders*/}
-                                {index === 1 ? <Badge badgeContent={4} color="primary" className='sidebar__drower-badge'></Badge> : null}
+                                    <ListItemIcon
+                                        sx={{
+                                            minWidth: 0,
+                                            mr: open ? 3 : 'auto',
+                                            justifyContent: 'center',
+                                        }}
+                                    >
+                                        {selectedButton === index ? text.icon1 : text.icon}
 
-                                {((index === 2 || index === 3) && open ? <KeyboardArrowRightIcon /> : null)}
+                                    </ListItemIcon>
+                                    <ListItemText primary={text.title} sx={{ opacity: open ? 1 : 0, color: theme.palette.secondary.light, fontWeight: 500 }} />
 
-                            </ListItemButton>
+                                    {/*Small badge in front of orders*/}
+                                    {index === 1 ? <Badge badgeContent={4} color="primary" className='sidebar__drower-badge'></Badge> : null}
+
+                                    {((index === 2 || index === 3) && open ? <KeyboardArrowRightIcon /> : null)}
+
+
+                                </ListItemButton>
+                            </Link>
+                            <Outlet />
+
                             {((index === 2) && open && (selectedButton == index) ? <div className='sidebar__dropduttons-items'>
 
                                 {

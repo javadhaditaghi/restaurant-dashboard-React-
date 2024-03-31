@@ -6,7 +6,7 @@ import Select from '@mui/material/Select';
 import { Typography } from '@mui/material';
 import { SvgIcon } from '@mui/material';
 import "./DashboardHeader.css";
-import { useEffect } from 'react';
+
 
 
 
@@ -32,14 +32,6 @@ const DashboardHeader = ({ handleData }) => {
     };
 
 
-    useEffect(() => {
-        if (period == 0 || period == 1 || period == 2) {
-            const svgElement = document.querySelector('.MuiPopover-paper svg');
-            if (svgElement) {
-                svgElement.style.display = 'none';
-            }
-        }
-    }, [period])
 
 
     return (
@@ -54,8 +46,6 @@ const DashboardHeader = ({ handleData }) => {
                     <Select
                         value={period}
                         onChange={handleChange}
-
-
                         sx={{ backgroundColor: "#F4F5F9", borderRadius: "0.75rem", outline: "0px", border: "0px", position: "relative" }}
                     >
 
