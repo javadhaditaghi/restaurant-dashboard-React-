@@ -166,7 +166,7 @@ export default function MiniDrawer(props) {
                         <ListItem key={text.index} disablePadding sx={{ display: 'block' }}>
 
 
-                            <Link to={text.to}>
+                            <Link to={text.to} style={{ textDecoration: "none" }}>
                                 <ListItemButton
                                     selected={selectedButton === index}
                                     onClick={() => handleButtonClick(index)}
@@ -175,6 +175,7 @@ export default function MiniDrawer(props) {
                                         justifyContent: open ? 'initial' : 'center',
                                         px: 2.5,
                                         color: selectedButton === index ? '#2F4CDD' : 'inherit',
+
                                     }}
                                 >
 
@@ -192,7 +193,7 @@ export default function MiniDrawer(props) {
                                         {selectedButton === index ? text.icon1 : text.icon}
 
                                     </ListItemIcon>
-                                    <ListItemText primary={text.title} sx={{ opacity: open ? 1 : 0, color: theme.palette.secondary.light, fontWeight: 500 }} />
+                                    <ListItemText primary={text.title} sx={{ opacity: open ? 1 : 0, color: theme.palette.secondary.light, fontWeight: 500, textDecoration: 'none', }} />
 
                                     {/*Small badge in front of orders*/}
                                     {index === 1 ? <Badge badgeContent={4} color="primary" className='sidebar__drower-badge'></Badge> : null}

@@ -1,7 +1,3 @@
-
-// import AppBarComp from "./components/sidebar/appBar"
-// import Content from "./components/sidebar/Content"
-
 import ReactDOM from "react-dom/client";
 import MiniDrawer from "./components/sidebar/sidebar"
 import { BrowserRouter, Routes, Route } from "react-router-dom";
