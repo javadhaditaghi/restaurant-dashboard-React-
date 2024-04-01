@@ -12,16 +12,16 @@ import DashboardTop from "../InfoSummery/dashboardTop";
 
 const Content = () => {
     return (
-        < MiniDrawer >
-            < Box component="main" sx={{ flexGrow: 1, p: 3, backgroundColor: "#F9F9F9", display: "flex", flexDirection: "column" }}>
-                <DashboardTop />
-                <Grid2 container rowSpacing={2} columnSpacing={{ xs: 1, sm: 2, md: 3 }} flexGrow={2}>
-                    <OrdersInfo />
-                    <Revenue />
-                </Grid2>
-                <DailyInfo />
-            </Box >
-        </MiniDrawer >
+
+        < Box component="main" sx={{ flexGrow: 1, p: 3, display: "flex", flexDirection: "column" }}>
+            <DashboardTop />
+            <Grid2 container rowSpacing={2} columnSpacing={{ xs: 1, sm: 2, md: 3 }} flexGrow={2}>
+                <OrdersInfo />
+                <Revenue />
+            </Grid2>
+            <DailyInfo />
+        </Box>
+
 
 
 

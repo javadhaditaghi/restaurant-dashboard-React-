@@ -22,6 +22,8 @@ import Badge from '@mui/material/Badge';
 
 //Importing React router dom
 import { Outlet, Link } from "react-router-dom";
+import Dashboard from '../../pages/dashboard';
+import Orders from '../../pages/orders';
 
 
 
@@ -203,7 +205,7 @@ export default function MiniDrawer(props) {
 
                                 </ListItemButton>
                             </Link>
-                            <Outlet />
+
 
                             {((index === 2) && open && (selectedButton == index) ? <div className='sidebar__dropduttons-items'>
 
@@ -262,9 +264,9 @@ export default function MiniDrawer(props) {
             </Drawer>
             {/* ------------- End  of Left Drawer Section------------------- */}
 
-            <Grid2 spacing={.5} width={'100%'}>
+            <Grid2 spacing={.5} width={'100%'} sx={{ backgroundColor: "#F9F9F9" }}>
                 <DrawerHeader />
-                {props.children}
+                <Outlet />
             </Grid2>
         </Box>
     );
