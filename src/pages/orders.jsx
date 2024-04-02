@@ -1,11 +1,12 @@
-
+import OrderHeader from "../components/ordersHeader/ordersHeader"
+import { Box } from "@mui/material"
 
 const Orders = () => {
     return (
 
-        <div style={{ margin: 300 }}>
-            <p>this is a  test</p>
-        </div>
+        <Box component="main" sx={{ flexGrow: 1, p: 3, display: "flex", flexDirection: "column" }}>
+            <OrderHeader />
+        </Box>
 
     )
 }
