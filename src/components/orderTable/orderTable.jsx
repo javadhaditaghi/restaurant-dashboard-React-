@@ -21,6 +21,8 @@ import Switch from '@mui/material/Switch';
 import DeleteIcon from '@mui/icons-material/Delete';
 import FilterListIcon from '@mui/icons-material/FilterList';
 import { visuallyHidden } from '@mui/utils';
+import styled from '@emotion/styled';
+import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 
 function createData(id, name, calories, fat, carbs, protein, status, help) {
     return {
@@ -158,11 +160,14 @@ function EnhancedTableHead(props) {
                         align={"left"}
                         padding={headCell.disablePadding ? 'none' : 'normal'}
                         sortDirection={orderBy === headCell.id ? order : false}
+                        sx={{ fontWeight: 'bold', color: '#3E4954' }}
                     >
                         <TableSortLabel
                             active={orderBy === headCell.id}
                             direction={orderBy === headCell.id ? order : 'asc'}
                             onClick={createSortHandler(headCell.id)}
+                            IconComponent={ArrowDropDownIcon}
+
                         >
                             {headCell.label}
                             {orderBy === headCell.id ? (
@@ -177,6 +182,7 @@ function EnhancedTableHead(props) {
         </TableHead>
     );
 }
+
 
 EnhancedTableHead.propTypes = {
     numSelected: PropTypes.number.isRequired,
@@ -278,6 +284,7 @@ export default function EnhancedTable() {
                             onSelectAllClick={handleSelectAllClick}
                             onRequestSort={handleRequestSort}
                             rowCount={rows.length}
+
                         />
                         <TableBody>
                             {visibleRows.map((row, index) => {
