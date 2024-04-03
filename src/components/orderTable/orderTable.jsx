@@ -23,6 +23,10 @@ import FilterListIcon from '@mui/icons-material/FilterList';
 import { visuallyHidden } from '@mui/utils';
 import styled from '@emotion/styled';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
+import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
+import { Menu } from '@mui/material';
+import MenuItem from '@mui/material/MenuItem';
+
 
 
 
@@ -212,6 +216,47 @@ export default function EnhancedTable() {
     const [dense, setDense] = React.useState(false);
     const [rowsPerPage, setRowsPerPage] = React.useState(10);
 
+    const [anchorEl, setAnchorEl] = React.useState(null);
+
+    const isMenuOpen = Boolean(anchorEl);
+    const handleProfileMenuOpen = (event) => {
+        setAnchorEl(event.currentTarget);
+    };
+    const handleMenuClose = () => {
+        setAnchorEl(null);
+        handleMobileMenuClose();
+    };
+
+    const menuId = 'primary-search-account-menu';
+    const renderMenu = (
+        <Menu
+            sx={{
+                [`.css-3dzjca-MuiPaper-root-MuiPopover-paper-MuiMenu-paper`]: {
+                    boxShadow: " 0px 1px 2px 0px rgba(0, 0, 0, 0.13)",
+
+                }
+            }}
+            anchorEl={anchorEl}
+            anchorOrigin={{
+                vertical: 'top',
+                horizontal: 'right',
+
+            }}
+            id={menuId}
+            keepMounted
+            transformOrigin={{
+                vertical: 'top',
+                horizontal: 'right',
+            }}
+            open={isMenuOpen}
+            onClose={handleMenuClose}
+
+        >
+            <MenuItem onClick={handleMenuClose} sx={{ padding: "15px 20px" }}>Accept Order</MenuItem>
+            <MenuItem onClick={handleMenuClose}>Reject Order</MenuItem>
+        </Menu>
+    );
+
     const handleRequestSort = (event, property) => {
         const isAsc = orderBy === property && order === 'asc';
         setOrder(isAsc ? 'desc' : 'asc');
@@ -277,10 +322,12 @@ export default function EnhancedTable() {
                 <TableContainer>
                     <Table
                         sx={{
-                            minWidth: 750
+                            minWidth: 750,
+
                         }}
                         aria-labelledby="tableTitle"
                         size={dense ? 'small' : 'medium'}
+
 
                     >
                         <EnhancedTableHead
@@ -351,7 +398,15 @@ export default function EnhancedTable() {
 
 
                                         }}>{row.status}</Box></TableCell>
-                                        <TableCell align="left">{row.help}</TableCell>
+                                        <TableCell align="left"><IconButton
+                                            aria-label="more info"
+
+                                            aria-haspopup="true"
+                                            onClick={handleProfileMenuOpen}
+                                            color="inherit"
+                                        ><MoreHorizIcon /></IconButton></TableCell>
+                                        {renderMenu}
+
                                     </TableRow>
                                 );
                             })}
