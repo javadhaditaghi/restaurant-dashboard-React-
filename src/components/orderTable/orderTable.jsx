@@ -37,19 +37,21 @@ function createData(id, name, calories, fat, carbs, protein, status, help) {
 }
 
 const rows = [
-    createData(1, 'Cupcake', 305, 3.7, 67, 4.3, "available"),
-    createData(2, 'Donut', 452, 25.0, 51, 4.9, "Not available"),
-    createData(3, 'Eclair', 262, 16.0, 24, 6.0, "available"),
-    createData(4, 'Frozen yoghurt', 159, 6.0, 24, 4.0, "available"),
-    createData(5, 'Gingerbread', 356, 16.0, 49, 3.9, "Not available"),
-    createData(6, 'Honeycomb', 408, 3.2, 87, 6.5, "available"),
-    createData(7, 'Ice cream sandwich', 237, 9.0, 37, 4.3),
-    createData(8, 'Jelly Bean', 375, 0.0, 94, 0.0, "Not available"),
-    createData(9, 'KitKat', 518, 26.0, 65, 7.0, "available"),
-    createData(10, 'Lollipop', 392, 0.2, 98, 0.0, "available"),
-    createData(11, 'Marshmallow', 318, 0, 81, 2.0, "Not available"),
-    createData(12, 'Nougat', 360, 19.0, 9, 37.0, "available"),
-    createData(13, 'Oreo', 437, 18.0, 63, 4.0, "Not available"),
+    createData(1, '#5552351', 305, "Jasper Montgomery", "Lakeview Avenue, Springdale", 4.3, "New Order"),
+    createData(2, '#5552351', 452, "Isabella Santiago", "Maplewood Lane, Willowbrook", 4.9, "New Order"),
+    createData(3, '#55523587', 262, "Lucas Daniels", "Cedar Hills Road, Riverdale", 16.0, "On Delivery"),
+    createData(4, '#5552456', 159, "Penelope Chen", "Oakridge Court, Sunnyvale", 6.0, "New Order"),
+    createData(5, '#5553434', 356, "Oliver Thompson", "Meadowbrook Drive, Brookside", 16.0, "Delivered"),
+    createData(6, '#5557890', 408, "Sophia Ramirez", "Pinecrest Lane, Hillcrest", 3.2, "On Delivery"),
+    createData(7, '#5551234', 237, "Elijah Patel", "Sunset Boulevard, Seaview", 9.0, "Delivered"),
+    createData(8, '#5553214', 375, "Ava Nguyen", "Elmwood Avenue, Forest Grove", 0.0, "On Delivery"),
+    createData(9, '#5552659', 518, "Logan Fitzgerald", "Birchwood Lane, Glenwood", 26.0, "Delivered"),
+    createData(10, '#55523456', 392, "Mia Santos", "Riverfront Terrace, Lakeside", 0.2, "New Order"),
+    createData(11, '#5552351', 318, "Liam Rodriguez", "Orchard Way, Meadowview", 2.0, "On Delivery"),
+    createData(12, '#5552351', 360, "Charlotte Kapoor", "Valleyview Drive, Hilltop", 37.0, "Delivered"),
+    createData(13, '#5552351', 437, "Noah Harrington", "Mountainview Road, Skyline", 18.0, "On Delivery"),
+
+
 ];
 
 function descendingComparator(a, b, orderBy) {
@@ -153,7 +155,7 @@ function EnhancedTableHead(props) {
                 {headCells.map((headCell) => (
                     <TableCell
                         key={headCell.id}
-                        align={headCell.numeric ? 'right' : 'left'}
+                        align={"left"}
                         padding={headCell.disablePadding ? 'none' : 'normal'}
                         sortDirection={orderBy === headCell.id ? order : false}
                     >
@@ -185,60 +187,9 @@ EnhancedTableHead.propTypes = {
     rowCount: PropTypes.number.isRequired,
 };
 
-function EnhancedTableToolbar(props) {
-    const { numSelected } = props;
 
-    return (
-        <Toolbar
-            sx={{
-                pl: { sm: 2 },
-                pr: { xs: 1, sm: 1 },
-                ...(numSelected > 0 && {
-                    bgcolor: (theme) =>
-                        alpha(theme.palette.primary.main, theme.palette.action.activatedOpacity),
-                }),
-            }}
-        >
-            {numSelected > 0 ? (
-                <Typography
-                    sx={{ flex: '1 1 100%' }}
-                    color="inherit"
-                    variant="subtitle1"
-                    component="div"
-                >
-                    {numSelected} selected
-                </Typography>
-            ) : (
-                <Typography
-                    sx={{ flex: '1 1 100%' }}
-                    variant="h6"
-                    id="tableTitle"
-                    component="div"
-                >
-                    Nutrition
-                </Typography>
-            )}
 
-            {numSelected > 0 ? (
-                <Tooltip title="Delete">
-                    <IconButton>
-                        <DeleteIcon />
-                    </IconButton>
-                </Tooltip>
-            ) : (
-                <Tooltip title="Filter list">
-                    <IconButton>
-                        <FilterListIcon />
-                    </IconButton>
-                </Tooltip>
-            )}
-        </Toolbar>
-    );
-}
 
-EnhancedTableToolbar.propTypes = {
-    numSelected: PropTypes.number.isRequired,
-};
 
 export default function EnhancedTable() {
     const [order, setOrder] = React.useState('asc');
@@ -313,7 +264,7 @@ export default function EnhancedTable() {
     return (
         <Box sx={{ width: '100%' }}>
             <Paper sx={{ width: '100%', mb: 2 }}>
-                <EnhancedTableToolbar numSelected={selected.length} />
+
                 <TableContainer>
                     <Table
                         sx={{ minWidth: 750 }}
@@ -361,12 +312,12 @@ export default function EnhancedTable() {
                                         >
                                             {row.name}
                                         </TableCell>
-                                        <TableCell align="right">{row.calories}</TableCell>
-                                        <TableCell align="right">{row.fat}</TableCell>
-                                        <TableCell align="right">{row.carbs}</TableCell>
-                                        <TableCell align="right">{row.protein}</TableCell>
-                                        <TableCell align="right">{row.status}</TableCell>
-                                        <TableCell align="right">{row.help}</TableCell>
+                                        <TableCell align="left">{row.calories}</TableCell>
+                                        <TableCell align="left">{row.fat}</TableCell>
+                                        <TableCell align="left">{row.carbs}</TableCell>
+                                        <TableCell align="left">{row.protein}</TableCell>
+                                        <TableCell align="left">{row.status}</TableCell>
+                                        <TableCell align="left">{row.help}</TableCell>
                                     </TableRow>
                                 );
                             })}
