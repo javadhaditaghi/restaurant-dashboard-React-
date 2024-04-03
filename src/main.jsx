@@ -12,7 +12,7 @@ const theme = createTheme({
   palette: {
     // Blue Color variation
     primary: {
-      lighter: '#DEE4FF',
+      lighter: '#2f4cdd0a',
       light: '#E9ECFF',
       main: '#2F4CDD',
       contrastText: '#fff',
@@ -33,7 +33,8 @@ const theme = createTheme({
       contrastText: '#fff',
     },
     // Green color
-    sucess: {
+    success: {
+      lighter: "#2bc1550d",
       light: '#E9FFEF',
       main: '#2BC155',
       dark: '#FF6D4D',

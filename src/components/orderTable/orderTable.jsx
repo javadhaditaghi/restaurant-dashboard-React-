@@ -40,20 +40,25 @@ function createData(id, name, calories, fat, carbs, protein, status, help) {
     };
 }
 
+const newOrder = "New Order"
+const onDelivery = "On Delivery"
+const delivered = "Delivered"
+
 const rows = [
-    createData(1, '#5552351', 305, "Jasper Montgomery", "Lakeview Avenue, Springdale", 4.3, "New Order"),
-    createData(2, '#5552351', 452, "Isabella Santiago", "Maplewood Lane, Willowbrook", 4.9, "New Order"),
-    createData(3, '#55523587', 262, "Lucas Daniels", "Cedar Hills Road, Riverdale", 16.0, "On Delivery"),
-    createData(4, '#5552456', 159, "Penelope Chen", "Oakridge Court, Sunnyvale", 6.0, "New Order"),
-    createData(5, '#5553434', 356, "Oliver Thompson", "Meadowbrook Drive, Brookside", 16.0, "Delivered"),
-    createData(6, '#5557890', 408, "Sophia Ramirez", "Pinecrest Lane, Hillcrest", 3.2, "On Delivery"),
-    createData(7, '#5551234', 237, "Elijah Patel", "Sunset Boulevard, Seaview", 9.0, "Delivered"),
-    createData(8, '#5553214', 375, "Ava Nguyen", "Elmwood Avenue, Forest Grove", 0.0, "On Delivery"),
-    createData(9, '#5552659', 518, "Logan Fitzgerald", "Birchwood Lane, Glenwood", 26.0, "Delivered"),
-    createData(10, '#55523456', 392, "Mia Santos", "Riverfront Terrace, Lakeside", 0.2, "New Order"),
-    createData(11, '#5552351', 318, "Liam Rodriguez", "Orchard Way, Meadowview", 2.0, "On Delivery"),
-    createData(12, '#5552351', 360, "Charlotte Kapoor", "Valleyview Drive, Hilltop", 37.0, "Delivered"),
-    createData(13, '#5552351', 437, "Noah Harrington", "Mountainview Road, Skyline", 18.0, "On Delivery"),
+
+    createData(1, '#5552351', 305, "Jasper Montgomery", "Lakeview Avenue, Springdale", 4.3, newOrder),
+    createData(2, '#5552351', 452, "Isabella Santiago", "Maplewood Lane, Willowbrook", 4.9, newOrder),
+    createData(3, '#55523587', 262, "Lucas Daniels", "Cedar Hills Road, Riverdale", 16.0, onDelivery),
+    createData(4, '#5552456', 159, "Penelope Chen", "Oakridge Court, Sunnyvale", 6.0, newOrder),
+    createData(5, '#5553434', 356, "Oliver Thompson", "Meadowbrook Drive, Brookside", 16.0, delivered),
+    createData(6, '#5557890', 408, "Sophia Ramirez", "Pinecrest Lane, Hillcrest", 3.2, onDelivery),
+    createData(7, '#5551234', 237, "Elijah Patel", "Sunset Boulevard, Seaview", 9.0, delivered),
+    createData(8, '#5553214', 375, "Ava Nguyen", "Elmwood Avenue, Forest Grove", 0.0, onDelivery),
+    createData(9, '#5552659', 518, "Logan Fitzgerald", "Birchwood Lane, Glenwood", 26.0, delivered),
+    createData(10, '#55523456', 392, "Mia Santos", "Riverfront Terrace, Lakeside", 0.2, newOrder),
+    createData(11, '#5552351', 318, "Liam Rodriguez", "Orchard Way, Meadowview", 2.0, onDelivery),
+    createData(12, '#5552351', 360, "Charlotte Kapoor", "Valleyview Drive, Hilltop", 37.0, delivered),
+    createData(13, '#5552351', 437, "Noah Harrington", "Mountainview Road, Skyline", 18.0, onDelivery),
 
 
 ];
@@ -329,7 +334,23 @@ export default function EnhancedTable() {
                                         <TableCell align="left">{row.fat}</TableCell>
                                         <TableCell align="left">{row.carbs}</TableCell>
                                         <TableCell align="left">{row.protein}</TableCell>
-                                        <TableCell align="left">{row.status}</TableCell>
+                                        <TableCell align="left"><Box sx={{
+
+                                            borderRadius: "10px", padding: "13px 16px",
+                                            backgroundColor: row.status == delivered
+                                                ? (theme) => theme.palette.success.lighter
+                                                : (row.status == onDelivery ? (theme) => theme.palette.primary.lighter : (theme) => theme.palette.danger.lighter),
+                                            color: row.status == delivered
+                                                ? (theme) => theme.palette.success.main
+                                                : (row.status == onDelivery ? (theme) => theme.palette.primary.main : (theme) => theme.palette.danger.main),
+                                            fontWeight: "bold",
+                                            display: "inline-flex",
+                                            alignItems: "center",
+                                            minWidth: "122px",
+                                            justifyContent: "center",
+
+
+                                        }}>{row.status}</Box></TableCell>
                                         <TableCell align="left">{row.help}</TableCell>
                                     </TableRow>
                                 );
