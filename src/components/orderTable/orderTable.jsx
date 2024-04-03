@@ -4,7 +4,7 @@ import { alpha } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
-import TableCell from '@mui/material/TableCell';
+import TableCell, { tableCellClasses } from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TablePagination from '@mui/material/TablePagination';
@@ -23,6 +23,8 @@ import FilterListIcon from '@mui/icons-material/FilterList';
 import { visuallyHidden } from '@mui/utils';
 import styled from '@emotion/styled';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
+
+
 
 function createData(id, name, calories, fat, carbs, protein, status, help) {
     return {
@@ -179,7 +181,7 @@ function EnhancedTableHead(props) {
                     </TableCell>
                 ))}
             </TableRow>
-        </TableHead>
+        </TableHead >
     );
 }
 
@@ -248,10 +250,6 @@ export default function EnhancedTable() {
         setPage(0);
     };
 
-    const handleChangeDense = (event) => {
-        setDense(event.target.checked);
-    };
-
     const isSelected = (id) => selected.indexOf(id) !== -1;
 
     // Avoid a layout jump when reaching the last page with empty rows.
@@ -273,9 +271,12 @@ export default function EnhancedTable() {
 
                 <TableContainer>
                     <Table
-                        sx={{ minWidth: 750 }}
+                        sx={{
+                            minWidth: 750
+                        }}
                         aria-labelledby="tableTitle"
                         size={dense ? 'small' : 'medium'}
+
                     >
                         <EnhancedTableHead
                             numSelected={selected.length}
@@ -286,7 +287,11 @@ export default function EnhancedTable() {
                             rowCount={rows.length}
 
                         />
-                        <TableBody>
+                        <TableBody sx={{
+                            [`& .${tableCellClasses.root}`]: {
+                                borderBottom: "none"
+                            }
+                        }}>
                             {visibleRows.map((row, index) => {
                                 const isItemSelected = isSelected(row.id);
                                 const labelId = `enhanced-table-checkbox-${index}`;
@@ -302,7 +307,7 @@ export default function EnhancedTable() {
                                         selected={isItemSelected}
                                         sx={{ cursor: 'pointer' }}
                                     >
-                                        <TableCell padding="checkbox">
+                                        <TableCell padding="checkbox" >
                                             <Checkbox
                                                 color="primary"
                                                 checked={isItemSelected}
@@ -316,6 +321,7 @@ export default function EnhancedTable() {
                                             id={labelId}
                                             scope="row"
                                             padding="none"
+
                                         >
                                             {row.name}
                                         </TableCell>
