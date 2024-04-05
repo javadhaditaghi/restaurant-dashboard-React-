@@ -9,8 +9,6 @@ const List = styled('ul')({
     margin: 0,
     display: 'flex',
     'button': {
-
-        border: '1px solid',
         backgroundColor: '#E3E4EB;',
         color: '#000000',
         borderRadius: "6px",
@@ -20,15 +18,11 @@ const List = styled('ul')({
     '& > li:first-child': {
         marginRight: "15px",
         fontWeight: 'bold',
-        '& button': {
-            backgroundColor: '#969BA0',
-        }
+
     },
     '& > li:last-child': {
         marginLeft: "15px",
-        '& button': {
-            backgroundColor: '#2F4CDD',
-        },
+
 
     },
     '& .endButton': {
@@ -42,12 +36,12 @@ const List = styled('ul')({
         padding: '5px 10px',
         display: 'block',
         fontSize: "15px",
-        border: "1px solid #E3E4EB;",
+        border: "1px solid #E3E4EB",
         color: '#2F4CDD',
     },
 
     '& .normalButton__wrapper': {
-        backgroundColor: '#E3E4EB;',
+        backgroundColor: '#E3E4EB',
         padding: '5px 8px',
         display: 'block',
 
@@ -56,13 +50,14 @@ const List = styled('ul')({
 
 
 export default function CustomizedPagination() {
+    const pageNum = 10
     const { items } = usePagination({
-        count: 10,
+        count: pageNum,
     });
 
     return (
-        <nav>
-            <List>
+        <nav >
+            <List sx={{ display: "flex", justifyContent: "end" }}>
                 {items.map(({ page, type, selected, ...item }, index) => {
                     let children = null;
 
@@ -73,6 +68,7 @@ export default function CustomizedPagination() {
                             <Box className="normalButton__wrapper" sx={{
                                 borderRadius: index === 1 ? "6px 0px 0px 6px" : (index === items.length - 2 ? "0px 6px 6px 0px" : "0px")
                             }}>
+
                                 <button
                                     type="button"
                                     className='normalButton'
@@ -91,8 +87,12 @@ export default function CustomizedPagination() {
                         );
                     } else {
                         children = (
-                            <button type="button" className='endButton' {...item}>
+                            <button type="button" className='endButton' {...item}
+                                style={{
+                                    backgroundColor: page == 0 || page == pageNum + 1 ? "#2F4CDD" : '#969BA0'
+                                }}>
                                 {type}
+
                             </button>
                         );
                     }
