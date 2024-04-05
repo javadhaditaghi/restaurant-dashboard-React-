@@ -26,6 +26,7 @@ import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import { Menu } from '@mui/material';
 import MenuItem from '@mui/material/MenuItem';
+import CustomizedPagination from './tablePagination';
 
 
 
@@ -50,19 +51,40 @@ const delivered = "Delivered"
 
 const rows = [
 
-    createData(1, '#5552351', 305, "Jasper Montgomery", "Lakeview Avenue, Springdale", 4.3, newOrder),
-    createData(2, '#5552351', 452, "Isabella Santiago", "Maplewood Lane, Willowbrook", 4.9, newOrder),
-    createData(3, '#55523587', 262, "Lucas Daniels", "Cedar Hills Road, Riverdale", 16.0, onDelivery),
-    createData(4, '#5552456', 159, "Penelope Chen", "Oakridge Court, Sunnyvale", 6.0, newOrder),
-    createData(5, '#5553434', 356, "Oliver Thompson", "Meadowbrook Drive, Brookside", 16.0, delivered),
-    createData(6, '#5557890', 408, "Sophia Ramirez", "Pinecrest Lane, Hillcrest", 3.2, onDelivery),
-    createData(7, '#5551234', 237, "Elijah Patel", "Sunset Boulevard, Seaview", 9.0, delivered),
-    createData(8, '#5553214', 375, "Ava Nguyen", "Elmwood Avenue, Forest Grove", 0.0, onDelivery),
-    createData(9, '#5552659', 518, "Logan Fitzgerald", "Birchwood Lane, Glenwood", 26.0, delivered),
-    createData(10, '#55523456', 392, "Mia Santos", "Riverfront Terrace, Lakeside", 0.2, newOrder),
-    createData(11, '#5552351', 318, "Liam Rodriguez", "Orchard Way, Meadowview", 2.0, onDelivery),
-    createData(12, '#5552351', 360, "Charlotte Kapoor", "Valleyview Drive, Hilltop", 37.0, delivered),
-    createData(13, '#5552351', 437, "Noah Harrington", "Mountainview Road, Skyline", 18.0, onDelivery),
+    createData(1, '#5552351', "March 12, 2024", "Jasper Montgomery", "Lakeview Avenue, Springdale", 4.3, newOrder),
+    createData(2, '#5552351', "May 5, 2023", "Isabella Santiago", "Maplewood Lane, Willowbrook", 4.9, newOrder),
+    createData(3, '#55523587', "August 21, 2024", "Lucas Daniels", "Cedar Hills Road, Riverdale", 16.0, onDelivery),
+    createData(4, '#5552456', "January 7, 2025", "Penelope Chen", "Oakridge Court, Sunnyvale", 6.0, newOrder),
+    createData(5, '#5553434', "October 30, 2023", "Oliver Thompson", "Meadowbrook Drive, Brookside", 16.0, delivered),
+    createData(6, '#5557890', "April 15, 2024", "Sophia Ramirez", "Pinecrest Lane, Hillcrest", 3.2, onDelivery),
+    createData(7, '#5551234', "September 3, 2023", "Elijah Patel", "Sunset Boulevard, Seaview", 9.0, delivered),
+    createData(8, '#5553214', "December 19, 2024", "Ava Nguyen", "Elmwood Avenue, Forest Grove", 0.0, onDelivery),
+    createData(9, '#5552659', "February 28, 2024", "Logan Fitzgerald", "Birchwood Lane, Glenwood", 26.0, delivered),
+    createData(10, '#55523456', "June 10, 2023", "Mia Santos", "Riverfront Terrace, Lakeside", 0.2, newOrder),
+    createData(11, '#5552351', "November 25, 2024", "Liam Rodriguez", "Orchard Way, Meadowview", 2.0, onDelivery),
+    createData(12, '#5552351', "July 8, 2024", "Charlotte Kapoor", "Valleyview Drive, Hilltop", 37.0, delivered),
+    createData(13, '#5552351', "March 1, 2025", "Noah Harrington", "Mountainview Road, Skyline", 18.0, onDelivery),
+    createData(14, '#5552351', "March 12, 2024", "Jasper Montgomery", "Lakeview Avenue, Springdale", 4.3, newOrder),
+    createData(15, '#5552351', "May 5, 2023", "Isabella Santiago", "Maplewood Lane, Willowbrook", 4.9, newOrder),
+    createData(16, '#5557890', "April 15, 2024", "Sophia Ramirez", "Pinecrest Lane, Hillcrest", 3.2, onDelivery),
+    createData(17, '#5551234', "September 3, 2023", "Elijah Patel", "Sunset Boulevard, Seaview", 9.0, delivered),
+    createData(18, '#5553214', "December 19, 2024", "Ava Nguyen", "Elmwood Avenue, Forest Grove", 0.0, onDelivery),
+    createData(19, '#5552659', "February 28, 2024", "Logan Fitzgerald", "Birchwood Lane, Glenwood", 26.0, delivered),
+    createData(20, '#55523456', "June 10, 2023", "Mia Santos", "Riverfront Terrace, Lakeside", 0.2, newOrder),
+    createData(21, '#5552351', "November 25, 2024", "Liam Rodriguez", "Orchard Way, Meadowview", 2.0, onDelivery),
+    createData(22, '#5552351', "July 8, 2024", "Charlotte Kapoor", "Valleyview Drive, Hilltop", 37.0, delivered),
+    createData(23, '#5552351', "March 1, 2025", "Noah Harrington", "Mountainview Road, Skyline", 18.0, onDelivery),
+    createData(24, '#5552351', "March 12, 2024", "Jasper Montgomery", "Lakeview Avenue, Springdale", 4.3, newOrder),
+    createData(25, '#5552351', "May 5, 2023", "Isabella Santiago", "Maplewood Lane, Willowbrook", 4.9, newOrder),
+    createData(26, '#5557890', "April 15, 2024", "Sophia Ramirez", "Pinecrest Lane, Hillcrest", 3.2, onDelivery),
+    createData(27, '#5551234', "September 3, 2023", "Elijah Patel", "Sunset Boulevard, Seaview", 9.0, delivered),
+    createData(28, '#5553214', "December 19, 2024", "Ava Nguyen", "Elmwood Avenue, Forest Grove", 0.0, onDelivery),
+    createData(29, '#5552659', "February 28, 2024", "Logan Fitzgerald", "Birchwood Lane, Glenwood", 26.0, delivered),
+    createData(30, '#55523456', "June 10, 2023", "Mia Santos", "Riverfront Terrace, Lakeside", 0.2, newOrder),
+    createData(31, '#5552351', "November 25, 2024", "Liam Rodriguez", "Orchard Way, Meadowview", 2.0, onDelivery),
+    createData(32, '#5552351', "July 8, 2024", "Charlotte Kapoor", "Valleyview Drive, Hilltop", 37.0, delivered),
+    createData(33, '#5552351', "March 1, 2025", "Noah Harrington", "Mountainview Road, Skyline", 18.0, onDelivery),
+
 
 
 ];
@@ -456,15 +478,18 @@ export default function EnhancedTable() {
                 </TableContainer>
 
             </Paper>
-            <TablePagination
-                rowsPerPageOptions={[5, 10, 25]}
-                component="div"
-                count={rows.length}
-                rowsPerPage={rowsPerPage}
-                page={page}
-                onPageChange={handleChangePage}
-                onRowsPerPageChange={handleChangeRowsPerPage}
-            />
+            {/*
+           <TablePagination
+           rowsPerPageOptions={[5, 10, 25]}
+           component="div"
+           count={rows.length}
+           rowsPerPage={rowsPerPage}
+           page={page}
+           onPageChange={handleChangePage}
+           onRowsPerPageChange={handleChangeRowsPerPage}
+       />
+        */}
+            <CustomizedPagination />
 
         </Box>
     );
