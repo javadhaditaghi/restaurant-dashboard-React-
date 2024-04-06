@@ -27,67 +27,45 @@ import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import { Menu } from '@mui/material';
 import MenuItem from '@mui/material/MenuItem';
 import CustomizedPagination from './tablePagination';
+import jsonData from './tableData.json'
 
 
 
 
-function createData(id, name, calories, fat, carbs, protein, status, help) {
+function createData(id, orderNumber, date, customerName, address, distance, status, help) {
     return {
         id,
-        name,
-        calories,
-        fat,
-        carbs,
-        protein,
+        orderNumber,
+        date,
+        customerName,
+        address,
+        distance,
         status,
         help
-
     };
 }
 
-const newOrder = "New Order"
-const onDelivery = "On Delivery"
-const delivered = "Delivered"
-
-const rows = [
-
-    createData(1, '#5552351', "March 12, 2024", "Jasper Montgomery", "Lakeview Avenue, Springdale", 4.3, newOrder),
-    createData(2, '#5552351', "May 5, 2023", "Isabella Santiago", "Maplewood Lane, Willowbrook", 4.9, newOrder),
-    createData(3, '#55523587', "August 21, 2024", "Lucas Daniels", "Cedar Hills Road, Riverdale", 16.0, onDelivery),
-    createData(4, '#5552456', "January 7, 2025", "Penelope Chen", "Oakridge Court, Sunnyvale", 6.0, newOrder),
-    createData(5, '#5553434', "October 30, 2023", "Oliver Thompson", "Meadowbrook Drive, Brookside", 16.0, delivered),
-    createData(6, '#5557890', "April 15, 2024", "Sophia Ramirez", "Pinecrest Lane, Hillcrest", 3.2, onDelivery),
-    createData(7, '#5551234', "September 3, 2023", "Elijah Patel", "Sunset Boulevard, Seaview", 9.0, delivered),
-    createData(8, '#5553214', "December 19, 2024", "Ava Nguyen", "Elmwood Avenue, Forest Grove", 0.0, onDelivery),
-    createData(9, '#5552659', "February 28, 2024", "Logan Fitzgerald", "Birchwood Lane, Glenwood", 26.0, delivered),
-    createData(10, '#55523456', "June 10, 2023", "Mia Santos", "Riverfront Terrace, Lakeside", 0.2, newOrder),
-    createData(11, '#5552351', "November 25, 2024", "Liam Rodriguez", "Orchard Way, Meadowview", 2.0, onDelivery),
-    createData(12, '#5552351', "July 8, 2024", "Charlotte Kapoor", "Valleyview Drive, Hilltop", 37.0, delivered),
-    createData(13, '#5552351', "March 1, 2025", "Noah Harrington", "Mountainview Road, Skyline", 18.0, onDelivery),
-    createData(14, '#5552351', "March 12, 2024", "Jasper Montgomery", "Lakeview Avenue, Springdale", 4.3, newOrder),
-    createData(15, '#5552351', "May 5, 2023", "Isabella Santiago", "Maplewood Lane, Willowbrook", 4.9, newOrder),
-    createData(16, '#5557890', "April 15, 2024", "Sophia Ramirez", "Pinecrest Lane, Hillcrest", 3.2, onDelivery),
-    createData(17, '#5551234', "September 3, 2023", "Elijah Patel", "Sunset Boulevard, Seaview", 9.0, delivered),
-    createData(18, '#5553214', "December 19, 2024", "Ava Nguyen", "Elmwood Avenue, Forest Grove", 0.0, onDelivery),
-    createData(19, '#5552659', "February 28, 2024", "Logan Fitzgerald", "Birchwood Lane, Glenwood", 26.0, delivered),
-    createData(20, '#55523456', "June 10, 2023", "Mia Santos", "Riverfront Terrace, Lakeside", 0.2, newOrder),
-    createData(21, '#5552351', "November 25, 2024", "Liam Rodriguez", "Orchard Way, Meadowview", 2.0, onDelivery),
-    createData(22, '#5552351', "July 8, 2024", "Charlotte Kapoor", "Valleyview Drive, Hilltop", 37.0, delivered),
-    createData(23, '#5552351', "March 1, 2025", "Noah Harrington", "Mountainview Road, Skyline", 18.0, onDelivery),
-    createData(24, '#5552351', "March 12, 2024", "Jasper Montgomery", "Lakeview Avenue, Springdale", 4.3, newOrder),
-    createData(25, '#5552351', "May 5, 2023", "Isabella Santiago", "Maplewood Lane, Willowbrook", 4.9, newOrder),
-    createData(26, '#5557890', "April 15, 2024", "Sophia Ramirez", "Pinecrest Lane, Hillcrest", 3.2, onDelivery),
-    createData(27, '#5551234', "September 3, 2023", "Elijah Patel", "Sunset Boulevard, Seaview", 9.0, delivered),
-    createData(28, '#5553214', "December 19, 2024", "Ava Nguyen", "Elmwood Avenue, Forest Grove", 0.0, onDelivery),
-    createData(29, '#5552659', "February 28, 2024", "Logan Fitzgerald", "Birchwood Lane, Glenwood", 26.0, delivered),
-    createData(30, '#55523456', "June 10, 2023", "Mia Santos", "Riverfront Terrace, Lakeside", 0.2, newOrder),
-    createData(31, '#5552351', "November 25, 2024", "Liam Rodriguez", "Orchard Way, Meadowview", 2.0, onDelivery),
-    createData(32, '#5552351', "July 8, 2024", "Charlotte Kapoor", "Valleyview Drive, Hilltop", 37.0, delivered),
-    createData(33, '#5552351', "March 1, 2025", "Noah Harrington", "Mountainview Road, Skyline", 18.0, onDelivery),
 
 
+const newOrder = "New Order";
+const onDelivery = "On Delivery";
+const delivered = "Delivered";
 
-];
+// Format the imported JSON data using createData function
+const rows = jsonData.map(item => {
+    let status;
+    if (item.status == "newOrder") {
+        status = newOrder;
+    } else if (item.status == "onDelivery") {
+        status = onDelivery;
+    } else if (item.status == "delivered") {
+        status = delivered;
+    } else {
+        // Handle unknown status
+        status = item.status;
+    }
+    return createData(item.id, item.orderNumber, item.date, item.customerName, item.address, item.distance, status);
+});
 
 function descendingComparator(a, b, orderBy) {
     if (b[orderBy] < a[orderBy]) {
@@ -123,31 +101,31 @@ function stableSort(array, comparator) {
 
 const headCells = [
     {
-        id: 'name',
+        id: 'orderNumber',
         numeric: false,
         disablePadding: true,
         label: 'Order ID',
     },
     {
-        id: 'calories',
+        id: 'date',
         numeric: true,
         disablePadding: false,
         label: 'Date',
     },
     {
-        id: 'fat',
+        id: 'customerName',
         numeric: true,
         disablePadding: false,
         label: 'Customer Name',
     },
     {
-        id: 'carbs',
+        id: 'address',
         numeric: true,
         disablePadding: false,
         label: 'Location',
     },
     {
-        id: 'protein',
+        id: 'distance',
         numeric: true,
         disablePadding: false,
         label: 'Amount',
@@ -232,11 +210,11 @@ EnhancedTableHead.propTypes = {
 
 export default function EnhancedTable() {
     const [order, setOrder] = React.useState('asc');
-    const [orderBy, setOrderBy] = React.useState('calories');
+    const [orderBy, setOrderBy] = React.useState('date');
     const [selected, setSelected] = React.useState([]);
-    const [page, setPage] = React.useState(0);
-    const [dense, setDense] = React.useState(false);
-    const [rowsPerPage, setRowsPerPage] = React.useState(10);
+    const page = 0;
+    const dense = false;
+    const rowsPerPage = 10
 
     const [anchorEl, setAnchorEl] = React.useState(null);
 
@@ -246,7 +224,7 @@ export default function EnhancedTable() {
     };
     const handleMenuClose = () => {
         setAnchorEl(null);
-        handleMobileMenuClose();
+
     };
 
     const menuId = 'primary-search-account-menu';
@@ -339,14 +317,8 @@ export default function EnhancedTable() {
         setSelected(newSelected);
     };
 
-    const handleChangePage = (event, newPage) => {
-        setPage(newPage);
-    };
 
-    const handleChangeRowsPerPage = (event) => {
-        setRowsPerPage(parseInt(event.target.value, 10));
-        setPage(0);
-    };
+
 
     const isSelected = (id) => selected.indexOf(id) !== -1;
 
@@ -362,6 +334,9 @@ export default function EnhancedTable() {
             ),
         [order, orderBy, page, rowsPerPage],
     );
+
+
+
 
     return (
         <Box sx={{
@@ -429,12 +404,12 @@ export default function EnhancedTable() {
                                             padding="none"
 
                                         >
-                                            {row.name}
+                                            {row.orderNumber}
                                         </TableCell>
-                                        <TableCell align="left">{row.calories}</TableCell>
-                                        <TableCell align="left">{row.fat}</TableCell>
-                                        <TableCell align="left">{row.carbs}</TableCell>
-                                        <TableCell align="left">{row.protein}</TableCell>
+                                        <TableCell align="left">{row.date}</TableCell>
+                                        <TableCell align="left">{row.customerName}</TableCell>
+                                        <TableCell align="left">{row.address}</TableCell>
+                                        <TableCell align="left">{row.distance}</TableCell>
                                         <TableCell align="left"><Box sx={{
 
                                             borderRadius: "10px", padding: "13px 16px",
@@ -478,18 +453,10 @@ export default function EnhancedTable() {
                 </TableContainer>
 
             </Paper>
-            {/*
-           <TablePagination
-           rowsPerPageOptions={[5, 10, 25]}
-           component="div"
-           count={rows.length}
-           rowsPerPage={rowsPerPage}
-           page={page}
-           onPageChange={handleChangePage}
-           onRowsPerPageChange={handleChangeRowsPerPage}
-       />
-        */}
-            <CustomizedPagination />
+
+            <CustomizedPagination
+            />
+
 
         </Box>
     );
