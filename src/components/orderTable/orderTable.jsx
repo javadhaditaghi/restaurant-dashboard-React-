@@ -474,12 +474,12 @@ export default function EnhancedTable() {
                                         <TableCell align="left"><Box sx={{
 
                                             borderRadius: "10px", padding: "13px 16px",
-                                            backgroundColor: row.status == delivered
+                                            backgroundColor: row.status == "Delivered"
                                                 ? (theme) => theme.palette.success.lighter
-                                                : (row.status == onDelivery ? (theme) => theme.palette.primary.lighter : (theme) => theme.palette.danger.lighter),
-                                            color: row.status == delivered
+                                                : (row.status == "On Delivery" ? (theme) => theme.palette.primary.lighter : (theme) => theme.palette.danger.lighter),
+                                            color: row.status == "Delivered"
                                                 ? (theme) => theme.palette.success.main
-                                                : (row.status == onDelivery ? (theme) => theme.palette.primary.main : (theme) => theme.palette.danger.main),
+                                                : (row.status == "On Delivery" ? (theme) => theme.palette.primary.main : (theme) => theme.palette.danger.main),
                                             fontWeight: "bold",
                                             display: "inline-flex",
                                             alignItems: "center",

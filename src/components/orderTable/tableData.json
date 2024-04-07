@@ -6,7 +6,7 @@
         "customerName": "Jasper Montgomery",
         "address": "Lakeview Avenue, Springdale",
         "distance": 4.3,
-        "status": "newOrder"
+        "status": "New Order"
     },
     {
         "id": 2,
@@ -15,7 +15,7 @@
         "customerName": "Isabella Santiago",
         "address": "Maplewood Lane, Willowbrook",
         "distance": 4.9,
-        "status": "newOrder"
+        "status": "New Order"
     },
     {
         "id": 3,
@@ -24,7 +24,7 @@
         "customerName": "Lucas Daniels",
         "address": "Cedar Hills Road, Riverdale",
         "distance": 16.0,
-        "status": "onDelivery"
+        "status": "On Delivery"
     },
     {
         "id": 4,
@@ -33,7 +33,7 @@
         "customerName": "Penelope Chen",
         "address": "Oakridge Court, Sunnyvale",
         "distance": 6.0,
-        "status": "newOrder"
+        "status": "New Order"
     },
     {
         "id": 5,
@@ -42,7 +42,7 @@
         "customerName": "Oliver Thompson",
         "address": "Meadowbrook Drive, Brookside",
         "distance": 16.0,
-        "status": "delivered"
+        "status": "Delivered"
     },
     {
         "id": 6,
@@ -51,7 +51,7 @@
         "customerName": "Sophia Ramirez",
         "address": "Pinecrest Lane, Hillcrest",
         "distance": 3.2,
-        "status": "onDelivery"
+        "status": "On Delivery"
     },
     {
         "id": 7,
@@ -60,7 +60,7 @@
         "customerName": "Elijah Patel",
         "address": "Sunset Boulevard, Seaview",
         "distance": 9.0,
-        "status": "delivered"
+        "status": "Delivered"
     },
     {
         "id": 8,
@@ -69,7 +69,7 @@
         "customerName": "Ava Nguyen",
         "address": "Elmwood Avenue, Forest Grove",
         "distance": 0.0,
-        "status": "onDelivery"
+        "status": "On Delivery"
     },
     {
         "id": 9,
@@ -78,7 +78,7 @@
         "customerName": "Logan Fitzgerald",
         "address": "Birchwood Lane, Glenwood",
         "distance": 26.0,
-        "status": "delivered"
+        "status": "Delivered"
     },
     {
         "id": 10,
@@ -87,7 +87,7 @@
         "customerName": "Mia Santos",
         "address": "Riverfront Terrace, Lakeside",
         "distance": 0.2,
-        "status": "newOrder"
+        "status": "New Order"
     },
     {
         "id": 11,
@@ -96,7 +96,7 @@
         "customerName": "Liam Rodriguez",
         "address": "Orchard Way, Meadowview",
         "distance": 2.0,
-        "status": "onDelivery"
+        "status": "On Delivery"
     },
     {
         "id": 12,
@@ -105,7 +105,7 @@
         "customerName": "Charlotte Kapoor",
         "address": "Valleyview Drive, Hilltop",
         "distance": 37.0,
-        "status": "delivered"
+        "status": "Delivered"
     },
     {
         "id": 13,
@@ -114,7 +114,7 @@
         "customerName": "Noah Harrington",
         "address": "Mountainview Road, Skyline",
         "distance": 18.0,
-        "status": "onDelivery"
+        "status": "On Delivery"
     },
     {
         "id": 14,
@@ -123,7 +123,7 @@
         "customerName": "Jasper Montgomery",
         "address": "Lakeview Avenue, Springdale",
         "distance": 4.3,
-        "status": "newOrder"
+        "status": "New Order"
     },
     {
         "id": 15,
@@ -132,7 +132,7 @@
         "customerName": "Isabella Santiago",
         "address": "Maplewood Lane, Willowbrook",
         "distance": 4.9,
-        "status": "newOrder"
+        "status": "New Order"
     },
     {
         "id": 16,
@@ -141,7 +141,7 @@
         "customerName": "Sophia Ramirez",
         "address": "Pinecrest Lane, Hillcrest",
         "distance": 3.2,
-        "status": "onDelivery"
+        "status": "On Delivery"
     },
     {
         "id": 17,
@@ -150,7 +150,7 @@
         "customerName": "Elijah Patel",
         "address": "Sunset Boulevard, Seaview",
         "distance": 9.0,
-        "status": "delivered"
+        "status": "Delivered"
     },
     {
         "id": 18,
@@ -159,7 +159,7 @@
         "customerName": "Ava Nguyen",
         "address": "Elmwood Avenue, Forest Grove",
         "distance": 0.0,
-        "status": "onDelivery"
+        "status": "On Delivery"
     },
     {
         "id": 19,
@@ -168,7 +168,7 @@
         "customerName": "Logan Fitzgerald",
         "address": "Birchwood Lane, Glenwood",
         "distance": 26.0,
-        "status": "delivered"
+        "status": "Delivered"
     },
     {
         "id": 20,
@@ -177,7 +177,7 @@
         "customerName": "Mia Santos",
         "address": "Riverfront Terrace, Lakeside",
         "distance": 0.2,
-        "status": "newOrder"
+        "status": "New Order"
     },
     {
         "id": 21,
@@ -186,7 +186,7 @@
         "customerName": "Liam Rodriguez",
         "address": "Orchard Way, Meadowview",
         "distance": 2.0,
-        "status": "onDelivery"
+        "status": "On Delivery"
     },
     {
         "id": 22,
@@ -195,7 +195,7 @@
         "customerName": "Charlotte Kapoor",
         "address": "Valleyview Drive, Hilltop",
         "distance": 37.0,
-        "status": "delivered"
+        "status": "Delivered"
     },
     {
         "id": 23,
@@ -204,7 +204,7 @@
         "customerName": "Noah Harrington",
         "address": "Mountainview Road, Skyline",
         "distance": 18.0,
-        "status": "onDelivery"
+        "status": "On Delivery"
     },
     {
         "id": 24,
@@ -213,7 +213,7 @@
         "customerName": "Jasper Montgomery",
         "address": "Lakeview Avenue, Springdale",
         "distance": 4.3,
-        "status": "newOrder"
+        "status": "New Order"
     },
     {
         "id": 25,
@@ -222,7 +222,7 @@
         "customerName": "Isabella Santiago",
         "address": "Maplewood Lane, Willowbrook",
         "distance": 4.9,
-        "status": "newOrder"
+        "status": "New Order"
     },
     {
         "id": 26,
@@ -231,7 +231,7 @@
         "customerName": "Sophia Ramirez",
         "address": "Pinecrest Lane, Hillcrest",
         "distance": 3.2,
-        "status": "onDelivery"
+        "status": "On Delivery"
     },
     {
         "id": 27,
@@ -240,7 +240,7 @@
         "customerName": "Elijah Patel",
         "address": "Sunset Boulevard, Seaview",
         "distance": 9.0,
-        "status": "delivered"
+        "status": "Delivered"
     },
     {
         "id": 28,
@@ -249,7 +249,7 @@
         "customerName": "Ava Nguyen",
         "address": "Elmwood Avenue, Forest Grove",
         "distance": 0.0,
-        "status": "onDelivery"
+        "status": "On Delivery"
     },
     {
         "id": 29,
@@ -258,7 +258,7 @@
         "customerName": "Logan Fitzgerald",
         "address": "Birchwood Lane, Glenwood",
         "distance": 26.0,
-        "status": "delivered"
+        "status": "Delivered"
     },
     {
         "id": 30,
@@ -267,7 +267,7 @@
         "customerName": "Mia Santos",
         "address": "Riverfront Terrace, Lakeside",
         "distance": 0.2,
-        "status": "newOrder"
+        "status": "New Order"
     },
     {
         "id": 31,
@@ -276,7 +276,7 @@
         "customerName": "Liam Rodriguez",
         "address": "Orchard Way, Meadowview",
         "distance": 2.0,
-        "status": "onDelivery"
+        "status": "On Delivery"
     },
     {
         "id": 32,
@@ -285,7 +285,7 @@
         "customerName": "Charlotte Kapoor",
         "address": "Valleyview Drive, Hilltop",
         "distance": 37.0,
-        "status": "delivered"
+        "status": "Delivered"
     },
     {
         "id": 33,
@@ -294,6 +294,6 @@
         "customerName": "Noah Harrington",
         "address": "Mountainview Road, Skyline",
         "distance": 18.0,
-        "status": "onDelivery"
+        "status": "On Delivery"
     }
 ]
