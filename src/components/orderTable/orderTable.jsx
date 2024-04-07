@@ -28,6 +28,9 @@ import { Menu } from '@mui/material';
 import MenuItem from '@mui/material/MenuItem';
 import CustomizedPagination from './tablePagination';
 import jsonData from './tableData.json'
+import service from './paginationService';
+import { useState, useEffect } from 'react';
+
 
 
 
@@ -212,9 +215,21 @@ export default function EnhancedTable() {
     const [order, setOrder] = React.useState('asc');
     const [orderBy, setOrderBy] = React.useState('date');
     const [selected, setSelected] = React.useState([]);
-    const page = 0;
+    const [page, setPage] = React.useState(1);
     const dense = false;
     const rowsPerPage = 10
+
+
+
+    const [pagination, setPagination] = useState({
+        countPage: 0,
+        from: 0,
+        to: rowsPerPage
+    });
+
+
+
+
 
     const [anchorEl, setAnchorEl] = React.useState(null);
 
@@ -338,6 +353,43 @@ export default function EnhancedTable() {
 
 
 
+    React.useEffect(() => {
+        service.getData({ from: pagination.from, to: pagination.to })
+            .then(response => {
+                setPagination(prevPagination => ({
+                    ...prevPagination,
+                    countPage: response.countPage
+                }));
+                console.log(response)
+            })
+            .catch(error => {
+                console.error('Error fetching data:', error);
+            });
+
+
+
+
+    }, [pagination.from, pagination.to]);
+
+
+    const handlePageChange = (event, page) => {
+        const from = (page - 1) * rowsPerPage
+        const to = (page - 1) * rowsPerPage + rowsPerPage
+
+        setPagination({ ...pagination, from: from, to: to })
+
+    }
+
+    const counter = Math.ceil(pagination.countPage / rowsPerPage)
+
+
+
+
+
+
+
+
+
     return (
         <Box sx={{
             width: '100%', [`& .css-1mxz8qt-MuiPaper-root`]: {
@@ -455,6 +507,10 @@ export default function EnhancedTable() {
             </Paper>
 
             <CustomizedPagination
+                counter={counter}
+
+                pageChange={handlePageChange}
+
             />
 
 

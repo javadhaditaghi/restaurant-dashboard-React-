@@ -3,6 +3,8 @@ import usePagination from '@mui/material/usePagination';
 import { styled } from '@mui/material/styles';
 import { Box, Typography } from '@mui/material';
 import service from './paginationService';
+import { useState } from 'react';
+
 
 const List = styled('ul')({
     listStyle: 'none',
@@ -50,15 +52,20 @@ const List = styled('ul')({
 });
 
 
-export default function CustomizedPagination() {
-    const pageNum = 10
+export default function CustomizedPagination({ counter, pageChange }) {
+
+
+
     const { items } = usePagination({
-        count: pageNum,
+        count: counter,
+        onChange: pageChange,
     });
 
-    React.useEffect(() => {
-        service.getData().then(response => { console.log(response) }, [])
-    })
+
+
+
+
+
 
     return (
         <nav >
@@ -87,17 +94,20 @@ export default function CustomizedPagination() {
                                     {...item}
                                 >
                                     {page}
+
                                 </button>
                             </Box>
                         );
                     } else {
                         children = (
                             <button type="button" className='endButton' {...item}
+
                                 style={{
-                                    backgroundColor: page == 0 || page == pageNum + 1 ? "#2F4CDD" : '#969BA0'
+                                    backgroundColor: page == 0 || page == counter + 1 ? "#2F4CDD" : '#969BA0'
 
                                 }}>
                                 {type}
+
 
                             </button>
                         );
