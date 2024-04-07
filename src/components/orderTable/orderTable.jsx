@@ -231,6 +231,11 @@ export default function EnhancedTable() {
 
 
 
+
+
+
+
+
     const [anchorEl, setAnchorEl] = React.useState(null);
 
     const isMenuOpen = Boolean(anchorEl);
@@ -341,15 +346,8 @@ export default function EnhancedTable() {
     const emptyRows =
         page > 0 ? Math.max(0, (1 + page) * rowsPerPage - rows.length) : 0;
 
-    const visibleRows = React.useMemo(
-        () =>
-            stableSort(rows, getComparator(order, orderBy)).slice(
-                page * rowsPerPage,
-                page * rowsPerPage + rowsPerPage,
-            ),
-        [order, orderBy, page, rowsPerPage],
-    );
 
+    const [visibleRows, setVisibleRows] = useState([]);
 
 
 
@@ -360,7 +358,8 @@ export default function EnhancedTable() {
                     ...prevPagination,
                     countPage: response.countPage
                 }));
-                console.log(response)
+
+                setVisibleRows(response.data)
             })
             .catch(error => {
                 console.error('Error fetching data:', error);
@@ -370,6 +369,14 @@ export default function EnhancedTable() {
 
 
     }, [pagination.from, pagination.to]);
+
+    const visibleRows_updated = React.useMemo(
+        () =>
+            stableSort(visibleRows, getComparator(order, orderBy)),
+        [visibleRows, order, orderBy],
+    );
+
+
 
 
     const handlePageChange = (event, page) => {
@@ -381,6 +388,8 @@ export default function EnhancedTable() {
     }
 
     const counter = Math.ceil(pagination.countPage / rowsPerPage)
+
+
 
 
 
@@ -425,7 +434,7 @@ export default function EnhancedTable() {
                                 borderBottom: "none"
                             }
                         }}>
-                            {visibleRows.map((row, index) => {
+                            {visibleRows_updated.map((row, index) => {
                                 const isItemSelected = isSelected(row.id);
                                 const labelId = `enhanced-table-checkbox-${index}`;
 
