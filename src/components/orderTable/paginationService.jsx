@@ -4,9 +4,11 @@ const service = {
     getData: ({ from, to }) => {
         return new Promise((resolve, reject) => {
             const data = jsonData.slice(from, to);
+            const wholeData = jsonData
             resolve({
                 countPage: jsonData.length,
-                data: data
+                data: data,
+                wholeData: wholeData
             });
         })
     }

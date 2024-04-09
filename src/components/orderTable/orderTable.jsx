@@ -1,27 +1,17 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
-import { alpha } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell, { tableCellClasses } from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
-import TablePagination from '@mui/material/TablePagination';
 import TableRow from '@mui/material/TableRow';
 import TableSortLabel from '@mui/material/TableSortLabel';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
 import Paper from '@mui/material/Paper';
 import Checkbox from '@mui/material/Checkbox';
 import IconButton from '@mui/material/IconButton';
-import Tooltip from '@mui/material/Tooltip';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Switch from '@mui/material/Switch';
-import DeleteIcon from '@mui/icons-material/Delete';
-import FilterListIcon from '@mui/icons-material/FilterList';
 import { visuallyHidden } from '@mui/utils';
-import styled from '@emotion/styled';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import { Menu } from '@mui/material';
@@ -35,40 +25,8 @@ import { useState, useEffect } from 'react';
 
 
 
-function createData(id, orderNumber, date, customerName, address, distance, status, help) {
-    return {
-        id,
-        orderNumber,
-        date,
-        customerName,
-        address,
-        distance,
-        status,
-        help
-    };
-}
 
 
-
-const newOrder = "New Order";
-const onDelivery = "On Delivery";
-const delivered = "Delivered";
-
-// Format the imported JSON data using createData function
-const rows = jsonData.map(item => {
-    let status;
-    if (item.status == "newOrder") {
-        status = newOrder;
-    } else if (item.status == "onDelivery") {
-        status = onDelivery;
-    } else if (item.status == "delivered") {
-        status = delivered;
-    } else {
-        // Handle unknown status
-        status = item.status;
-    }
-    return createData(item.id, item.orderNumber, item.date, item.customerName, item.address, item.distance, status);
-});
 
 function descendingComparator(a, b, orderBy) {
     if (b[orderBy] < a[orderBy]) {
@@ -86,10 +44,7 @@ function getComparator(order, orderBy) {
         : (a, b) => -descendingComparator(a, b, orderBy);
 }
 
-// Since 2020 all major browsers ensure sort stability with Array.prototype.sort().
-// stableSort() brings sort stability to non-modern browsers (notably IE11). If you
-// only support modern browsers you can replace stableSort(exampleArray, exampleComparator)
-// with exampleArray.slice().sort(exampleComparator)
+
 function stableSort(array, comparator) {
     const stabilizedThis = array.map((el, index) => [el, index]);
     stabilizedThis.sort((a, b) => {
@@ -311,7 +266,7 @@ export default function EnhancedTable() {
 
     const handleSelectAllClick = (event) => {
         if (event.target.checked) {
-            const newSelected = rows.map((n) => n.id);
+            const newSelected = wholeData.map((n) => n.id);
             setSelected(newSelected);
             return;
         }
@@ -342,32 +297,26 @@ export default function EnhancedTable() {
 
     const isSelected = (id) => selected.indexOf(id) !== -1;
 
-    // Avoid a layout jump when reaching the last page with empty rows.
-    const emptyRows =
-        page > 0 ? Math.max(0, (1 + page) * rowsPerPage - rows.length) : 0;
+
 
 
     const [visibleRows, setVisibleRows] = useState([]);
 
 
-
-    React.useEffect(() => {
+    const [wholeData, setWholeData] = useState([]);
+    useEffect(() => {
         service.getData({ from: pagination.from, to: pagination.to })
             .then(response => {
                 setPagination(prevPagination => ({
                     ...prevPagination,
                     countPage: response.countPage
                 }));
-
-                setVisibleRows(response.data)
+                setVisibleRows(response.data);
+                setWholeData(response.wholeData); // Set the whole data here
             })
             .catch(error => {
                 console.error('Error fetching data:', error);
             });
-
-
-
-
     }, [pagination.from, pagination.to]);
 
     const visibleRows_updated = React.useMemo(
@@ -375,6 +324,12 @@ export default function EnhancedTable() {
             stableSort(visibleRows, getComparator(order, orderBy)),
         [visibleRows, order, orderBy],
     );
+
+
+
+    // Avoid a layout jump when reaching the last page with empty rows.
+    const emptyRows =
+        page > 0 ? Math.max(0, (1 + page) * rowsPerPage - wholeData.length) : 0;
 
 
 
@@ -426,7 +381,7 @@ export default function EnhancedTable() {
                             orderBy={orderBy}
                             onSelectAllClick={handleSelectAllClick}
                             onRequestSort={handleRequestSort}
-                            rowCount={rows.length}
+                            rowCount={wholeData.length}
 
                         />
                         <TableBody sx={{
