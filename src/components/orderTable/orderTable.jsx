@@ -17,7 +17,6 @@ import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import { Menu } from '@mui/material';
 import MenuItem from '@mui/material/MenuItem';
 import CustomizedPagination from './tablePagination';
-import jsonData from './tableData.json'
 import service from './paginationService';
 import { useState, useEffect } from 'react';
 
@@ -57,57 +56,14 @@ function stableSort(array, comparator) {
     return stabilizedThis.map((el) => el[0]);
 }
 
-const headCells = [
-    {
-        id: 'orderNumber',
-        numeric: false,
-        disablePadding: true,
-        label: 'Order ID',
-    },
-    {
-        id: 'date',
-        numeric: true,
-        disablePadding: false,
-        label: 'Date',
-    },
-    {
-        id: 'customerName',
-        numeric: true,
-        disablePadding: false,
-        label: 'Customer Name',
-    },
-    {
-        id: 'address',
-        numeric: true,
-        disablePadding: false,
-        label: 'Location',
-    },
-    {
-        id: 'distance',
-        numeric: true,
-        disablePadding: false,
-        label: 'Amount',
-    },
-    {
-        id: 'status',
-        numeric: true,
-        disablePadding: false,
-        label: 'Status',
-    },
-    {
-        id: 'help',
-        numeric: true,
-        disablePadding: false,
-        label: ' ',
-    },
-];
 
 function EnhancedTableHead(props) {
-    const { onSelectAllClick, order, orderBy, numSelected, rowCount, onRequestSort } =
+    const { onSelectAllClick, order, orderBy, numSelected, rowCount, onRequestSort, ordersHead } =
         props;
     const createSortHandler = (property) => (event) => {
         onRequestSort(event, property);
     };
+    { console.log(ordersHead) }
 
     return (
         <TableHead>
@@ -123,7 +79,7 @@ function EnhancedTableHead(props) {
                         }}
                     />
                 </TableCell>
-                {headCells.map((headCell) => (
+                {ordersHead.map((headCell) => (
                     <TableCell
                         key={headCell.id}
                         align={"left"}
@@ -173,22 +129,37 @@ export default function EnhancedTable() {
     const [page, setPage] = React.useState(1);
     const dense = false;
     const rowsPerPage = 10
-
-
-
     const [pagination, setPagination] = useState({
         countPage: 0,
         from: 0,
         to: rowsPerPage
     });
+    const [visibleRows, setVisibleRows] = useState([]);
+    const [ordersHead, setOrdersHead] = useState([]);
+    const [wholeData, setWholeData] = useState([]);
 
+    useEffect(() => {
+        service.getData({ from: pagination.from, to: pagination.to })
+            .then(response => {
+                setPagination(prevPagination => ({
+                    ...prevPagination,
+                    countPage: response.countPage
+                }));
+                setVisibleRows(response.data);
+                setWholeData(response.wholeData); // Set the whole data here
+                setOrdersHead(response.ordersHead);
 
+            })
+            .catch(error => {
+                console.error('Error fetching data:', error);
+            });
+    }, [pagination.from, pagination.to]);
 
-
-
-
-
-
+    const visibleRows_updated = React.useMemo(
+        () =>
+            stableSort(visibleRows, getComparator(order, orderBy)),
+        [visibleRows, order, orderBy],
+    );
 
 
     const [anchorEl, setAnchorEl] = React.useState(null);
@@ -300,30 +271,7 @@ export default function EnhancedTable() {
 
 
 
-    const [visibleRows, setVisibleRows] = useState([]);
 
-
-    const [wholeData, setWholeData] = useState([]);
-    useEffect(() => {
-        service.getData({ from: pagination.from, to: pagination.to })
-            .then(response => {
-                setPagination(prevPagination => ({
-                    ...prevPagination,
-                    countPage: response.countPage
-                }));
-                setVisibleRows(response.data);
-                setWholeData(response.wholeData); // Set the whole data here
-            })
-            .catch(error => {
-                console.error('Error fetching data:', error);
-            });
-    }, [pagination.from, pagination.to]);
-
-    const visibleRows_updated = React.useMemo(
-        () =>
-            stableSort(visibleRows, getComparator(order, orderBy)),
-        [visibleRows, order, orderBy],
-    );
 
 
 
@@ -382,6 +330,8 @@ export default function EnhancedTable() {
                             onSelectAllClick={handleSelectAllClick}
                             onRequestSort={handleRequestSort}
                             rowCount={wholeData.length}
+                            ordersHead={ordersHead}
+
 
                         />
                         <TableBody sx={{

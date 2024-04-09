@@ -111,4 +111,56 @@ const sidebarSubuttons_2 = [
 
 // --------------------End of sidebar subbuttons ---------------------
 
-export { sidebarButtons, sidebarSubuttons_1, sidebarSubuttons_2 }
+
+// --------------------Start of table header ---------------------
+
+const ordersHeadCells = [
+    {
+        id: 1,
+        numeric: false,
+        disablePadding: true,
+        label: 'Order ID',
+    },
+    {
+        id: 2,
+        numeric: true,
+        disablePadding: false,
+        label: 'Date',
+    },
+    {
+        id: 3,
+        numeric: true,
+        disablePadding: false,
+        label: 'Customer Name',
+    },
+    {
+        id: 4,
+        numeric: true,
+        disablePadding: false,
+        label: 'Location',
+    },
+    {
+        id: 5,
+        numeric: true,
+        disablePadding: false,
+        label: 'Amount',
+    },
+    {
+        id: 6,
+        numeric: true,
+        disablePadding: false,
+        label: 'Status',
+    },
+    {
+        id: 7,
+        numeric: true,
+        disablePadding: false,
+        label: ' ',
+    },
+];
+
+
+
+// --------------------End of table header ---------------------
+
+export { sidebarButtons, sidebarSubuttons_1, sidebarSubuttons_2, ordersHeadCells }
