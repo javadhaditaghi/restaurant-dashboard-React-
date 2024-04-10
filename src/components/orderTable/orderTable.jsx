@@ -201,10 +201,6 @@ export default function EnhancedTable() {
 
 
 
-
-
-
-
     // Avoid a layout jump when reaching the last page with empty rows.
     const emptyRows =
         page > 0 ? Math.max(0, (1 + page) * rowsPerPage - wholeData.length) : 0;
@@ -221,15 +217,6 @@ export default function EnhancedTable() {
     }
 
     const counter = Math.ceil(pagination.countPage / rowsPerPage)
-
-
-
-
-
-
-
-
-
 
 
     return (
