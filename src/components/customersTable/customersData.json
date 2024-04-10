@@ -460,5 +460,19 @@
             "price": 47.75,
             "status": "Processing"
         }
+    },
+    {
+        "id": 34,
+        "customerId": "#C-004592",
+        "joinDate": "September 6, 2024",
+        "customerName": "Christina Hall",
+        "location": "345 Pine St, Hillcrest",
+        "totalSpent": 850.25,
+        "lastOrder": {
+            "orderNumber": "#C-004596",
+            "date": "June 22, 2024",
+            "price": 47.75,
+            "status": "Processing"
+        }
     }
 ]

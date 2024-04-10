@@ -50,17 +50,13 @@ function stableSort(array, comparator) {
 
 
 
+
+
 export default function EnhancedTable() {
 
-    //Getting the url name 
-    const componentDidMount = () => {
-        const pathname = window.location.pathname;
-        const parts = pathname.split('/');
-        const ord = parts[parts.length - 1];
-        console.log(ord);
-    }
 
-    componentDidMount()
+
+
 
 
 
@@ -91,23 +87,68 @@ export default function EnhancedTable() {
 
 
 
+
     // Fetching the data to use in the table
     useEffect(() => {
         service.getData({ from: pagination.from, to: pagination.to })
+
             .then(response => {
+                //Finding the last item in the url (is it order? or customer?)
+                const pathname = window.location.pathname;
+                const parts = pathname.split('/');
+                const relatedPath = parts[parts.length - 1];
+
+
+                //Setting the pagingation
                 setPagination(prevPagination => ({
                     ...prevPagination,
-                    countPage: response.countPage
+                    countPage: relatedPath == 'orders' ? response.countPage : response.countPageCustomers
                 }));
-                setVisibleRows(response.data);
-                setWholeData(response.wholeData); // Set the whole data here
-                setOrdersHead(response.ordersHead);
+
+
+
+
+                setVisibleRows(relatedPath == 'orders' ? response.data : response.customersData);
+                setWholeData(relatedPath == 'orders' ? response.wholeData : response.wholeCustomersData); // Set the whole data here
+                setOrdersHead(relatedPath == 'orders' ? response.ordersHead : response.customersHead);
 
             })
             .catch(error => {
                 console.error('Error fetching data:', error);
             });
     }, [pagination.from, pagination.to]);
+
+
+
+
+    //Getting the url name 
+    const componentDidMount = () => {
+        let xdata
+        const pathname = window.location.pathname;
+        const parts = pathname.split('/');
+        const ord = parts[parts.length - 1];
+        if (ord == 'order') {
+            xdata = 1
+        }
+        else if (ord == 'customer') {
+            xdata = 2
+        } else (
+            console.log('page not found')
+        )
+
+        console.log(xdata)
+        console.log(ord)
+    }
+
+    componentDidMount()
+
+
+
+
+
+
+
+
 
     const visibleRows_updated = React.useMemo(
         () =>
@@ -311,21 +352,23 @@ export default function EnhancedTable() {
                                             padding="none"
 
                                         >
-                                            {row.orderNumber}
+                                            {row.orderNumber || row.customerId}
                                         </TableCell>
-                                        <TableCell align="left">{row.date}</TableCell>
+                                        <TableCell align="left">{row.date || row.joinDate}</TableCell>
                                         <TableCell align="left">{row.customerName}</TableCell>
-                                        <TableCell align="left">{row.address}</TableCell>
-                                        <TableCell align="left">{row.distance}</TableCell>
+                                        <TableCell align="left">{row.address || row.location}</TableCell>
+                                        <TableCell align="left">{row.distance || `$${row.totalSpent}`}</TableCell>
                                         <TableCell align="left"><Box sx={{
 
                                             borderRadius: "10px", padding: "13px 16px",
                                             backgroundColor: row.status == "Delivered"
                                                 ? (theme) => theme.palette.success.lighter
-                                                : (row.status == "On Delivery" ? (theme) => theme.palette.primary.lighter : (theme) => theme.palette.danger.lighter),
+                                                : (row.status == "On Delivery" ? (theme) => theme.palette.primary.lighter :
+                                                    (row.status == 'New Order' ? (theme) => theme.palette.danger.lighter : "rgba(62, 73, 84, 0.06)")),
+
                                             color: row.status == "Delivered"
                                                 ? (theme) => theme.palette.success.main
-                                                : (row.status == "On Delivery" ? (theme) => theme.palette.primary.main : (theme) => theme.palette.danger.main),
+                                                : (row.status == "On Delivery" ? (theme) => theme.palette.primary.main : (row.status == 'New Order' ? (theme) => theme.palette.danger.main : "#3E4954")),
                                             fontWeight: "bold",
                                             display: "inline-flex",
                                             alignItems: "center",
@@ -333,7 +376,7 @@ export default function EnhancedTable() {
                                             justifyContent: "center",
 
 
-                                        }}>{row.status}</Box></TableCell>
+                                        }}>{row.status || row.lastOrder.price}</Box></TableCell>
                                         <TableCell align="left"><IconButton
                                             aria-label="more info"
 
@@ -367,6 +410,6 @@ export default function EnhancedTable() {
             />
 
 
-        </Box>
+        </Box >
     );
 }
