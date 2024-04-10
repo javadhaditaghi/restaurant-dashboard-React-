@@ -1,5 +1,6 @@
 import jsonData from './tableData.json'
 import { ordersHeadCells } from '../../constants/consts';
+import customersData from '../customersTable/customersData.json'
 
 const service = {
     getData: ({ from, to }) => {
