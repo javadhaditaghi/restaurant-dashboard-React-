@@ -15,6 +15,7 @@ import CustomizedPagination from './tablePagination';
 import service from './paginationService';
 import { useState, useEffect } from 'react';
 import { EnhancedTableHead } from './enhancedTable';
+import { useParams } from 'react-router-dom';
 
 
 
@@ -50,6 +51,22 @@ function stableSort(array, comparator) {
 
 
 export default function EnhancedTable() {
+
+    //Getting the url name 
+    const componentDidMount = () => {
+        const pathname = window.location.pathname;
+        const parts = pathname.split('/');
+        const ord = parts[parts.length - 1];
+        console.log(ord);
+    }
+
+    componentDidMount()
+
+
+
+
+
+
     const [order, setOrder] = React.useState('asc');
     const [orderBy, setOrderBy] = React.useState('date');
     const [selected, setSelected] = React.useState([]);
@@ -64,6 +81,13 @@ export default function EnhancedTable() {
     const [visibleRows, setVisibleRows] = useState([]);
     const [ordersHead, setOrdersHead] = useState([]);
     const [wholeData, setWholeData] = useState([]);
+
+    const { pageName } = useParams()
+
+
+
+
+
 
 
 
