@@ -9,13 +9,13 @@ import Paper from '@mui/material/Paper';
 import Checkbox from '@mui/material/Checkbox';
 import IconButton from '@mui/material/IconButton';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
-import { Menu } from '@mui/material';
-import MenuItem from '@mui/material/MenuItem';
 import CustomizedPagination from './tablePagination';
 import service from './paginationService';
 import { useState, useEffect } from 'react';
 import { EnhancedTableHead } from './enhancedTable';
 import { useParams } from 'react-router-dom';
+import RenderMenu from './tableMenue';
+
 
 
 
@@ -52,15 +52,11 @@ function stableSort(array, comparator) {
 
 
 
+
+
+
+
 export default function EnhancedTable() {
-
-
-
-
-
-
-
-
 
 
     const [order, setOrder] = React.useState('asc');
@@ -83,11 +79,6 @@ export default function EnhancedTable() {
 
 
 
-
-
-
-
-
     // Fetching the data to use in the table
     useEffect(() => {
         service.getData({ from: pagination.from, to: pagination.to })
@@ -105,9 +96,6 @@ export default function EnhancedTable() {
                     countPage: relatedPath == 'orders' ? response.countPage : response.countPageCustomers
                 }));
 
-
-
-
                 setVisibleRows(relatedPath == 'orders' ? response.data : response.customersData);
                 setWholeData(relatedPath == 'orders' ? response.wholeData : response.wholeCustomersData); // Set the whole data here
                 setOrdersHead(relatedPath == 'orders' ? response.ordersHead : response.customersHead);
@@ -117,35 +105,6 @@ export default function EnhancedTable() {
                 console.error('Error fetching data:', error);
             });
     }, [pagination.from, pagination.to]);
-
-
-
-
-    //Getting the url name 
-    const componentDidMount = () => {
-        let xdata
-        const pathname = window.location.pathname;
-        const parts = pathname.split('/');
-        const ord = parts[parts.length - 1];
-        if (ord == 'order') {
-            xdata = 1
-        }
-        else if (ord == 'customer') {
-            xdata = 2
-        } else (
-            console.log('page not found')
-        )
-
-        console.log(xdata)
-        console.log(ord)
-    }
-
-    componentDidMount()
-
-
-
-
-
 
 
 
@@ -169,60 +128,9 @@ export default function EnhancedTable() {
     };
 
     const menuId = 'primary-search-account-menu';
-    const renderMenu = (
-        <Menu
-            sx={{
-                [`.css-3dzjca-MuiPaper-root-MuiPopover-paper-MuiMenu-paper`]: {
-                    boxShadow: " 0px 1px 2px 0px rgba(0, 0, 0, 0.13)",
-                    borderRadius: "12px"
 
-                }
-            }}
-            anchorEl={anchorEl}
-            anchorOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
 
-            }}
-            id={menuId}
-            keepMounted
-            transformOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
-            }}
-            open={isMenuOpen}
-            onClose={handleMenuClose}
 
-        >
-            <MenuItem onClick={handleMenuClose} sx={{
-                padding: "15px 20px",
-                transition: "color 0.2s ease, font-weight 0.2s ease",
-                '&:hover': {
-                    color: (theme) => theme.palette.primary.main,
-                    fontWeight: "600"
-                }
-            }}>
-                <Box sx={{ pr: 2, display: "flex", }}><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                    <path d="M22 11.08V12C21.9988 14.1564 21.3005 16.2547 20.0093 17.9818C18.7182 19.709 16.9033 20.9725 14.8354 21.5839C12.7674 22.1953 10.5573 22.1219 8.53447 21.3746C6.51168 20.6273 4.78465 19.2461 3.61096 17.4371C2.43727 15.628 1.87979 13.4881 2.02168 11.3363C2.16356 9.18455 2.99721 7.13631 4.39828 5.49706C5.79935 3.85781 7.69279 2.71537 9.79619 2.24013C11.8996 1.7649 14.1003 1.98232 16.07 2.85999" stroke="#2F4CDD" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                    <path d="M22 4L12 14.01L9 11.01" stroke="#2F4CDD" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                </svg></Box>
-                Accept Order</MenuItem>
-            <MenuItem onClick={handleMenuClose} sx={{
-                padding: "15px 20px",
-                transition: "color 0.2s ease, font-weight 0.2s ease",
-                '&:hover': {
-                    color: (theme) => theme.palette.danger.main,
-                    fontWeight: "600"
-                }
-            }}>
-                <Box sx={{ pr: 2, display: "flex", }}><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                    <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="#F24242" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                    <path d="M15 9L9 15" stroke="#F24242" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                    <path d="M9 9L15 15" stroke="#F24242" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                </svg></Box>
-                Reject Order</MenuItem>
-        </Menu>
-    );
 
     const handleRequestSort = (event, property) => {
         const isAsc = orderBy === property && order === 'asc';
@@ -282,6 +190,9 @@ export default function EnhancedTable() {
     }
 
     const counter = Math.ceil(pagination.countPage / rowsPerPage)
+
+
+
 
 
     return (
@@ -376,7 +287,7 @@ export default function EnhancedTable() {
                                             justifyContent: "center",
 
 
-                                        }}>{row.status || row.lastOrder.price}</Box></TableCell>
+                                        }}>{row.status || `$${row.lastOrder.price}`}</Box></TableCell>
                                         <TableCell align="left"><IconButton
                                             aria-label="more info"
 
@@ -384,7 +295,14 @@ export default function EnhancedTable() {
                                             onClick={handleProfileMenuOpen}
                                             color="inherit"
                                         ><MoreHorizIcon /></IconButton></TableCell>
-                                        {renderMenu}
+                                        <RenderMenu
+                                            anchorEl={anchorEl}
+                                            menuId={menuId}
+                                            isMenuOpen={isMenuOpen}
+                                            handleMenuClose={handleMenuClose}
+                                            category={row.category}
+
+                                        />
 
                                     </TableRow>
                                 );

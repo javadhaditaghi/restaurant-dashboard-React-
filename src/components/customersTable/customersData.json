@@ -5,6 +5,7 @@
         "joinDate": "January 5, 2022",
         "customerName": "John Doe",
         "location": "123 Main St, Anytown",
+        "category": "customers",
         "totalSpent": 500.25,
         "lastOrder": {
             "orderNumber": "#C-004564",
@@ -19,6 +20,7 @@
         "joinDate": "February 12, 2022",
         "customerName": "Jane Smith",
         "location": "456 Elm St, Springfield",
+        "category": "customers",
         "totalSpent": 320.75,
         "lastOrder": {
             "orderNumber": "#C-004565",
@@ -33,6 +35,7 @@
         "joinDate": "March 20, 2022",
         "customerName": "David Johnson",
         "location": "789 Oak St, Lakeside",
+        "category": "customers",
         "totalSpent": 1020.00,
         "lastOrder": {
             "orderNumber": "#C-004566",
@@ -47,6 +50,7 @@
         "joinDate": "April 25, 2022",
         "customerName": "Emily Brown",
         "location": "321 Pine St, Hilltop",
+        "category": "customers",
         "totalSpent": 800.50,
         "lastOrder": {
             "orderNumber": "#C-004567",
@@ -61,6 +65,7 @@
         "joinDate": "May 15, 2022",
         "customerName": "Michael Wilson",
         "location": "567 Maple St, Riverside",
+        "category": "customers",
         "totalSpent": 620.90,
         "lastOrder": {
             "orderNumber": "#C-004568",
@@ -75,6 +80,7 @@
         "joinDate": "June 8, 2022",
         "customerName": "Amanda Jones",
         "location": "876 Cedar St, Brookside",
+        "category": "customers",
         "totalSpent": 430.20,
         "lastOrder": {
             "orderNumber": "#C-004569",
@@ -89,6 +95,7 @@
         "joinDate": "July 3, 2022",
         "customerName": "Matthew Martinez",
         "location": "987 Walnut St, Oakville",
+        "category": "customers",
         "totalSpent": 920.75,
         "lastOrder": {
             "orderNumber": "#C-004570",
@@ -103,6 +110,7 @@
         "joinDate": "August 19, 2022",
         "customerName": "Sarah Taylor",
         "location": "234 Birch St, Pineville",
+        "category": "customers",
         "totalSpent": 1100.35,
         "lastOrder": {
             "orderNumber": "#C-004571",
@@ -117,6 +125,7 @@
         "joinDate": "September 10, 2022",
         "customerName": "Daniel Anderson",
         "location": "543 Spruce St, Greenwood",
+        "category": "customers",
         "totalSpent": 720.60,
         "lastOrder": {
             "orderNumber": "#C-004572",
@@ -131,6 +140,7 @@
         "joinDate": "October 7, 2022",
         "customerName": "Jessica Garcia",
         "location": "765 Cherry St, Woodville",
+        "category": "customers",
         "totalSpent": 880.90,
         "lastOrder": {
             "orderNumber": "#C-004573",
@@ -145,6 +155,7 @@
         "joinDate": "November 15, 2022",
         "customerName": "Christopher Rodriguez",
         "location": "876 Olive St, Fairview",
+        "category": "customers",
         "totalSpent": 960.25,
         "lastOrder": {
             "orderNumber": "#C-004574",
@@ -159,6 +170,7 @@
         "joinDate": "December 3, 2022",
         "customerName": "Jennifer Martinez",
         "location": "987 Pine St, Sunnyside",
+        "category": "customers",
         "totalSpent": 680.40,
         "lastOrder": {
             "orderNumber": "#C-004575",
@@ -173,6 +185,7 @@
         "joinDate": "January 20, 2023",
         "customerName": "Ryan Hernandez",
         "location": "345 Cedar St, Hillcrest",
+        "category": "customers",
         "totalSpent": 520.80,
         "lastOrder": {
             "orderNumber": "#C-004576",
@@ -187,6 +200,7 @@
         "joinDate": "February 8, 2023",
         "customerName": "Melissa Lopez",
         "location": "654 Elm St, Lakeside",
+        "category": "customers",
         "totalSpent": 1100.75,
         "lastOrder": {
             "orderNumber": "#C-004577",
@@ -201,6 +215,7 @@
         "joinDate": "March 12, 2023",
         "customerName": "Kevin Young",
         "location": "987 Oak St, Brookside",
+        "category": "customers",
         "totalSpent": 880.30,
         "lastOrder": {
             "orderNumber": "#C-004578",
@@ -215,6 +230,7 @@
         "joinDate": "April 5, 2023",
         "customerName": "Laura King",
         "location": "210 Maple St, Oakville",
+        "category": "customers",
         "totalSpent": 620.90,
         "lastOrder": {
             "orderNumber": "#C-004579",
@@ -229,6 +245,7 @@
         "joinDate": "May 18, 2023",
         "customerName": "Brian Wright",
         "location": "876 Pine St, Hilltop",
+        "category": "customers",
         "totalSpent": 770.20,
         "lastOrder": {
             "orderNumber": "#C-004580",
@@ -243,6 +260,7 @@
         "joinDate": "June 9, 2023",
         "customerName": "Lisa Scott",
         "location": "543 Cedar St, Pineville",
+        "category": "customers",
         "totalSpent": 910.75,
         "lastOrder": {
             "orderNumber": "#C-004581",
@@ -257,6 +275,7 @@
         "joinDate": "July 3, 2023",
         "customerName": "Brandon Green",
         "location": "765 Elm St, Greenwood",
+        "category": "customers",
         "totalSpent": 1020.60,
         "lastOrder": {
             "orderNumber": "#C-004582",
@@ -271,6 +290,7 @@
         "joinDate": "August 22, 2023",
         "customerName": "Ashley Adams",
         "location": "987 Cherry St, Woodville",
+        "category": "customers",
         "totalSpent": 840.90,
         "lastOrder": {
             "orderNumber": "#C-004583",
@@ -285,6 +305,7 @@
         "joinDate": "September 14, 2023",
         "customerName": "Kyle Hernandez",
         "location": "654 Olive St, Fairview",
+        "category": "customers",
         "totalSpent": 720.25,
         "lastOrder": {
             "orderNumber": "#C-004584",
@@ -299,6 +320,7 @@
         "joinDate": "October 8, 2023",
         "customerName": "Michelle Ramirez",
         "location": "210 Pine St, Sunnyside",
+        "category": "customers",
         "totalSpent": 660.40,
         "lastOrder": {
             "orderNumber": "#C-004585",
@@ -313,6 +335,7 @@
         "joinDate": "November 2, 2023",
         "customerName": "Eric Hall",
         "location": "876 Cedar St, Hillcrest",
+        "category": "customers",
         "totalSpent": 890.80,
         "lastOrder": {
             "orderNumber": "#C-004586",
@@ -327,6 +350,7 @@
         "joinDate": "December 20, 2023",
         "customerName": "Samantha Torres",
         "location": "345 Elm St, Lakeside",
+        "category": "customers",
         "totalSpent": 1180.75,
         "lastOrder": {
             "orderNumber": "#C-004587",
@@ -341,6 +365,7 @@
         "joinDate": "January 16, 2024",
         "customerName": "Nicholas Flores",
         "location": "654 Oak St, Brookside",
+        "category": "customers",
         "totalSpent": 540.30,
         "lastOrder": {
             "orderNumber": "#C-004588",
@@ -355,6 +380,7 @@
         "joinDate": "February 9, 2024",
         "customerName": "Megan Clark",
         "location": "987 Maple St, Oakville",
+        "category": "customers",
         "totalSpent": 960.20,
         "lastOrder": {
             "orderNumber": "#C-004589",
@@ -369,6 +395,7 @@
         "joinDate": "March 7, 2024",
         "customerName": "Justin Lewis",
         "location": "543 Pine St, Hilltop",
+        "category": "customers",
         "totalSpent": 720.90,
         "lastOrder": {
             "orderNumber": "#C-004590",
@@ -383,6 +410,7 @@
         "joinDate": "April 18, 2024",
         "customerName": "Rachel Walker",
         "location": "765 Cedar St, Pineville",
+        "category": "customers",
         "totalSpent": 680.75,
         "lastOrder": {
             "orderNumber": "#C-004591",
@@ -397,6 +425,7 @@
         "joinDate": "May 10, 2024",
         "customerName": "Timothy Perez",
         "location": "987 Elm St, Greenwood",
+        "category": "customers",
         "totalSpent": 950.60,
         "lastOrder": {
             "orderNumber": "#C-004592",
@@ -411,6 +440,7 @@
         "joinDate": "June 5, 2024",
         "customerName": "Rebecca Hill",
         "location": "654 Cherry St, Woodville",
+        "category": "customers",
         "totalSpent": 800.25,
         "lastOrder": {
             "orderNumber": "#C-004593",
@@ -425,6 +455,7 @@
         "joinDate": "July 25, 2024",
         "customerName": "Paula Martinez",
         "location": "210 Olive St, Fairview",
+        "category": "customers",
         "totalSpent": 720.30,
         "lastOrder": {
             "orderNumber": "#C-004594",
@@ -439,6 +470,7 @@
         "joinDate": "August 11, 2024",
         "customerName": "Tyler Gonzalez",
         "location": "876 Cedar St, Sunnyside",
+        "category": "customers",
         "totalSpent": 620.90,
         "lastOrder": {
             "orderNumber": "#C-004595",
@@ -453,6 +485,7 @@
         "joinDate": "September 6, 2024",
         "customerName": "Christina Hall",
         "location": "345 Pine St, Hillcrest",
+        "category": "customers",
         "totalSpent": 850.25,
         "lastOrder": {
             "orderNumber": "#C-004596",
@@ -467,6 +500,7 @@
         "joinDate": "September 6, 2024",
         "customerName": "Christina Hall",
         "location": "345 Pine St, Hillcrest",
+        "category": "customers",
         "totalSpent": 850.25,
         "lastOrder": {
             "orderNumber": "#C-004596",
