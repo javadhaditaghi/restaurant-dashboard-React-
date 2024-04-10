@@ -112,7 +112,7 @@ const sidebarSubuttons_2 = [
 // --------------------End of sidebar subbuttons ---------------------
 
 
-// --------------------Start of table header ---------------------
+// --------------------Start of orders table header ---------------------
 
 const ordersHeadCells = [
     {
@@ -161,6 +161,52 @@ const ordersHeadCells = [
 
 
 
-// --------------------End of table header ---------------------
+// --------------------End of table orders header ---------------------
+// --------------------Start of table customers header ---------------------
+const customersHeadCells = [
+    {
+        id: 1,
+        numeric: false,
+        disablePadding: true,
+        label: 'Customer ID',
+    },
+    {
+        id: 2,
+        numeric: true,
+        disablePadding: false,
+        label: 'Join Date',
+    },
+    {
+        id: 3,
+        numeric: true,
+        disablePadding: false,
+        label: 'Customer Name',
+    },
+    {
+        id: 4,
+        numeric: true,
+        disablePadding: false,
+        label: 'Location',
+    },
+    {
+        id: 5,
+        numeric: true,
+        disablePadding: false,
+        label: 'Total Spent',
+    },
+    {
+        id: 6,
+        numeric: true,
+        disablePadding: false,
+        label: 'Last Order',
+    },
+    {
+        id: 7,
+        numeric: true,
+        disablePadding: false,
+        label: ' ',
+    },
+];
+// --------------------End of table customers header ---------------------
 
-export { sidebarButtons, sidebarSubuttons_1, sidebarSubuttons_2, ordersHeadCells }
+export { sidebarButtons, sidebarSubuttons_1, sidebarSubuttons_2, ordersHeadCells, customersHeadCells }
