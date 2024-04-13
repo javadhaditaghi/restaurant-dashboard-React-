@@ -1,6 +1,8 @@
 import { Box } from "@mui/material"
 import Title from "../components/dashboardHeader/title"
 import SelectData from "../components/dashboardHeader/select"
+import Grid2 from "@mui/material/Unstable_Grid2/Grid2";
+import InnerBox2 from "../components/ordersSummary/InnerBox2";
 
 
 const Analytics = () => {
@@ -10,6 +12,21 @@ const Analytics = () => {
                 <Title title="Analytics" subtitle="Here is your restaurant summary with graph view" />
                 <SelectData />
             </Box>
+            <Grid2 container rowSpacing={2} columnSpacing={{ xs: 1, sm: 2, md: 3 }} flexGrow={2}>
+                <Grid2 sm={12} md={6}>
+                    <InnerBox2>
+
+                    </InnerBox2>
+                </Grid2>
+                <Grid2 sm={12} md={6}>
+                    <InnerBox2>
+
+                    </InnerBox2>
+
+                </Grid2>
+
+            </Grid2>
+
 
         </Box>
     )
