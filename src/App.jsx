@@ -5,6 +5,8 @@ import Dashboard from "./pages/dashboard";
 import Orders from "./pages/orders";
 import Customers from "./pages/Customers";
 import Menues from "./menues";
+import Analytics from "./pages/analytics";
+
 
 
 
@@ -23,6 +25,7 @@ function App() {
           <Route path="/orders" element={<Orders />} />
           <Route path="/menues" element={<Menues />} />
           <Route path="/customers" element={<Customers />} />
+          <Route path="/analytics" element={<Analytics />} />
         </Route>
       </Routes>
     </BrowserRouter>
