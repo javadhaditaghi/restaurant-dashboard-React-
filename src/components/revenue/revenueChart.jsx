@@ -15,6 +15,9 @@ const RevenueChart = ({ data }) => {
     const incomeData = data["incomeData"];
     const xLabels = data["Labels"];
 
+    const orderData = data["orderData"]
+    console.log(orderData)
+
 
 
     return (
@@ -24,10 +27,15 @@ const RevenueChart = ({ data }) => {
             height={350}
             colors={['#2F4CDD', '#B519EC']}
             series={
-                [
-                    { data: incomeData, label: 'Income', area: 'true' },
-                    { data: expenseData, label: 'Expense', area: 'true' },
-                ]}
+                orderData == undefined ?
+                    [
+                        { data: incomeData, label: 'Income', area: 'true' },
+                        { data: expenseData, label: 'Expense', area: 'true' },
+                    ] : [
+                        { data: orderData, label: 'order', area: 'true' },
+                    ]
+
+            }
             xAxis={[{ scaleType: 'point', data: xLabels }]}
 
             slotProps={{

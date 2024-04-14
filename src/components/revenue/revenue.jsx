@@ -30,7 +30,7 @@ const Revenue = () => {
                 <RevenueHeader handleData={handleData} />
                 <ChartInfo data={data} />
                 <RevenueChart data={data} />
-                {console.log(data)}
+
 
             </InnerBox2>
 
