@@ -6,6 +6,7 @@ import OrderInfHeader from "../../ordersSummary/orderInfoHeader";
 import RevenueChart from "../../revenue/revenueChart";
 import jsonData from "./ordersData.json"
 import { useState } from "react";
+import CardHeaderTxt from "../cardHeaderTxt.jsx/cardHeaderTxt";
 
 
 const AnalyticsOrder = () => {
@@ -24,10 +25,7 @@ const AnalyticsOrder = () => {
         <Grid2 sm={12} md={6}>
             <InnerBox2>
                 <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "10px" }}>
-                    <Box>
-                        <Typography variant="h7" fontWeight={700}>Chart Orders</Typography>
-                        <Typography variant="caption" color={"#969BA0"} sx={{ display: "block" }}>Lorem ipsum dolor sit amet, consectetur</Typography>
-                    </Box>
+                    <CardHeaderTxt title="Chart Orders" subtitle="Lorem ipsum dolor sit amet, consectetur" />
                     <Box>
                         <OrderInfHeader handleData={handleData} />
                     </Box>

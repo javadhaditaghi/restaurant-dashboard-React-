@@ -23,12 +23,10 @@ const Analytics = () => {
                     <InnerBox2>
 
                     </InnerBox2>
-
                 </Grid2>
 
+
             </Grid2>
-
-
         </Box >
     )
 }
