@@ -19,10 +19,7 @@ const Analytics = () => {
             </Box>
             <Grid2 container rowSpacing={2} columnSpacing={{ xs: 1, sm: 2, md: 3 }} flexGrow={2}>
                 <AnalyticsOrder />
-
                 <TrendingItems />
-
-
             </Grid2>
         </Box >
     )

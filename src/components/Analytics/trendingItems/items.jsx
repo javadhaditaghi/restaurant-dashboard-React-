@@ -10,11 +10,11 @@ const TrendingItem = () => {
     return (
         <Box>
             {
-                jsonData.map((item) => (
+                jsonData.sort((a, b) => b.totalSale - a.totalSale).map((item, index) => (
                     <Box key={item.id}>
                         <Grid2 container spacing={1} sx={{ display: "flex", alignItems: "center" }}>
                             <Grid2 xs={1}>
-                                <Typography fontSize={22} fontWeight={600} color={"#969BA0"} sx={{ textAlign: "center" }}>{`#${item.id}`}</Typography>
+                                <Typography fontSize={22} fontWeight={600} color={"#969BA0"} sx={{ textAlign: "center" }}>{`#${index + 1}`}</Typography>
 
                             </Grid2>
                             <Grid2 xs={2} sx={{ display: "flex", justifyContent: "center" }}>
@@ -46,7 +46,7 @@ const TrendingItem = () => {
 
                                     <Box sx={{ margin: "3px" }}>
                                         <Typography fontSize={"22px"} fontWeight={600} >{item.totalSale}</Typography>
-                                        <Typography fontSize={"13px"} color={"#969BA0"}> {`Sales (${item.salesGrowth})`}</Typography>
+                                        <Typography fontSize={"13px"} color={"#969BA0"}> {`Sales (${item.salesGrowth}%)`}</Typography>
                                     </Box>
 
                                 </Box>

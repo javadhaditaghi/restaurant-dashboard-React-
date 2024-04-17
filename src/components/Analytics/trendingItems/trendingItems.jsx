@@ -17,7 +17,6 @@ const TrendingItems = () => {
                 </Box>
                 <Box sx={{ padding: "10px 20px" }}>
                     <TrendingItem />
-
                 </Box>
 
 

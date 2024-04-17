@@ -1,5 +1,4 @@
-
- [
+[
           {
             "id": 1,
             "title": "Tuna soup spinach with himalaya salt",
@@ -7,7 +6,7 @@
             "price": 12.56,
             "type": "main course",
             "totalSale": 524,
-            "salesGrowth": "12%"
+            "salesGrowth": 12
           },
           {
             "id": 2,
@@ -16,7 +15,7 @@
             "price": 15.99,
             "type": "main course",
             "totalSale": 360,
-            "salesGrowth": "8%"
+            "salesGrowth": 8
           },
           {
             "id": 3,
@@ -25,7 +24,7 @@
             "price": 10.99,
             "type": "main course",
             "totalSale": 442,
-            "salesGrowth": "10%"
+            "salesGrowth": -10
           },
           {
             "id": 4,
@@ -34,7 +33,7 @@
             "price": 13.75,
             "type": "main course",
             "totalSale": 312,
-            "salesGrowth": "6%"
+            "salesGrowth": 6
           },
           {
             "id": 5,
@@ -43,44 +42,9 @@
             "price": 14.25,
             "type": "main course",
             "totalSale": 288,
-            "salesGrowth": "5%"
-          },
-          {
-            "id": 6,
-            "title": "Mushroom Risotto",
-            "imgURL": "../../../src/assets/images/foods/Food_6.png",
-            "price": 11.95,
-            "type": "main course",
-            "totalSale": 380,
-            "salesGrowth": "9%"
-          },
-          {
-            "id": 7,
-            "title": "Beef Tacos with Avocado Salsa",
-            "imgURL": "../../../src/assets/images/foods/Food_7.png",
-            "price": 9.99,
-            "type": "main course",
-            "totalSale": 498,
-            "salesGrowth": "11%"
-          },
-          {
-            "id": 8,
-            "title": "Chicken Caesar Salad",
-            "imgURL": "../../../src/assets/images/foods/Food_8.png",
-            "price": 10.50,
-            "type": "main course",
-            "totalSale": 436,
-            "salesGrowth": "10%"
-          },
-          {
-            "id": 9,
-            "title": "Pesto Pasta with Cherry Tomatoes",
-            "imgURL": "../../../src/assets/images/foods/Food_9.png",
-            "price": 12.25,
-            "type": "main course",
-            "totalSale": 375,
-            "salesGrowth": "9%"
+            "salesGrowth": -5
           }
+          
         ]
 
 

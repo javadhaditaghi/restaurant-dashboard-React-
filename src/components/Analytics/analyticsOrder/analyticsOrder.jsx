@@ -22,7 +22,7 @@ const AnalyticsOrder = () => {
     }
 
     return (
-        <Grid2 sm={12} md={6}>
+        <Grid2 sm={12} md={6} maxHeight={"480px"}>
             <InnerBox2>
                 <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "10px" }}>
                     <CardHeaderTxt title="Chart Orders" subtitle="Lorem ipsum dolor sit amet, consectetur" />
