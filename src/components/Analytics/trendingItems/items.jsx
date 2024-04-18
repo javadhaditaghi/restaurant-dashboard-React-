@@ -25,7 +25,7 @@ const TrendingItem = ({ data }) => {
                                 <Typography fontWeight={600}>{item.title}</Typography>
                                 <Box sx={{ display: "flex" }}>
                                     <Box fontSize={"12px"} fontWeight={700} lineHeight={3.5}>${item.price} &ensp;&ensp;</Box>
-                                    <Box fontSize={"12px"} fontWeight={600} lineHeight={3.5} color={"#2F4CDD"}>{item.price}</Box>
+                                    <Box fontSize={"12px"} fontWeight={600} lineHeight={3.5} color={"#2F4CDD"}>{item.type}</Box>
 
                                 </Box>
                             </Grid2>

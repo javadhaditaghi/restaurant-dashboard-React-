@@ -24,19 +24,18 @@ const TrendingItems = () => {
 
 
     return (
-        <Grid2 sm={12} md={6}>
-            <InnerBox2>
-                <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "10px" }}>
-                    <CardHeaderTxt title="🔥 Trending Items" subtitle="Lorem ipsum dolor sit amet, consectetur" />
-                    <CardDropdown handleData={handleData} />
-                </Box>
-                <Box sx={{ padding: "10px 20px" }}>
-                    <TrendingItem data={data} />
-                </Box>
 
+        <InnerBox2>
+            <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "10px" }}>
+                <CardHeaderTxt title="🔥 Trending Items" subtitle="Lorem ipsum dolor sit amet, consectetur" />
+                <CardDropdown handleData={handleData} />
+            </Box>
+            <Box sx={{ padding: "10px 20px" }}>
+                <TrendingItem data={data} />
+            </Box>
 
-            </InnerBox2>
-        </Grid2>
+        </InnerBox2>
+
 
 
     )

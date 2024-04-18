@@ -5,6 +5,8 @@ import Grid2 from "@mui/material/Unstable_Grid2/Grid2";
 import InnerBox2 from "../components/ordersSummary/InnerBox2";
 import AnalyticsOrder from "../components/Analytics/analyticsOrder/analyticsOrder";
 import TrendingItems from "../components/Analytics/trendingItems/trendingItems";
+import LeftSide from "../components/Analytics/leftSide/leftSide";
+import RightSide from "../components/Analytics/rightSide/rightSide";
 
 
 
@@ -18,10 +20,17 @@ const Analytics = () => {
                 <SelectData />
             </Box>
             <Grid2 container rowSpacing={2} columnSpacing={{ xs: 1, sm: 2, md: 3 }} flexGrow={2}>
-                <AnalyticsOrder />
-                <TrendingItems />
+                <Grid2 sm={12} md={6}>
+                    <LeftSide />
+                </Grid2>
+                <Grid2 sm={12} md={6}>
+                    <RightSide />
+                </Grid2>
+
+
+
             </Grid2>
-        </Box >
+        </Box>
     )
 }
 
