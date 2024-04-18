@@ -3,14 +3,15 @@ import { Box, Typography } from "@mui/material"
 import Grid2 from "@mui/material/Unstable_Grid2/Grid2"
 import Avatar from '@mui/material/Avatar';
 import Divider from '@mui/material/Divider';
-import jsonData from "./itemsData.json"
 
 
-const TrendingItem = () => {
+const TrendingItem = ({ data }) => {
+
+
     return (
         <Box>
             {
-                jsonData.sort((a, b) => b.totalSale - a.totalSale).map((item, index) => (
+                data.sort((a, b) => b.totalSale - a.totalSale).map((item, index) => (
                     <Box key={item.id}>
                         <Grid2 container spacing={1} sx={{ display: "flex", alignItems: "center" }}>
                             <Grid2 xs={1}>
@@ -23,8 +24,8 @@ const TrendingItem = () => {
                             <Grid2 xs={6}>
                                 <Typography fontWeight={600}>{item.title}</Typography>
                                 <Box sx={{ display: "flex" }}>
-                                    <Box fontSize={"12px"} fontWeight={700} lineHeight={3}>${item.price} &ensp;&ensp;</Box>
-                                    <Box fontSize={"12px"} fontWeight={600} lineHeight={3} color={"#2F4CDD"}>{item.price}</Box>
+                                    <Box fontSize={"12px"} fontWeight={700} lineHeight={3.5}>${item.price} &ensp;&ensp;</Box>
+                                    <Box fontSize={"12px"} fontWeight={600} lineHeight={3.5} color={"#2F4CDD"}>{item.price}</Box>
 
                                 </Box>
                             </Grid2>
