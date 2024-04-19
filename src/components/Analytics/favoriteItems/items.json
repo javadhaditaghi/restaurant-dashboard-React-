@@ -1,0 +1,149 @@
+{
+    "daily": [
+        {
+            "name": "Medium Spicy Pizza with Kemangi Leaf",
+            "imgURL": "../../../src/assets/images/foods/Food_15.png",
+            "starRate": 4,
+            "reviewCount": 101,
+            "likesCount": 135
+        },
+        {
+            "name": "Creamy Chicken Alfredo Pasta",
+            "imgURL": "../../../src/assets/images/foods/Food_22.png",
+            "starRate": 5,
+            "reviewCount": 87,
+            "likesCount": 210
+        },
+        {
+            "name": "Grilled Salmon with Lemon Butter Sauce",
+            "imgURL": "../../../src/assets/images/foods/Food_10.png",
+            "starRate": 4.5,
+            "reviewCount": 124,
+            "likesCount": 180
+        },
+        {
+            "name": "Vegetarian Quinoa Salad",
+            "imgURL": "../../../src/assets/images/foods/Food_18.png",
+            "starRate": 4.2,
+            "reviewCount": 76,
+            "likesCount": 150
+        },
+        {
+            "name": "Spicy Tofu Stir-Fry",
+            "imgURL": "../../../src/assets/images/foods/Food_7.png",
+            "starRate": 3.8,
+            "reviewCount": 92,
+            "likesCount": 105
+        },
+        {
+            "name": "Classic Beef Burger with Fries",
+            "imgURL": "../../../src/assets/images/foods/Food_4.png",
+            "starRate": 4.7,
+            "reviewCount": 155,
+            "likesCount": 250
+        },
+        {
+            "name": "Spicy Tofu Stir-Fry",
+            "imgURL": "../../../src/assets/images/foods/Food_7.png",
+            "starRate": 3.8,
+            "reviewCount": 92,
+            "likesCount": 105
+        },
+        {
+            "name": "Classic Beef Burger with Fries",
+            "imgURL": "../../../src/assets/images/foods/Food_4.png",
+            "starRate": 4.7,
+            "reviewCount": 155,
+            "likesCount": 250
+        }
+    ],
+    "weekly": [
+        {
+            "name": "Homemade Margherita Pizza",
+            "imgURL": "../../../src/assets/images/foods/Food_8.png",
+            "starRate": 4.3,
+            "reviewCount": 68,
+            "likesCount": 95
+        },
+        {
+            "name": "Spaghetti Aglio e Olio",
+            "imgURL": "../../../src/assets/images/foods/Food_20.png",
+            "starRate": 4.6,
+            "reviewCount": 79,
+            "likesCount": 120
+        },
+        {
+            "name": "BBQ Chicken Wings",
+            "imgURL": "../../../src/assets/images/foods/Food_14.png",
+            "starRate": 4.8,
+            "reviewCount": 103,
+            "likesCount": 170
+        },
+        {
+            "name": "Caesar Salad with Grilled Chicken",
+            "imgURL": "../../../src/assets/images/foods/Food_17.png",
+            "starRate": 4.4,
+            "reviewCount": 94,
+            "likesCount": 140
+        },
+        {
+            "name": "Vegetable Pad Thai",
+            "imgURL": "../../../src/assets/images/foods/Food_12.png",
+            "starRate": 4.1,
+            "reviewCount": 82,
+            "likesCount": 110
+        },
+        {
+            "name": "Mushroom Risotto",
+            "imgURL": "../../../src/assets/images/foods/Food_5.png",
+            "starRate": 4.5,
+            "reviewCount": 88,
+            "likesCount": 125
+        }
+    ],
+    "monthly": [
+        {
+            "name": "Tuna Nicoise Salad",
+            "imgURL": "../../../src/assets/images/foods/Food_11.png",
+            "starRate": 4.2,
+            "reviewCount": 63,
+            "likesCount": 85
+        },
+        {
+            "name": "Hawaiian Chicken Skewers",
+            "imgURL": "../../../src/assets/images/foods/Food_23.png",
+            "starRate": 4.7,
+            "reviewCount": 117,
+            "likesCount": 200
+        },
+        {
+            "name": "Caprese Panini",
+            "imgURL": "../../../src/assets/images/foods/Food_9.png",
+            "starRate": 4.4,
+            "reviewCount": 79,
+            "likesCount": 130
+        },
+        {
+            "name": "Lemon Garlic Shrimp Pasta",
+            "imgURL": "../../../src/assets/images/foods/Food_16.png",
+            "starRate": 4.6,
+            "reviewCount": 102,
+            "likesCount": 160
+        },
+        {
+            "name": "Roasted Vegetable Wrap",
+            "imgURL": "../../../src/assets/images/foods/Food_21.png",
+            "starRate": 4,
+            "reviewCount": 74,
+            "likesCount": 100
+        },
+        {
+            "name": "Greek Salad with Feta Cheese",
+            "imgURL": "../../../src/assets/images/foods/Food_6.png",
+            "starRate": 4.3,
+            "reviewCount": 91,
+            "likesCount": 145
+        }
+    ]
+}
+

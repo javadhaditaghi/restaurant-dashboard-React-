@@ -9,6 +9,9 @@ import Rating from '@mui/material/Rating';
 import StarIcon from '@mui/icons-material/Star';
 import Chip from '@mui/material/Chip';
 import SvgIcon from '@mui/material/SvgIcon';
+import jsonData from './items.json';
+import { useState, useEffect } from "react";
+import Link from '@mui/material/Link';
 
 
 export function Heart() {
@@ -23,67 +26,91 @@ export function Heart() {
 }
 
 
-const FavoriteItems = () => {
+const FavoriteItems = ({ maxNum = 6 }) => {
+
+    // Receiving data from jsonData file 
+    const todayItems = jsonData.daily
+    const weekItems = jsonData.weekly
+    const monthItems = jsonData.monthly
+
+    const [data, setData] = useState(todayItems);
+    const [filteredData, setFilteredData] = useState(data.slice(0, maxNum));
+
+    // Update filteredData when data changes
+    useEffect(() => {
+        setFilteredData(data.slice(0, maxNum));
+    }, [data, maxNum]);
+
+    const onBottonClick = (index) => {
+        setData(index === 2 ? todayItems : (index === 1 ? weekItems : monthItems));
+    };
+
+    const clickHandler = () => {
+        if (filteredData.length == maxNum) {
+            // If currently showing only the first 6 items, show all items
+            setFilteredData(data);
+        } else {
+            // If currently showing all items, show only the first 6 items
+            setFilteredData(data.slice(0, maxNum));
+        }
+    }
+
+
+
+
     return (
 
         <InnerBox2>
             <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "10px" }}>
                 <CardHeaderTxt title="Most Favorites Items" subtitle="Lorem ipsum dolor sit amet, consectetur" />
-                <OrderInfHeader />
+                <OrderInfHeader onButtonClick={onBottonClick} />
             </Box>
+
             <Grid2 container rowSpacing={2} columnSpacing={{ xs: 1, sm: 2, md: 3 }} sx={{ pt: 4 }}>
-                <Grid2 md={4} >
-                    <Avatar variant="rounded" src="../../../src/assets/images/foods/Food_8.png" sx={{ width: "100%", height: "auto", backgroundColor: "#F9F9F9", p: "20px", borderRadius: "15px" }}>
-                        Food
-                    </Avatar>
-                    <Typography fontWeight={600} sx={{ mt: "10px" }}>Medium Spicy Pizza with Kemangi Leaf</Typography>
-                    <Box sx={{ display: "flex", justifyContent: "space-between", mt: 1, alignItems: "center" }}>
-                        <Rating name="read-only" size="medium" value={4} readOnly emptyIcon={<StarIcon style={{ opacity: 0.55 }} fontSize="inherit" />} />
-                        <Typography fontSize={14} color={"#969BA0"}>(454 revies)</Typography>
-                    </Box>
-                    <Chip
-                        avatar={<Avatar alt="Natacha" sx={{ backgroundColor: "rgba(47, 76, 221, 0.0)" }}><Heart /></Avatar>}
-                        label="256k Like it"
-                        variant="filled"
-                        sx={{ mt: 1, backgroundColor: "rgba(47, 76, 221, 0.10)", py: "20px !important", px: "10px !important", color: "#2F4CDD" }}
-                    />
-                </Grid2>
+                {
+                    filteredData.map((item, index) => (
+                        <Grid2 md={4} key={index}>
+                            <Box sx={{ display: "flex", flexDirection: "column", justifyContent: "space-between", height: "100%" }} >
+                                <Avatar variant="rounded" src={item.imgURL} sx={{ width: "100%", height: "auto", backgroundColor: "#F9F9F9", p: "20px", borderRadius: "15px" }}>
+                                    {item.name}
+                                </Avatar>
+                                <Typography fontWeight={600} sx={{ mt: "10px" }}>{item.name}</Typography>
+                                <Box sx={{ display: "flex", flexDirection: "column", justifyContent: "flex-end", height: "100%" }}>
+                                    <Box sx={{ display: "flex", justifyContent: "space-between", mt: 1, alignItems: "center" }}>
+                                        <Rating name="read-only" size="medium" value={item.starRate} readOnly emptyIcon={<StarIcon style={{ opacity: 0.55 }} fontSize="inherit" />} />
+                                        <Typography fontSize={14} color={"#969BA0"}>({item.reviewCount} reviews)</Typography>
+                                    </Box>
+                                    <Chip
+                                        avatar={<Avatar alt="Natacha" sx={{ backgroundColor: "rgba(47, 76, 221, 0.0)" }}><Heart /></Avatar>}
+                                        label={`${item.likesCount} Like it`}
+                                        variant="filled"
+                                        sx={{ mt: 1, backgroundColor: "rgba(47, 76, 221, 0.10)", py: "20px !important", px: "10px !important", color: "#2F4CDD" }}
+                                    />
+                                </Box>
+                            </Box>
 
-                <Grid2 md={4} >
-                    <Avatar variant="rounded" src="../../../src/assets/images/foods/Food_15.png" sx={{ width: "100%", height: "auto", backgroundColor: "#F9F9F9", p: "20px", borderRadius: "15px" }}>
-                        Food
-                    </Avatar>
-                    <Typography fontWeight={600} sx={{ mt: "10px" }}>Medium Spicy Pizza with Kemangi Leaf</Typography>
-                    <Box sx={{ display: "flex", justifyContent: "space-between", mt: 1, alignItems: "center" }}>
-                        <Rating name="read-only" size="medium" value={4} readOnly emptyIcon={<StarIcon style={{ opacity: 0.55 }} fontSize="inherit" />} />
-                        <Typography fontSize={14} color={"#969BA0"}>(454 revies)</Typography>
-                    </Box>
-                    <Chip
-                        avatar={<Avatar alt="Natacha" sx={{ backgroundColor: "rgba(47, 76, 221, 0.0)" }}><Heart /></Avatar>}
-                        label="256k Like it"
-                        variant="filled"
-                        sx={{ mt: 1, backgroundColor: "rgba(47, 76, 221, 0.10)", py: "20px !important", px: "10px !important", color: "#2F4CDD" }}
-                    />
-                </Grid2>
+                        </Grid2>
 
-                <Grid2 md={4} >
-                    <Avatar variant="rounded" src="../../../src/assets/images/foods/Food_20.png" sx={{ width: "100%", height: "auto", backgroundColor: "#F9F9F9", p: "20px", borderRadius: "15px" }}>
-                        Food
-                    </Avatar>
-                    <Typography fontWeight={600} sx={{ mt: "10px" }}>Medium Spicy Pizza with Kemangi Leaf</Typography>
-                    <Box sx={{ display: "flex", justifyContent: "space-between", mt: 1, alignItems: "center" }}>
-                        <Rating name="read-only" size="medium" value={4} readOnly emptyIcon={<StarIcon style={{ opacity: 0.55 }} fontSize="inherit" />} />
-                        <Typography fontSize={14} color={"#969BA0"}>(454 revies)</Typography>
-                    </Box>
-                    <Chip
-                        avatar={<Avatar alt="Natacha" sx={{ backgroundColor: "rgba(47, 76, 221, 0.0)" }}><Heart /></Avatar>}
-                        label="256k Like it"
-                        variant="filled"
-                        sx={{ mt: 1, backgroundColor: "rgba(47, 76, 221, 0.10)", py: "20px !important", px: "10px !important", color: "#2F4CDD" }}
-                    />
-                </Grid2>
+                    ))
 
+                }
             </Grid2>
+            <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center", mt: 3 }}>
+                <Link
+                    component="button"
+                    variant="body2"
+                    onClick={
+                        clickHandler
+                    }
+
+                >
+                    View more
+                </Link>
+            </Box>
+
+
+
+
 
         </InnerBox2 >
 
