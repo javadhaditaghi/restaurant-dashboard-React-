@@ -44,14 +44,14 @@
         },
         {
             "name": "Spicy Tofu Stir-Fry",
-            "imgURL": "../../../src/assets/images/foods/Food_7.png",
+            "imgURL": "../../../src/assets/images/foods/Food_16.png",
             "starRate": 3.8,
             "reviewCount": 92,
             "likesCount": 105
         },
         {
             "name": "Classic Beef Burger with Fries",
-            "imgURL": "../../../src/assets/images/foods/Food_4.png",
+            "imgURL": "../../../src/assets/images/foods/Food_20.png",
             "starRate": 4.7,
             "reviewCount": 155,
             "likesCount": 250

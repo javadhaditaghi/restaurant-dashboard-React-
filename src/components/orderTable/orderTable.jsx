@@ -51,11 +51,6 @@ function stableSort(array, comparator) {
 
 
 
-
-
-
-
-
 export default function EnhancedTable() {
 
 
