@@ -59,7 +59,7 @@ const MostSellingItems = ({ maxNum = 5 }) => {
             </Box>
 
 
-            {filteredData.map((item, index) => (
+            {filteredData.sort((a, b) => b.servingSize - a.servingSize).map((item, index) => (
                 <Grid2 container rowSpacing={2} columnSpacing={{ xs: 1, sm: 2, md: 3 }} sx={{ pt: 4 }} key={index}>
 
                     <Grid2 md={1}></Grid2>

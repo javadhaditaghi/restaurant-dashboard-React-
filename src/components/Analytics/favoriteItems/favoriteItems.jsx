@@ -71,7 +71,7 @@ const FavoriteItems = ({ maxNum = 6 }) => {
 
             <Grid2 container rowSpacing={2} columnSpacing={{ xs: 1, sm: 2, md: 3 }} sx={{ pt: 4 }}>
                 {
-                    filteredData.map((item, index) => (
+                    filteredData.sort((a, b) => b.reviewCount - a.reviewCount).map((item, index) => (
                         <Grid2 md={4} key={index}>
                             <Box sx={{ display: "flex", flexDirection: "column", justifyContent: "space-between", height: "100%" }} >
                                 <Avatar variant="rounded" src={item.imgURL} sx={{ width: "100%", height: "auto", backgroundColor: "#F9F9F9", p: "20px", borderRadius: "15px" }}>
