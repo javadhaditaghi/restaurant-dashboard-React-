@@ -1,82 +1,248 @@
-[
-    {
-        "name": "Creamy Mushroom Pasta",
-        "imgURL": "../../../src/assets/images/foods/Food_12.png",
-        "type": "PASTA",
-        "servingSize": 3,
-        "lastPurchase": 18,
-        "price": 18
-    },
-    {
-        "name": "Classic Margherita Pizza",
-        "imgURL": "../../../src/assets/images/foods/Food_5.png",
-        "type": "PIZZA",
-        "servingSize": 2,
-        "lastPurchase": 12,
-        "price": 15
-    },
-    {
-        "name": "Grilled Salmon with Lemon Butter Sauce",
-        "imgURL": "../../../src/assets/images/foods/Food_8.png",
-        "type": "SEAFOOD",
-        "servingSize": 2,
-        "lastPurchase": 9,
-        "price": 28
-    },
-    {
-        "name": "Vegetarian Pad Thai",
-        "imgURL": "../../../src/assets/images/foods/Food_19.png",
-        "type": "NOODLES",
-        "servingSize": 3,
-        "lastPurchase": 14,
-        "price": 20
-    },
-    {
-        "name": "BBQ Chicken Wings",
-        "imgURL": "../../../src/assets/images/foods/Food_2.png",
-        "type": "APPETIZER",
-        "servingSize": 6,
-        "lastPurchase": 6,
-        "price": 12
-    },
-    {
-        "name": "Beef Stir Fry with Broccoli",
-        "imgURL": "../../../src/assets/images/foods/Food_7.png",
-        "type": "STIR FRY",
-        "servingSize": 4,
-        "lastPurchase": 20,
-        "price": 25
-    },
-    {
-        "name": "Spicy Tuna Sushi Roll",
-        "imgURL": "../../../src/assets/images/foods/Food_22.png",
-        "type": "SUSHI",
-        "servingSize": 8,
-        "lastPurchase": 10,
-        "price": 161
-    },
-    {
-        "name": "Cheeseburger with Fries",
-        "imgURL": "../../../src/assets/images/foods/Food_1.png",
-        "type": "BURGER",
-        "servingSize": 1,
-        "lastPurchase": 7,
-        "price": 14
-    },
-    {
-        "name": "Vegetable Spring Rolls",
-        "imgURL": "../../../src/assets/images/foods/Food_10.png",
-        "type": "APPETIZER",
-        "servingSize": 5,
-        "lastPurchase": 11,
-        "price": 221
-    },
-    {
-        "name": "Pineapple Fried Rice",
-        "imgURL": "../../../src/assets/images/foods/Food_17.png",
-        "type": "RICE DISH",
-        "servingSize": 4,
-        "lastPurchase": 16,
-        "price": 18
-    }
-]
+{
+    "monthly": [
+        {
+            "name": "Creamy Mushroom Pasta",
+            "imgURL": "../../../src/assets/images/foods/Food_12.png",
+            "type": "PASTA",
+            "servingSize": 3,
+            "lastPurchase": 18,
+            "price": 18
+        },
+        {
+            "name": "Classic Margherita Pizza",
+            "imgURL": "../../../src/assets/images/foods/Food_5.png",
+            "type": "PIZZA",
+            "servingSize": 2,
+            "lastPurchase": 12,
+            "price": 15
+        },
+        {
+            "name": "Grilled Salmon with Lemon Butter Sauce",
+            "imgURL": "../../../src/assets/images/foods/Food_8.png",
+            "type": "SEAFOOD",
+            "servingSize": 2,
+            "lastPurchase": 9,
+            "price": 28
+        },
+        {
+            "name": "Vegetarian Pad Thai",
+            "imgURL": "../../../src/assets/images/foods/Food_19.png",
+            "type": "NOODLES",
+            "servingSize": 3,
+            "lastPurchase": 14,
+            "price": 20
+        },
+        {
+            "name": "BBQ Chicken Wings",
+            "imgURL": "../../../src/assets/images/foods/Food_2.png",
+            "type": "APPETIZER",
+            "servingSize": 6,
+            "lastPurchase": 6,
+            "price": 12
+        },
+        {
+            "name": "Beef Stir Fry with Broccoli",
+            "imgURL": "../../../src/assets/images/foods/Food_7.png",
+            "type": "STIR FRY",
+            "servingSize": 4,
+            "lastPurchase": 20,
+            "price": 25
+        },
+        {
+            "name": "Spicy Tuna Sushi Roll",
+            "imgURL": "../../../src/assets/images/foods/Food_22.png",
+            "type": "SUSHI",
+            "servingSize": 8,
+            "lastPurchase": 10,
+            "price": 16
+        },
+        {
+            "name": "Cheeseburger with Fries",
+            "imgURL": "../../../src/assets/images/foods/Food_1.png",
+            "type": "BURGER",
+            "servingSize": 1,
+            "lastPurchase": 7,
+            "price": 14
+        },
+        {
+            "name": "Vegetable Spring Rolls",
+            "imgURL": "../../../src/assets/images/foods/Food_10.png",
+            "type": "APPETIZER",
+            "servingSize": 5,
+            "lastPurchase": 11,
+            "price": 10
+        },
+        {
+            "name": "Pineapple Fried Rice",
+            "imgURL": "../../../src/assets/images/foods/Food_17.png",
+            "type": "RICE DISH",
+            "servingSize": 4,
+            "lastPurchase": 16,
+            "price": 18
+        }
+    ],
+    "weekly": [
+        {
+            "name": "Chicken Caesar Salad",
+            "imgURL": "../../../src/assets/images/foods/Food_14.png",
+            "type": "SALAD",
+            "servingSize": 2,
+            "lastPurchase": 3,
+            "price": 10
+        },
+        {
+            "name": "Margarita Cocktail",
+            "imgURL": "../../../src/assets/images/foods/Food_26.png",
+            "type": "DRINK",
+            "servingSize": 1,
+            "lastPurchase": 5,
+            "price": 8
+        },
+        {
+            "name": "Chocolate Brownie Sundae",
+            "imgURL": "../../../src/assets/images/foods/Food_29.png",
+            "type": "DESSERT",
+            "servingSize": 1,
+            "lastPurchase": 2,
+            "price": 12
+        },
+        {
+            "name": "Spinach and Feta Stuffed Mushrooms",
+            "imgURL": "../../../src/assets/images/foods/Food_31.png",
+            "type": "APPETIZER",
+            "servingSize": 4,
+            "lastPurchase": 6,
+            "price": 15
+        },
+        {
+            "name": "Beef Tacos with Salsa",
+            "imgURL": "../../../src/assets/images/foods/Food_34.png",
+            "type": "MEXICAN",
+            "servingSize": 3,
+            "lastPurchase": 4,
+            "price": 17
+        },
+        {
+            "name": "Caesar Salad",
+            "imgURL": "../../../src/assets/images/foods/Food_36.png",
+            "type": "SALAD",
+            "servingSize": 2,
+            "lastPurchase": 3,
+            "price": 9
+        },
+        {
+            "name": "Mojito",
+            "imgURL": "../../../src/assets/images/foods/Food_37.png",
+            "type": "DRINK",
+            "servingSize": 1,
+            "lastPurchase": 5,
+            "price": 7
+        },
+        {
+            "name": "New York Cheesecake",
+            "imgURL": "../../../src/assets/images/foods/Food_38.png",
+            "type": "DESSERT",
+            "servingSize": 1,
+            "lastPurchase": 2,
+            "price": 14
+        },
+        {
+            "name": "Bruschetta",
+            "imgURL": "../../../src/assets/images/foods/Food_39.png",
+            "type": "APPETIZER",
+            "servingSize": 4,
+            "lastPurchase": 6,
+            "price": 13
+        },
+        {
+            "name": "Chicken Enchiladas",
+            "imgURL": "../../../src/assets/images/foods/Food_40.png",
+            "type": "MEXICAN",
+            "servingSize": 3,
+            "lastPurchase": 4,
+            "price": 16
+        }
+    ],
+    "daily": [
+        {
+            "name": "Lemon Garlic Butter Shrimp",
+            "imgURL": "../../../src/assets/images/foods/Food_3.png",
+            "type": "SEAFOOD",
+            "servingSize": 2,
+            "lastPurchase": 1,
+            "price": 22
+        },
+        {
+            "name": "Chicken Alfredo",
+            "imgURL": "../../../src/assets/images/foods/Food_9.png",
+            "type": "PASTA",
+            "servingSize": 3,
+            "lastPurchase": 1,
+            "price": 19
+        },
+        {
+            "name": "Margherita Flatbread Pizza",
+            "imgURL": "../../../src/assets/images/foods/Food_11.png",
+            "type": "PIZZA",
+            "servingSize": 2,
+            "lastPurchase": 1,
+            "price": 14
+        },
+        {
+            "name": "California Sushi Roll",
+            "imgURL": "../../../src/assets/images/foods/Food_15.png",
+            "type": "SUSHI",
+            "servingSize": 8,
+            "lastPurchase": 1,
+            "price": 18
+        },
+        {
+            "name": "Vegetarian Pho",
+            "imgURL": "../../../src/assets/images/foods/Food_18.png",
+            "type": "NOODLES",
+            "servingSize": 2,
+            "lastPurchase": 1,
+            "price": 16
+        },
+        {
+            "name": "Chicken Quesadillas",
+            "imgURL": "../../../src/assets/images/foods/Food_20.png",
+            "type": "MEXICAN",
+            "servingSize": 3,
+            "lastPurchase": 1,
+            "price": 15
+        },
+        {
+            "name": "Caprese Salad",
+            "imgURL": "../../../src/assets/images/foods/Food_23.png",
+            "type": "SALAD",
+            "servingSize": 2,
+            "lastPurchase": 1,
+            "price": 11
+        },
+        {
+            "name": "Mojito",
+            "imgURL": "../../../src/assets/images/foods/Food_25.png",
+            "type": "DRINK",
+            "servingSize": 1,
+            "lastPurchase": 1,
+            "price": 8
+        },
+        {
+            "name": "Chocolate Lava Cake",
+            "imgURL": "../../../src/assets/images/foods/Food_28.png",
+            "type": "DESSERT",
+            "servingSize": 1,
+            "lastPurchase": 1,
+            "price": 13
+        },
+        {
+            "name": "Bruschetta",
+            "imgURL": "../../../src/assets/images/foods/Food_30.png",
+            "type": "APPETIZER",
+            "servingSize": 4,
+            "lastPurchase": 1,
+            "price": 12
+        }
+    ]
+}
