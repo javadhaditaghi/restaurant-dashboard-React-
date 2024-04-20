@@ -35,6 +35,7 @@ const FavoriteItems = ({ maxNum = 6 }) => {
 
     const [data, setData] = useState(todayItems);
     const [filteredData, setFilteredData] = useState(data.slice(0, maxNum));
+    const [linkText, setLinkText] = useState('more');
 
     // Update filteredData when data changes
     useEffect(() => {
@@ -49,9 +50,11 @@ const FavoriteItems = ({ maxNum = 6 }) => {
         if (filteredData.length == maxNum) {
             // If currently showing only the first 6 items, show all items
             setFilteredData(data);
+            setLinkText("less")
         } else {
             // If currently showing all items, show only the first 6 items
             setFilteredData(data.slice(0, maxNum));
+            setLinkText("more")
         }
     }
 
@@ -104,7 +107,7 @@ const FavoriteItems = ({ maxNum = 6 }) => {
                     }
 
                 >
-                    View more
+                    View {linkText}
                 </Link>
             </Box>
 
