@@ -7,20 +7,48 @@ import Avatar from "@mui/material/Avatar"
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import IconButton from '@mui/material/IconButton';
 import jsonData from './mostSellingItems.json';
-import { useState } from "react"
+import { useState, useEffect } from "react"
+import Link from "@mui/material/Link"
 
 
-const MostSellingItems = () => {
+const MostSellingItems = ({ maxNum = 5 }) => {
     const dilyData = jsonData.daily
     const weeklyData = jsonData.weekly
     const monthlyData = jsonData.monthly
 
-    // Differentiationg between daily, weekly and monthly
+    // Differentiationg between daily, weekly and monthly and slicing the first 5 items
     const [data, setData] = useState(dilyData)
+    const [filteredData, setFilteredData] = useState(data.slice(0, maxNum));
+    const [linkText, setLinkText] = useState('more');
+
+
+    // Update filteredData when data changes
+    useEffect(() => {
+        setFilteredData(data.slice(0, maxNum));
+    }, [data, maxNum]);
+
+
 
     const onBottonClick = (index) => {
         setData(index == 2 ? dilyData : (index == 1 ? weeklyData : monthlyData))
     }
+
+
+
+    const clickHandler = () => {
+        if (filteredData.length == maxNum) {
+            // If currently showing only the first 6 items, show all items
+            setFilteredData(data);
+            setLinkText("less")
+
+        } else {
+            // If currently showing all items, show only the first 6 items
+            setFilteredData(data.slice(0, maxNum));
+            setLinkText("more")
+
+        }
+    }
+
 
 
     return (
@@ -31,7 +59,7 @@ const MostSellingItems = () => {
             </Box>
 
 
-            {data.map((item, index) => (
+            {filteredData.map((item, index) => (
                 <Grid2 container rowSpacing={2} columnSpacing={{ xs: 1, sm: 2, md: 3 }} sx={{ pt: 4 }} key={index}>
 
                     <Grid2 md={1}></Grid2>
@@ -68,9 +96,22 @@ const MostSellingItems = () => {
 
                 </Grid2>
             ))}
+            <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
+                <Link
+                    component="button"
+                    variant="body2"
+                    onClick={
+                        clickHandler
+                    }
+
+                >
+                    View {linkText}
+                </Link>
+            </Box>
 
 
         </InnerBox2>
+
     )
 }
 
