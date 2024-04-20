@@ -96,17 +96,19 @@ const MostSellingItems = ({ maxNum = 5 }) => {
 
                 </Grid2>
             ))}
-            <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
-                <Link
-                    component="button"
-                    variant="body2"
-                    onClick={
-                        clickHandler
-                    }
+            <Box sx={{ background: "linear-gradient(0deg, #FFF 4.49%, rgba(255, 255, 255, 0.00) 75%)", position: "relative", height: 245, top: "-230px", marginBottom: "-230px" }}>
+                <Box sx={{ display: "flex", justifyContent: "center", alignItems: "flex-end", height: "100%" }}>
+                    <Link
+                        component="button"
+                        variant="body2"
+                        onClick={
+                            clickHandler
+                        }
 
-                >
-                    View {linkText}
-                </Link>
+                    >
+                        View {linkText}
+                    </Link>
+                </Box>
             </Box>
 
 
