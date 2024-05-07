@@ -5,7 +5,7 @@ const RevenueHeaderText = () => {
     return (
         <Box>
             <Typography variant="h7" fontWeight={700}>Revenue</Typography>
-            <Typography variant="caption" color={"#969BA0"} sx={{ display: "block" }}>Lorem ipsum dolor sit amet, consectetur</Typography>
+            <Typography variant="caption" color={"#969BA0"} sx={{ display: { xs: "none", md: "block" } }}>Lorem ipsum dolor sit amet, consectetur</Typography>
         </Box>
     )
 }

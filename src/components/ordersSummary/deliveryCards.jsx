@@ -9,7 +9,7 @@ const DeliveryCards = ({ ordersData }) => {
             {/* Pie -------------------------- Start of delivery Info Cards in orders summery secion -------------------*/}
             {
                 ordersData.map((item, index) => (
-                    <Grid2 key={index} xs={12} sm={4}>
+                    <Grid2 key={index} xs={6} sm={4}>
                         <Box sx={{ borderRadius: "12px", border: "1px solid #F2F2F2", width: "100%", p: 2 }}>
                             <Typography variant="h5" fontWeight={700}>{item.content}</Typography>
                             <Typography color={"#969BA0"} fontWeight={600}>{item.title}</Typography>

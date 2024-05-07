@@ -45,7 +45,7 @@ const DeliveryChart = ({ ordersData }) => {
 
         <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
             <Grid container spacing={2}>
-                <Grid item xs={12} sm={4} md={4}>
+                <Grid item xs={12} sm={4} md={4} sx={{ display: "flex", justifyContent: "center" }}>
 
                     {/* Pie -------------------------- Start of Pie Chart -------------------*/}
                     <PieChart
@@ -85,7 +85,7 @@ const DeliveryChart = ({ ordersData }) => {
                         {...chartSetting}
                         // leftAxis={null}
                         bottomAxis={null}
-                        sx={{ pt: 3 }}
+                        sx={{ pt: { xs: 0, md: 3 } }}
                         slotProps={{
 
                             bar: {

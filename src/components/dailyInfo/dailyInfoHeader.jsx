@@ -9,7 +9,7 @@ import OrderInfHeader from '../ordersSummary/orderInfoHeader';
 const DailyInfoHeader = ({ dataClicked }) => {
 
     return (
-        <Box sx={{ width: "100%", display: "flex", justifyContent: "space-between", alignItems: "center", padding: "10px" }}>
+        <Box sx={{ width: "100%", display: "flex", justifyContent: "space-between", alignItems: "center", padding: "10px", flexDirection: { xs: "column", md: "row" }, gap: { xs: 2, md: 0 } }}>
             <Box>
                 <Typography variant="h7" fontWeight={700}>Customer Map</Typography>
                 <Typography variant="caption" color={"#969BA0"} sx={{ display: "block" }}>Lorem ipsum dolor sit amet, consectetur</Typography>

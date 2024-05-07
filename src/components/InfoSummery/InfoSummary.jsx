@@ -14,7 +14,7 @@ const InfoSummary = ({ data }) => {
                 {
 
                     data.map((item) => (
-                        <Grid2 sm={6} md={3}>
+                        <Grid2 sm={12} md={3} width={"100%"}>
                             <InnerBox>
                                 <Box>
                                     <img src={item.ImgSrc} width={70} />

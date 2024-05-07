@@ -30,7 +30,7 @@ const OrdersInfo = () => {
 
         <Grid2 sm={12} md={6}>
             <InnerBox2>
-                <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "10px" }}>
+                <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "10px", flexDirection: { xs: "column", md: "row" }, gap: { xs: 2, md: 0 } }}>
                     <Box>
                         <Typography variant="h7" fontWeight={700}>Orders Summary</Typography>
                         <Typography variant="caption" color={"#969BA0"} sx={{ display: "block" }}>Lorem ipsum dolor sit amet, consectetur</Typography>

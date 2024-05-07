@@ -30,3 +30,12 @@ text.MuiChartsAxis-tickLabel {
 .css-66gjpw-MuiResponsiveChart-container rect:nth-of-type(3) {
     fill: #FF6D4C !important;
 }
+
+
+
+@media only screen and (max-width: 600px) {
+    .css-66gjpw-MuiResponsiveChart-container {
+        width: 260px !important;
+        height: 130px !important
+    }
+}
