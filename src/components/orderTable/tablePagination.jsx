@@ -39,7 +39,9 @@ const List = styled('ul')({
         display: 'block',
         fontSize: "15px",
         border: "1px solid #E3E4EB",
-        color: '#2F4CDD',
+        color: '#2F4CDD'
+
+
     },
 
     '& .normalButton__wrapper': {
@@ -48,6 +50,33 @@ const List = styled('ul')({
         display: 'block',
 
     }
+
+    ,
+
+    "@media only screen and (max-width: 600px)": {
+        '& .endButton': {
+            padding: "8px 10px",
+            fontSize: "14px",
+            color: 'white',
+        },
+        '& .normalButton': {
+            fontSize: "14px",
+            padding: "4px 7px"
+        },
+        '& .normalButton__wrapper': {
+            backgroundColor: '#E3E4EB',
+            padding: '5px 4px',
+            display: 'block',
+
+        }
+
+    }
+
+
+
+
+
+
 });
 
 

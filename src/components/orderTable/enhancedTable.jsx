@@ -61,7 +61,7 @@ export function EnhancedTableHead(props) {
                     </TableCell>
                 ))}
             </TableRow>
-        </TableHead >
+        </TableHead>
     );
 }
 
