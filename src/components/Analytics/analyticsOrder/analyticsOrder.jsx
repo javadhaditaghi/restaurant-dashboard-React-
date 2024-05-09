@@ -24,11 +24,9 @@ const AnalyticsOrder = () => {
     return (
 
         <InnerBox2>
-            <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "10px" }}>
+            <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "10px", flexDirection: { xs: "column", md: "row" }, gap: { xs: 2, md: 0 } }}>
                 <CardHeaderTxt title="Chart Orders" subtitle="Lorem ipsum dolor sit amet, consectetur" />
-                <Box>
-                    <OrderInfHeader handleData={handleData} />
-                </Box>
+                <OrderInfHeader handleData={handleData} />
             </Box>
             <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "10px" }}>
                 <RevenueChart data={data} />

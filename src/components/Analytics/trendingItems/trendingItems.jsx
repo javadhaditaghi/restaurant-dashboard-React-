@@ -6,6 +6,7 @@ import CardDropdown from "../../dropdown/cardDropdown";
 import TrendingItem from "./items";
 import jsonData from "./itemsData.json";
 import { useState } from 'react';
+import { useMediaQuery } from '@mui/material';
 
 
 
@@ -23,11 +24,15 @@ const TrendingItems = () => {
     }
 
 
+    const isMdScreen = useMediaQuery('(min-width: 768px)');
+
+
     return (
 
         <InnerBox2>
             <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "10px" }}>
-                <CardHeaderTxt title="🔥 Trending Items" subtitle="Lorem ipsum dolor sit amet, consectetur" />
+                {isMdScreen && <CardHeaderTxt title="🔥 Trending Items" subtitle="Lorem ipsum dolor sit amet, consectetur" />}
+                {!isMdScreen && <CardHeaderTxt title="🔥 Trending" />}
                 <CardDropdown handleData={handleData} />
             </Box>
             <Box sx={{ padding: "10px 20px" }}>

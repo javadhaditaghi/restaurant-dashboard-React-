@@ -64,7 +64,7 @@ const FavoriteItems = ({ maxNum = 6 }) => {
     return (
 
         <InnerBox2>
-            <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "10px" }}>
+            <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "10px", flexDirection: { xs: "column", md: "row" }, gap: { xs: 2, md: 0 } }}>
                 <CardHeaderTxt title="Most Favorites Items" subtitle="Lorem ipsum dolor sit amet, consectetur" />
                 <OrderInfHeader onButtonClick={onBottonClick} />
             </Box>
@@ -72,14 +72,14 @@ const FavoriteItems = ({ maxNum = 6 }) => {
             <Grid2 container rowSpacing={2} columnSpacing={{ xs: 1, sm: 2, md: 3 }} sx={{ pt: 4 }}>
                 {
                     filteredData.sort((a, b) => b.reviewCount - a.reviewCount).map((item, index) => (
-                        <Grid2 md={4} key={index}>
+                        <Grid2 xs={6} md={4} key={index}>
                             <Box sx={{ display: "flex", flexDirection: "column", justifyContent: "space-between", height: "100%" }} >
                                 <Avatar variant="rounded" src={item.imgURL} sx={{ width: "100%", height: "auto", backgroundColor: "#F9F9F9", p: "20px", borderRadius: "15px" }}>
                                     {item.name}
                                 </Avatar>
                                 <Typography fontWeight={600} sx={{ mt: "10px" }}>{item.name}</Typography>
                                 <Box sx={{ display: "flex", flexDirection: "column", justifyContent: "flex-end", height: "100%" }}>
-                                    <Box sx={{ display: "flex", justifyContent: "space-between", mt: 1, alignItems: "center" }}>
+                                    <Box sx={{ display: "flex", justifyContent: "space-between", mt: 1, alignItems: "center", flexDirection: { xs: "column", md: "row" }, gap: { xs: 1, md: 0 } }}>
                                         <Rating name="read-only" size="medium" value={item.starRate} readOnly emptyIcon={<StarIcon style={{ opacity: 0.55 }} fontSize="inherit" />} />
                                         <Typography fontSize={14} color={"#969BA0"}>({item.reviewCount} reviews)</Typography>
                                     </Box>

@@ -53,7 +53,7 @@ const MostSellingItems = ({ maxNum = 5 }) => {
 
     return (
         <InnerBox2>
-            <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "10px" }}>
+            <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "10px", flexDirection: { xs: "column", md: "row" }, gap: { xs: 2, md: 0 } }}>
                 <CardHeaderTxt title="Most Selling Items" subtitle="Lorem ipsum dolor sit amet, consectetur" />
                 <OrderInfHeader onButtonClick={onBottonClick} />
             </Box>
@@ -62,22 +62,23 @@ const MostSellingItems = ({ maxNum = 5 }) => {
             {filteredData.sort((a, b) => b.servingSize - a.servingSize).map((item, index) => (
                 <Grid2 container rowSpacing={2} columnSpacing={{ xs: 1, sm: 2, md: 3 }} sx={{ pt: 4 }} key={index}>
 
-                    <Grid2 md={1}></Grid2>
-                    <Grid2 md={2}>
-                        <Avatar variant="rounded" src={item.imgURL} sx={{ width: "100%", height: "auto", backgroundColor: "#F9F9F9", p: "10px", borderRadius: "15px" }}>
+
+                    <Grid2 xs={0} md={1}></Grid2>
+                    <Grid2 xs={0} md={2}>
+                        <Avatar variant="rounded" src={item.imgURL} sx={{ display: { xs: "none", md: "block" }, width: "100%", height: "auto", backgroundColor: "#F9F9F9", p: "10px", borderRadius: "15px" }}>
                             {item.name}
                         </Avatar>
                     </Grid2>
-                    <Grid2 md={5}>
+                    <Grid2 xs={7} md={5}>
                         <Box sx={{ display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "flex-start" }}>
-                            <Typography fontWeight={600}>{item.name}</Typography>
-                            <Typography sx={{ pt: 1, color: "#2F4CDD" }} textTransform={"uppercase"}>{item.type}</Typography>
-                            <Typography sx={{ pt: 2, color: "#969BA0" }}>Serves for {item.servingSize} Person | {item.lastPurchase}mins</Typography>
+                            <Typography fontWeight={600} sx={{ fontSize: { xs: 14, md: 16 } }}>{item.name}</Typography>
+                            <Typography sx={{ pt: { xs: 0, md: 1 }, color: "#2F4CDD", fontSize: { xs: 13, md: 16 } }} textTransform={"uppercase"} >{item.type}</Typography>
+                            <Typography sx={{ pt: { xs: 1, md: 2 }, color: "#969BA0", fontSize: { xs: 13, md: 16 } }}>Serves for {item.servingSize} Person | {item.lastPurchase} mins</Typography>
                         </Box>
                     </Grid2>
-                    <Grid2 md={2}>
+                    <Grid2 xs={2} md={2}>
                         <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center", height: "100%" }}>
-                            <Typography fontWeight={700} fontSize={24} sx={{ display: "block" }}>${item.price}</Typography>
+                            <Typography fontWeight={700} fontSize={24} sx={{ display: "block", fontSize: { xs: 18, md: 24 } }}>${item.price}</Typography>
                         </Box>
 
                     </Grid2>
@@ -92,7 +93,8 @@ const MostSellingItems = ({ maxNum = 5 }) => {
                         </Box>
 
                     </Grid2>
-                    <Grid2 md={1}></Grid2>
+                    <Grid2 xs={0} md={1}></Grid2>
+
 
                 </Grid2>
             ))}

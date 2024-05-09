@@ -15,7 +15,7 @@ const Analytics = () => {
 
     return (
         <Box component="main" sx={{ flexGrow: 1, p: 3, display: "flex", flexDirection: "column" }}>
-            <Box sx={{ width: "100%", display: "flex", justifyContent: "space-between", py: 3, alignItems: "center" }}>
+            <Box sx={{ width: "100%", display: "flex", justifyContent: "space-between", py: 3, alignItems: "center", flexDirection: { xs: "column", md: "row" }, gap: { xs: 2, md: 0 } }}>
                 <Title title="Analytics" subtitle="Here is your restaurant summary with graph view" />
                 <SelectData />
             </Box>
