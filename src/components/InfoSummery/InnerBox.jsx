@@ -19,6 +19,7 @@ export default function InnerBox(props) {
                 transition: ".5s ease-in-out",
 
 
+
                 '&:hover': {
                     boxShadow: "0px 12px 23px 0px rgba(62, 73, 84, 0.2)",
                 },

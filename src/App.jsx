@@ -6,6 +6,7 @@ import Orders from "./pages/orders";
 import Customers from "./pages/Customers";
 import Menues from "./menues";
 import Analytics from "./pages/analytics";
+import CustomerReviews from "./pages/customerReviews";
 
 
 
@@ -22,6 +23,7 @@ function App() {
         <Route path="/" element={<MiniDrawer />}>
 
           <Route index element={<Dashboard />} />
+          <Route path="/customer_reviews" element={<CustomerReviews />} />
           <Route path="/orders" element={<Orders />} />
           <Route path="/menues" element={<Menues />} />
           <Route path="/customers" element={<Customers />} />

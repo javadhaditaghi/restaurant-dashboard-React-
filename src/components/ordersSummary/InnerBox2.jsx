@@ -15,6 +15,7 @@ export default function InnerBox2(props) {
                 flexShrink: 1,
                 padding: "20px 10px 20px 10px",
                 transition: ".5s ease-in-out",
+                backgroundColor: props.backColor,
 
 
                 '&:hover': {
