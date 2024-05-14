@@ -21,7 +21,6 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<MiniDrawer />}>
-
           <Route index element={<Dashboard />} />
           <Route path="/customer_reviews" element={<CustomerReviews />} />
           <Route path="/orders" element={<Orders />} />
