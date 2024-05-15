@@ -17,7 +17,7 @@ const OtherReviews = () => {
                                 <Avatar
                                     alt="customer"
                                     src="/static/images/avatar/1.pg"
-                                    sx={{ width: 55, height: 55, backgroundColor: "#C4C4C4", color: "#344038", mr: 2 }}></Avatar>
+                                    sx={{ width: 55, height: 55, backgroundColor: "#C4C4C4", color: "#344038", mr: 2 }}>{item.customer_name[0]}</Avatar>
 
                                 <Box width={"100%"}>
                                     <Box sx={{ display: "flex", justifyContent: "space-between", width: "100%" }}>
