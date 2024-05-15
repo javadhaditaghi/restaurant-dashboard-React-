@@ -1,0 +1,72 @@
+[
+  {
+    "customer_name": "Alice Johnson",
+    "position_or_job_title": "Software Engineer",
+    "review": "Great ambiance and delicious food! Will definitely be coming back soon.",
+    "highlights": ["Ambiance", "Delicious Food"],
+    "rating": 4.5
+  },
+  {
+    "customer_name": "David Smith",
+    "position_or_job_title": "Marketing Manager",
+    "review": "Excellent service and friendly staff. The desserts are to die for!",
+    "highlights": ["Excellent Service", "Friendly Staff", "Delicious Desserts"],
+    "rating": 5
+  },
+  {
+    "customer_name": "Emily Brown",
+    "position_or_job_title": "Teacher",
+    "review": "Had a wonderful dining experience. The presentation of the dishes was impeccable.",
+    "highlights": ["Wonderful Experience", "Impeccable Presentation"],
+    "rating": 4
+  },
+  {
+    "customer_name": "Michael Rodriguez",
+    "position_or_job_title": "Accountant",
+    "review": "Impressive variety on the menu. Loved the fusion of flavors!",
+    "highlights": ["Impressive Variety", "Fusion of Flavors"],
+    "rating": 4
+  },
+  {
+    "customer_name": "Sophia Martinez",
+    "position_or_job_title": "Graphic Designer",
+    "review": "The staff went above and beyond to accommodate our dietary restrictions. Highly recommended!",
+    "highlights": ["Accommodating Staff", "Highly Recommended"],
+    "rating": 3.5
+  },
+  {
+    "customer_name": "Ethan Wilson",
+    "position_or_job_title": "Student",
+    "review": "Reasonable prices for the quality of food. Perfect spot for a casual dinner with friends.",
+    "highlights": ["Reasonable Prices", "Quality Food", "Casual Atmosphere"],
+    "rating": 4
+  },
+  {
+    "customer_name": "Olivia Taylor",
+    "position_or_job_title": "Nurse",
+    "review": "The restaurant has a cozy atmosphere and the portions are generous. A gem in the neighborhood!",
+    "highlights": ["Cozy Atmosphere", "Generous Portions", "Neighborhood Gem"],
+    "rating": 5
+  },
+  {
+    "customer_name": "Daniel Anderson",
+    "position_or_job_title": "Architect",
+    "review": "The attention to detail in every dish is remarkable. A must-visit for food enthusiasts!",
+    "highlights": ["Attention to Detail", "Remarkable Dishes", "Must-Visit"],
+    "rating": 4.5
+  },
+  {
+    "customer_name": "Ava Thomas",
+    "position_or_job_title": "HR Specialist",
+    "review": "We celebrated a special occasion here and it exceeded our expectations. Thank you for the memorable experience!",
+    "highlights": ["Exceeded Expectations", "Memorable Experience"],
+    "rating": 5
+  },
+  {
+    "customer_name": "William Clark",
+    "position_or_job_title": "Retired",
+    "review": "Been a regular here for years and never disappointed. Consistency in quality and service is commendable.",
+    "highlights": ["Consistency", "Quality Service"],
+    "rating": 4
+  }
+]
