@@ -7,6 +7,7 @@ import InnerBox2 from "../components/ordersSummary/InnerBox2"
 import { Avatar, Chip, Rating, Typography, Box } from "@mui/material"
 import StarIcon from '@mui/icons-material/Star';
 import OtherReviews from "./otherReviews"
+import { useState } from "react"
 
 
 
@@ -14,6 +15,7 @@ import OtherReviews from "./otherReviews"
 
 
 const CustomerReviews = () => {
+
     return (
 
 

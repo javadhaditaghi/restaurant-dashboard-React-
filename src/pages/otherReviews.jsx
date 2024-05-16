@@ -1,16 +1,62 @@
 
-import { Avatar, Chip, Rating, Typography, Box } from "@mui/material"
+import { Avatar, Chip, Rating, Typography, Box, Button } from "@mui/material"
 import StarIcon from '@mui/icons-material/Star';
 import Grid2 from "@mui/material/Unstable_Grid2/Grid2";
 import jsonData from './otherReviews.json'
+import { useState } from "react";
+import { SvgIcon } from "@mui/material";
 
 
 
-const OtherReviews = () => {
+
+export const ArrowDown = () => {
+    return (
+        <SvgIcon>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                <path d="M18 12.5L12 18.5L6 12.5" stroke="#D3D6E4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M18 5.5L12 11.5L6 5.5" stroke="#D3D6E4" stroke-opacity="0.35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+        </SvgIcon>
+
+    )
+}
+export const ArrowUp = () => {
+    return (
+        <SvgIcon>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                <path d="M6 12.5001L12 6.50012L18 12.5001" stroke="#D3D6E4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M6 19.5001L12 13.5001L18 19.5001" stroke="#D3D6E4" stroke-opacity="0.35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+        </SvgIcon>
+
+    )
+}
+
+
+const OtherReviews = ({ maxNum = 6 }) => {
+    const [data, setData] = useState(jsonData.slice(0, maxNum))
+    const [linkText, setLinkText] = useState('more');
+    const [arrow, setArrow] = useState(<ArrowDown />);
+
+    const clickHandler = () => {
+        if (data.length == maxNum) {
+            // If currently showing only the first 6 items, show all items
+            setData(jsonData);
+            setLinkText("less")
+            setArrow(<ArrowUp />)
+        } else {
+            // If currently showing all items, show only the first 6 items
+            setData(data.slice(0, maxNum));
+            setLinkText("more")
+            setArrow(<ArrowDown />)
+        }
+    }
+
+
     return (
         <>
             {
-                jsonData.map((item) => (
+                data.map((item) => (
                     <Grid2 container rowSpacing={2} columnSpacing={{ xs: 1, sm: 2, md: 3 }} flexGrow={2} padding={2}>
                         <Grid2 md={10}>
                             <Box display={"flex"} width={"100%"}>
@@ -50,6 +96,7 @@ const OtherReviews = () => {
                         </Grid2>
 
 
+
                     </Grid2>
 
 
@@ -58,6 +105,17 @@ const OtherReviews = () => {
 
             }
 
+            <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center", mt: 3 }}>
+
+
+                <Button
+                    variant="contained"
+                    endIcon={arrow}
+                    onClick={
+                        clickHandler
+                    }> Load {linkText}</Button>
+
+            </Box>
         </>
 
 
