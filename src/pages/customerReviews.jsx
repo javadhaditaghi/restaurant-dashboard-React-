@@ -4,10 +4,9 @@ import Title from "../components/dashboardHeader/title"
 import SelectData from "../components/dashboardHeader/select"
 import ReviewsCarousel from "../components/customerReviews/ReviewsCarousel"
 import InnerBox2 from "../components/ordersSummary/InnerBox2"
-import { Avatar, Chip, Rating, Typography, Box } from "@mui/material"
-import StarIcon from '@mui/icons-material/Star';
-import OtherReviews from "./otherReviews"
-import { useState } from "react"
+import { Box } from "@mui/material"
+import OtherReviews from "../components/customerReviews/otherReviews"
+import NewReviewsSideCarousel from "../components/customerReviews/NewReviewsSideCarousel"
 
 
 
@@ -15,9 +14,7 @@ import { useState } from "react"
 
 
 const CustomerReviews = () => {
-
     return (
-
 
 
         <Box component="main" sx={{ flexGrow: 1, p: 3, display: "flex", flexDirection: "column" }}>
@@ -33,7 +30,7 @@ const CustomerReviews = () => {
 
             </Grid2>
             <Grid2 container rowSpacing={2} columnSpacing={{ xs: 1, sm: 2, md: 3 }} flexGrow={2}>
-                <Grid2 md={8.5}>
+                <Grid2 md={9.5}>
                     <InnerBox2>
                         <Box padding={2}>
                             <Title title="Other Reviews" subtitle="Here is customer review about your restaurant" />
@@ -44,8 +41,17 @@ const CustomerReviews = () => {
 
                     </InnerBox2>
                 </Grid2>
-                <Grid2 md={3.5}>
-                    <InnerBox2></InnerBox2>
+                <Grid2 md={2.5}>
+                    <InnerBox2 backColor="#3E4954" customHeight="auto" customPadding="0px">
+                        <Box padding={"30px"}>
+                            <Title title="🔥 Newest" customColor={"#ffffff"} />
+                        </Box>
+
+
+
+                        <NewReviewsSideCarousel />
+
+                    </InnerBox2>
                 </Grid2>
 
             </Grid2>

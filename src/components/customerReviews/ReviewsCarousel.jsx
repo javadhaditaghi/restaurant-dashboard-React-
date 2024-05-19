@@ -3,6 +3,8 @@
 import { Navigation, A11y } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
+
+
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -21,7 +23,10 @@ const ReviewsCarousel = () => {
             spaceBetween={50}
             slidesPerView={3.4}
             navigation
+            className='customSwiper'
+
             style={{ height: '100%' }}
+
             breakpoints={{
                 576: {
                     // width: 576,
@@ -45,6 +50,7 @@ const ReviewsCarousel = () => {
 
 
         >
+
             <SwiperSlide>
                 <ReviewsCarouselContent />
             </SwiperSlide>

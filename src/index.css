@@ -16,8 +16,8 @@ a {
     text-decoration: none;
 }
 
-.swiper-button-prev:after,
-.swiper-button-next:after {
+.customSwiper .swiper-button-prev:after,
+.customSwiper .swiper-button-next:after {
     font-family: swiper-icons;
     /* font-size: var(--swiper-navigation-size); */
     text-transform: none !important;
@@ -30,4 +30,23 @@ a {
     background-color: #2f4cdd;
     border-radius: 10px;
     color: white;
+}
+
+.customSwiper1 .swiper-button-prev:after,
+.customSwiper1 .swiper-button-next:after {
+    font-size: 18px !important;
+    color: #ffffff;
+    font-weight: 600;
+    top: -6%;
+
+
+}
+
+.customSwiper1 .swiper-button-prev,
+.customSwiper1 .swiper-button-next {
+    top: -45px
+}
+
+.customSwiper1 .swiper-button-prev {
+    left: 73%;
 }

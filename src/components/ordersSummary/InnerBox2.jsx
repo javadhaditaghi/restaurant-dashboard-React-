@@ -7,13 +7,13 @@ export default function InnerBox2(props) {
         <Box
             sx={{
                 width: "100%",
-                height: "100%",
+                height: props.customHeight || "100%",
                 borderRadius: "1.25rem;",
-                bgcolor: '#FFF',
+                bgcolor: '#FFFFFF',
                 boxShadow: "0px 12px 23px 0px rgba(62, 73, 84, 0.04)",
                 alignItems: "center",
                 flexShrink: 1,
-                padding: "20px 10px 20px 10px",
+                padding: props.customPadding || "20px 10px 20px 10px",
                 transition: ".5s ease-in-out",
                 backgroundColor: props.backColor,
 
